@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'pug')
 
 // app.get('/home', (req, res) => {
-app.get((req, res) => {
+app.use((req, res) => {
   res.render('index')
 })
 
