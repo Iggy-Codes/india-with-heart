@@ -1,0 +1,22 @@
+{
+  "name": "india-with-heart",
+  "description": "Project for the Non Profit Organization India with heart",
+  "main": "app.js",
+  "authors": [
+    "Iggy <amargos.ignasi@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Iggy-Codes/india-with-heart",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
