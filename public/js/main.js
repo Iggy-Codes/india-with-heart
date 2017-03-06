@@ -18,7 +18,10 @@ $(document).ready(function () {
   txt += '<p> $(window).height = ' + $(window).height() + '</p>'
   txt += '<p>Total width/height: ' + screen.width + '*' + screen.height + '</p>'
   txt += '<p>Available width/height: ' + screen.availWidth + '*' + screen.availHeight + '</p>'
+
+  txt += '<p>Device height' + device.height + '<p>'
   txt += '<p>Color depth: ' + screen.colorDepth + '</p>'
   txt += '<p>Color resolution: ' + screen.pixelDepth + '</p>'
   $(infoWindow).html(txt)
 })
+
