@@ -1,0 +1,85 @@
+extends layout.pug
+block content
+  .container
+    .row
+      h3.space-before-block.space-after-block Your trip
+      .trip.center-block.hidden-xs
+        .trip-row
+          .trip-step
+            button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+              //- i.fa.fa-user.fa-3x
+            p Delhi
+          .trip-step
+            button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+              //- i.fa.fa-comments-o.fa-3x
+            p Jodhpur
+          .trip-step
+            button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+              //- i.fa.fa-thumbs-up.fa-3x
+            p Udaipur
+          .trip-step
+            button.btn.btn-primary.btn-circle(type='button', disabled='disabled')
+              //- i.fa.fa-eur.fa-3x
+            p Bundi
+          .trip-step
+            button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+              //- i.fa.fa-eur.fa-3x
+            p Jaipur
+          .trip-step
+            button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+              //- i.fa.fa-eur.fa-3x
+            p Agra
+    .row.space-before-block
+      #map
+      .city-title
+        h3 Udaipur
+        h4 La Venecia del Este
+        .city-activity
+          p
+            strong D&iacute;a 5 - Jodhpur - Udaipur
+          p  Por la ma&ntilde;ana, visitaremos uno de los fuertes mejor conservados del Rajasthan, el impresionante fuerte amurallado Mehrangarh del S. XVII, con su museo interior que protege el palacio de los Rajputs. A la hora convenida, partiremos hacia Udaipur, conocida como la Venecia del Este por sus preciosos lagos dentro de la ciudad. De camino visitaremos uno de los m&aacute;s importantes e impresionantes templos jainistas, el templo de Ranakpur que fueron construidos entre los siglos XII y XV y est&aacute;n dedicadas a Rikhabdev y Sambhavanth. Hay 1444 columnas en el templo y ningunos son similares.
+        .city-foto
+          img.img-responsive(src='/img/udaipur_1_380x253.jpeg')
+
+  script.
+    function initMap() {
+      var locations = [
+        { name: 'Delhi', coor: { lat: 28.6618976, lng: 77.22739580000007 }},
+        { name: 'Jodhpur', coor: { lat: 26.23894689999999, lng: 73.02430939999999 }},
+        { name: 'Udaipur', coor: { lat: 24.585445, lng: 73.712479 }},
+        { name: 'Bundi', coor: { lat: 25.430514, lng: 75.649903 }} ,
+        { name: 'Jaipur', coor: { lat: 26.912434, lng: 75.787271 }},
+        { name: 'Agra', coor: { lat: 27.17667, lng: 78.008075 }}]
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: locations[2].coor
+      });
+      var coorLocations = []
+      locations.forEach((element) => {
+        var icon = (element.name === 'Udaipur') ? '/img/blue-marker-40.png' : '/img/red-marker-40.png'
+        var marker = new google.maps.Marker({
+         position: element.coor,
+         icon,
+         map: map,
+         title: element.name
+          });
+        coorLocations.push(element.coor)
+        })
+      coorLocations.push(locations[0].coor)
+      console.log(coorLocations)
+      var travelPath = new google.maps.Polyline({
+        path: coorLocations,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+      });
+
+      travelPath.setMap(map);
+    }
+  script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDX4newU7Fpvpp_6-GjJOHfxf1PSigPiRA&callback=initMap')
+
+
+//- block footer
+//-   script(src='load-map.js')
+//-   script(async,defer,src=urlMaps)

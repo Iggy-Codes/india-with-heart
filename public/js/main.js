@@ -13,14 +13,25 @@ $(document).ready(function () {
       }
     })
   }
-  var txt = ''
-  txt += '<p> $(window).width = ' + $(window).width() + '</p>'
-  txt += '<p> $(window).height = ' + $(window).height() + '</p>'
-  txt += '<p>Total width/height: ' + screen.width + '*' + screen.height + '</p>'
-  txt += '<p>Available width/height: ' + screen.availWidth + '*' + screen.availHeight + '</p>'
-  txt += '<p>Color depth: ' + screen.colorDepth + '</p>'
-  txt += '<p>Color resolution: ' + screen.pixelDepth + '</p>'
-  console.log(txt)
-  $(infoWindow).html(txt)
+  // var txt = ''
+  // txt += '<p> $(window).width = ' + $(window).width() + '</p>'
+  // txt += '<p> $(window).height = ' + $(window).height() + '</p>'
+  // txt += '<p>Total width/height: ' + screen.width + '*' + screen.height + '</p>'
+  // txt += '<p>Available width/height: ' + screen.availWidth + '*' + screen.availHeight + '</p>'
+  // txt += '<p>Color depth: ' + screen.colorDepth + '</p>'
+  // txt += '<p>Color resolution: ' + screen.pixelDepth + '</p>'
+  // console.log(txt)
+  // $(infoWindow).html(txt)
 })
 
+// function initMap () {
+//   var uluru = {lat: -25.363, lng: 131.044}
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 4,
+//     center: uluru
+//   })
+//   var marker = new google.maps.Marker({
+//     position: uluru,
+//     map: map
+//   })
+// }

@@ -1,0 +1,38 @@
+var nameLocations = ['Delhi', 'Jodhpur', 'Udaipur', 'Bundi', 'Jaipur', 'Agra'] 
+
+Delhi
+{ lat: 28.6618976, lng: 77.22739580000007 }
+
+Zaza Stay
+54, Block E, Nizamuddin West, New Delhi, Delhi 110013, India
+28.587272
+77.24558100000002
+
+Jodhpur, Rajasthan, India
+{ lat: 26.23894689999999, lng: 73.02430939999999 }
+
+Mandore Guest House
+Dadawari Lane Near, Mandore Rd, Mandore, Jodhpur, Rajasthan 342006, India
+26.3503789
+73.04002360000004
+
+Udaipur, Rajasthan, India
+{ lat: 24.585445, lng: 73.712479 }
+
+Jagat Niwas Palace Hotel 23-25, Lal Ghat, Behind Jagdish Temple, Udaipur, Rajasthan 313001, India
+Latitude: 24.578269 | Longitude: 73.68254
+
+Bundi, Rajasthan 323001, India
+{ lat: 25.430514, lng: 75.649903 }
+
+Hotel Bundi Haveli 107, Balchand Parra, Near Naval Sagar Lake, Balchand Para, Bundi, Rajasthan 323001, India
+Latitude: 25.447961 | Longitude: 75.632272
+
+Jaipur, Rajasthan, India
+{ lat: 26.912434, lng: 75.787271 }
+
+Agra, Uttar Pradesh, India
+{ lat: 27.17667, lng: 78.008075 }
+
+Hotel Atulyaa Taj 538, Near Shilp Gram, Taj Mahal Eastern Gate, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India
+Latitude: 27.168917 | Longitude: 78.049946

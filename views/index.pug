@@ -1,7 +1,7 @@
 extends layout.pug
 block content
   #startchange
-  #carousel-example-generic.carousel.slide(data-ride='carousel')
+  #carousel-example-generic.carousel.slide.spacing_title(data-ride='carousel')
     ol.carousel-indicators
       li.active(data-target='#carousel-example-generic', data-slide-to='0')
       li(data-target='#carousel-example-generic', data-slide-to='1')
@@ -24,14 +24,19 @@ block content
     .container
       span Recibe gratis nuestra guía de turismo responsable
       a(href="#").btn.btn-primary La quiero
+  .content-block-one.content-block-height#why
+    .container
+      h2 El porqué de viajar con India con corazón
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   .content-space-one.content-space-all
     .text-center
       //- h1 This separates content!
       //- .page-break
       //- p Other information can go here
-  .content-block-one#why
+  .content-block-one.content-block-height#responsible
     .container
-      h2 El porqué de viajar con India con corazón
+      h2 Turismo Responsable en la India
       p
         | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   .content-space-two.content-space-all
@@ -39,17 +44,7 @@ block content
       //- h1 This separates content!
       //- .page-break
       //- p Other information can go here
-  .content-block-one#responsible
-    .container
-      h2 Turismo Responsable en la India
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    .content-space-three.content-space-all
-    .text-center
-      //- h1 This separates content!
-      //- .page-break
-      //- p Other information can go here
-  .content-block-one#trip
+  .content-block-one.content-block-height#trip
     .container
       h2 Nuestro viaje
       p
@@ -59,5 +54,10 @@ block content
         |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         |proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  .content-space-three.content-space-all
+    .text-center
+      //- h1 This separates content!
+      //- .page-break
+      //- p Other information can go here
   .content-block-one
     .container#infoWindow
