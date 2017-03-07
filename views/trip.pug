@@ -1,47 +1,148 @@
 extends layout.pug
 block content
+  #myModal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          .pull-left My Gallery Title
+          |  
+          button.close(type='button', data-dismiss='modal', title='Close')
+            span.glyphicon.glyphicon-remove
+        .modal-body
+          #myGallery.carousel.slide(data-interval='false')
+            .carousel-inner
+              .item.active
+                img(src='/img/1280x760/india_1_1280x760.jpeg', alt='item0')
+                .carousel-caption
+                  h3 Heading 3
+                  p Slide 0 description.
+              .item
+                img(src='/img/1280x760/india_2_1280x760.jpeg', alt='item1')
+                .carousel-caption
+                  h3 Heading 3
+                  p Slide 1 description.
+              .item
+                img(src='/img/1280x760/india_3_1280x760.jpeg', alt='item2')
+                .carousel-caption
+                  h3 Heading 3
+                  p Slide 2 description.
+              .item
+                img(src='/img/1280x760/india_4_1280x760.jpeg', alt='item3')
+                .carousel-caption
+                  h3 Heading 3
+                  p Slide 3 description.
+              .item
+                img(src='/img/1280x760/india_5_1280x760.jpeg', alt='item4')
+                .carousel-caption
+                  h3 Heading 3
+                  p Slide 4 description.
+              .item
+                img(src='/img/1280x760/india_6_1280x760.jpeg', alt='item5')
+                .carousel-caption
+                  h3 Heading 3
+                  p Slide 5 description.
+            a.left.carousel-control(href='#myGallery', role='button', data-slide='prev')
+              span.glyphicon.glyphicon-chevron-left
+            a.right.carousel-control(href='#myGallery', role='button', data-slide='next')
+              span.glyphicon.glyphicon-chevron-right
+        .modal-footer
+          .pull-left
+            small
+              | Photographs by 
+              a(href='http://lorempixel.com', target='new') Lorempixel.com
+          |  
+          button.btn-sm.close(type='button', data-dismiss='modal') Close
   .container
     .row
-      h3.space-before-block.space-after-block Your trip
-      .trip.center-block.hidden-xs
+      h2.space-before-block.space-after-block.text-center Nuestro viaje
+    .row.hidden-xs  
+      .trip.center-block
         .trip-row
           .trip-step
             button.btn.btn-default.btn-circle(type='button', disabled='disabled')
               //- i.fa.fa-user.fa-3x
-            p Delhi
+            p 
+              a(href="") Delhi
           .trip-step
             button.btn.btn-default.btn-circle(type='button', disabled='disabled')
               //- i.fa.fa-comments-o.fa-3x
-            p Jodhpur
+            p  
+              a(href="") Jodhpur
           .trip-step
             button.btn.btn-default.btn-circle(type='button', disabled='disabled')
               //- i.fa.fa-thumbs-up.fa-3x
-            p Udaipur
+            p 
+              a(href="") Udaipur
           .trip-step
             button.btn.btn-primary.btn-circle(type='button', disabled='disabled')
               //- i.fa.fa-eur.fa-3x
-            p Bundi
+            p 
+              a(href="") Bundi
           .trip-step
             button.btn.btn-default.btn-circle(type='button', disabled='disabled')
               //- i.fa.fa-eur.fa-3x
-            p Jaipur
+            p 
+              a(href="") Jaipur
           .trip-step
             button.btn.btn-default.btn-circle(type='button', disabled='disabled')
               //- i.fa.fa-eur.fa-3x
-            p Agra
-    .row.space-before-block
-      #map
-      .city-title
-        h3 Udaipur
+            p 
+              a(href="") Agra
+    .row
+      #map.hidden-xs
+    .row
+      h3.text-center Udaipur
+      .col-sm-8
         h4 La Venecia del Este
-        .city-activity
-          p
-            strong D&iacute;a 5 - Jodhpur - Udaipur
-          p  Por la ma&ntilde;ana, visitaremos uno de los fuertes mejor conservados del Rajasthan, el impresionante fuerte amurallado Mehrangarh del S. XVII, con su museo interior que protege el palacio de los Rajputs. A la hora convenida, partiremos hacia Udaipur, conocida como la Venecia del Este por sus preciosos lagos dentro de la ciudad. De camino visitaremos uno de los m&aacute;s importantes e impresionantes templos jainistas, el templo de Ranakpur que fueron construidos entre los siglos XII y XV y est&aacute;n dedicadas a Rikhabdev y Sambhavanth. Hay 1444 columnas en el templo y ningunos son similares.
-        .city-foto
+        p
+          strong Jodhpur - Udaipur
+        p  Por la ma&ntilde;ana, visitaremos uno de los fuertes mejor conservados del Rajasthan, el impresionante fuerte amurallado Mehrangarh del S. XVII, con su museo interior que protege el palacio de los Rajputs. A la hora convenida, partiremos hacia Udaipur, conocida como la Venecia del Este por sus preciosos lagos dentro de la ciudad. De camino visitaremos uno de los m&aacute;s importantes e impresionantes templos jainistas, el templo de Ranakpur que fueron construidos entre los siglos XII y XV y est&aacute;n dedicadas a Rikhabdev y Sambhavanth. Hay 1444 columnas en el templo y ningunos son similares.
+      .col-sm-4
           img.img-responsive(src='/img/udaipur_1_380x253.jpeg')
+    .row
+      .col-sm-4
+          img.img-responsive(src='/img/udaipur_2_380x253.jpeg')
+      .col-sm-8
+          h4 Los proyectos solidarios en Udaipur
+    .row
+      .col-sm-8      
+        h4 Los latidos de nuestros viajeros
+        p Me gusto muchísimo la ciudad. Antonia
+        p No vuelvo ni borracho. Antonio
+        p No aguanto a mis padres. AntoÑito
+        p Que pesados. Toño
+      .col-sm-4
+          img.img-responsive(src='/img/corason-color.png')
 
+    //- .row
+    //-   .myThumbnails
+    //-     ul
+    //-       li(data-toggle='modal', data-target='#myModal')
+    //-         a(href='#myGallery', data-slide-to='0')
+    //-           img.img-thumbnail(src='/img/1280x760/india_1_1280x760.jpeg')
+    //-       li(data-toggle='modal', data-target='#myModal')
+    //-         a(href='#myGallery', data-slide-to='1')
+    //-           img.img-thumbnail(src='/img/1280x760/india_2_1280x760.jpeg')
+    //-       li(data-toggle='modal', data-target='#myModal')
+    //-         a(href='#myGallery', data-slide-to='2')
+    //-           img.img-thumbnail(src='/img/1280x760/india_3_1280x760.jpeg')
+    //-       li(data-toggle='modal', data-target='#myModal')
+    //-         a(href='#myGallery', data-slide-to='3')
+    //-           img.img-thumbnail(src='/img/1280x760/india_4_1280x760.jpeg')
+    //-       li(data-toggle='modal', data-target='#myModal')
+    //-         a(href='#myGallery', data-slide-to='4')
+    //-           img.img-thumbnail(src='/img/1280x760/india_5_1280x760.jpeg')
+    //-       li(data-toggle='modal', data-target='#myModal')
+    //-         a(href='#myGallery', data-slide-to='5')
+    //-           img.img-thumbnail(src='/img/1280x760/india_6_1280x760.jpeg')
+   
+block javascript
   script.
+    $(document).ready(function() {
+      $('#myCarousel').carousel({
+      interval: 10000
+      })
+    });
     function initMap() {
       var locations = [
         { name: 'Delhi', coor: { lat: 28.6618976, lng: 77.22739580000007 }},
@@ -52,7 +153,7 @@ block content
         { name: 'Agra', coor: { lat: 27.17667, lng: 78.008075 }}]
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 6,
-        center: locations[2].coor
+        center: locations[4].coor
       });
       var coorLocations = []
       locations.forEach((element) => {
@@ -78,8 +179,3 @@ block content
       travelPath.setMap(map);
     }
   script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDX4newU7Fpvpp_6-GjJOHfxf1PSigPiRA&callback=initMap')
-
-
-//- block footer
-//-   script(src='load-map.js')
-//-   script(async,defer,src=urlMaps)

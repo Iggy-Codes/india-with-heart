@@ -1,5 +1,7 @@
-h3
-  margin-top: 0px
+$path-color: darkblue
+
+// h3
+//   margin-top: 0px
 
 .space-before-block
   margin-top: 65px
@@ -10,58 +12,61 @@ h3
 .right-map
   background-color: lightblue
 
-@media (min-width: @screen-sm-min)
-  .stepwizard-step p
-    margin-top: 10px
-    color:
-  .trip-row
-    display: table-row
-  .trip
-    display: table
-    width: 80%
-    position: relative
-    // margin-top: 50px
-  .trip-step button[disabled]
-    opacity: 1 !important
-    filter: alpha(opacity = 100) !important
-  .trip-row:before
-    // top: 50px
-    // padding-top: 50px
-    top: 12px
-    bottom: 0
-    position: absolute
-    content: " "
-    width: 100%
-    height: 2px
-    background-color: darkblue
-    z-order: 0
-  .trip-step
-    display: table-cell
-    text-align: center
-    position: relative
-    color: blue
-    p
-      margin-top: -50px
-      // margin-bottom: 50px
-      color: darkblue
-      font-size: 20px
-  .btn-circle
-    width: 24px
-    height: 24px
-    text-align: center
-    padding: 8px 0
-    // font-size: 12px
-    // line-height: 1.428571429
-    // line-height: 1.25
-    border-radius: 50%
-    border-color: darkblue
-    border-width: 2px
+
+.stepwizard-step p
+  margin-top: 10px
+  color:
+.trip-row
+  display: table-row
+.trip
+  display: table
+  width: 100%
+  position: relative
+  margin-top: 20px
+.trip-step button[disabled]
+  opacity: 1 !important
+  filter: alpha(opacity = 100) !important
+.trip-row:before
+  // top: 50px
+  // padding-top: 50px
+  top: 12px
+  bottom: 0
+  position: absolute
+  content: " "
+  width: 100%
+  height: 2px
+  background-color: $path-color
+  z-order: 0
+.trip-step
+  display: table-cell
+  text-align: center
+  position: relative
+  color: blue
+  p
+    margin-top: -55px
+    // margin-bottom: 50px
+    color: $path-color
+    font-size: 20px
+    a
+      color: $path-color
+.btn-circle
+  width: 24px
+  height: 24px
+  text-align: center
+  padding: 8px 0
+  // font-size: 12px
+  // line-height: 1.428571429
+  // line-height: 1.25
+  border-radius: 50%
+  border-color: $path-color
+  border-width: 2px
 
 #map
   height: 300px
-  width: 50%
+  width: 100%
   background-color: grey
   margin: 0 auto
+  margin-top: 40px
 
 .city-title
   width: 66%
@@ -77,3 +82,39 @@ h3
   width: 50%
   float: right
   background-color: red
+
+// .myThumbnails
+//   width: 80%
+//   margin: 30px auto 10px auto
+//   white-space: nowrap
+//   overflow-x: scroll
+//   overflow-y: hidden
+//   height: 160px   
+//   ul
+//     list-style-type: none
+//     overflow-x: visible
+//     width: 100%
+//     li
+//       display: inline-block
+//       position: relative;
+//       float: left;
+//   img
+//     height: 133px
+
+.cover-container
+  height: 180px
+  width: 100%
+  overflow-x: scroll
+
+.cover-item
+  position: relative
+  float: left
+  margin: 8px 8px
+  box-shadow: 2px 2px 4px #bbb
+  border-top-right-radius: 4px
+  width: 116px
+  height: 158px
+  vertical-align: bottom
+  background-position: top left
+  background-repeat: no-repeat
+  background-size: cover
