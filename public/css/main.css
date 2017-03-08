@@ -9629,54 +9629,60 @@ button.close {
   text-align: center;
 }
 
-/* line 9, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 8, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+.footer p {
+  margin-bottom: 0px;
+  color: grey;
+}
+
+/* line 12, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-twitter {
   color: #4099FF;
 }
 
-/* line 12, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 15, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-facebook {
   color: #3B5998;
 }
 
-/* line 15, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 18, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-youtube-play {
   color: #e52d27;
 }
 
-/* line 18, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 21, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-rss {
   color: #FF6600;
 }
 
-/* line 21, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 24, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-vine {
   color: #00a478;
 }
 
-/* line 24, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 27, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-flickr {
   color: #ff0084;
 }
 
-/* line 27, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 30, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-twitch {
   color: #6441A5;
 }
 
-/* line 30, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 33, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa-linkedin {
   color: #007bb6;
 }
 
-/* line 33, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 36, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa {
   opacity: 0.7;
   transition: 1s;
   -webkit-transition: 1s;
 }
 
-/* line 37, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
+/* line 40, /home/iggy/Documents/skylab-project/india-with-heart/src/footer.sass */
 .fa:hover {
   opacity: 1;
   transition: 1s;
