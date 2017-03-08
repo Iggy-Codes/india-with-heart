@@ -86,29 +86,16 @@ block content
               li
               a(href=photo.url,data-toggle="lightbox" data-gallery="example-gallery")
                 img(src=photo.url, alt=photo.des)
-            //- li(data-toggle='modal', data-target='#myModal')
-            //-   a(href='',data-toggle="lightbox" data-gallery="example-gallery")
-            //-     img.img-thumbnail(src='/img/1280x760/india_1_1280x760.jpeg')
-            //- li(data-toggle='modal', data-target='#myModal')
-            //-   a(href='#myGallery', data-slide-to='1')
-            //-     img.img-thumbnail(src='/img/1280x760/india_2_1280x760.jpeg')
-            //- li(data-toggle='modal', data-target='#myModal')
-            //-   a(href='#myGallery', data-slide-to='2')
-            //-     img.img-thumbnail(src='/img/1280x760/india_3_1280x760.jpeg')
-            //- li(data-toggle='modal', data-target='#myModal')
-            //-   a(href='#myGallery', data-slide-to='3')
-            //-     img.img-thumbnail(src='/img/1280x760/india_4_1280x760.jpeg')
-            //- li(data-toggle='modal', data-target='#myModal')
-            //-   a(href='#myGallery', data-slide-to='4')
-            //-     img.img-thumbnail(src='/img/1280x760/india_5_1280x760.jpeg')
-            //- li(data-toggle='modal', data-target='#myModal')
-            //-   a(href='#myGallery', data-slide-to='5')
-            //-     img.img-thumbnail(src='/img/1280x760/india_6_1280x760.jpeg')
+
    
 block javascript
   script(src='/bower_components/tether/dist/js/tether.min.js')
   script(src='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.js')
   script.
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
     function initMap() {
       var locations = [
         { name: 'Delhi', coor: { lat: 28.6618976, lng: 77.22739580000007 }},

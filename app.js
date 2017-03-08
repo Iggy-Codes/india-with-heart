@@ -27,9 +27,7 @@ app.get('/trip', (req, res) => {
     { url: '/img/1280x760/india_5_1280x760.jpeg',
       des: 'Photo number 5' },
     { url: '/img/1280x760/india_6_1280x760.jpeg',
-      des: 'Photo number 6' },
-    { url: '/img/1280x760/india_7_1280x760.jpeg',
-      des: 'Photo number 1' }
+      des: 'Photo number 6' }
   ]
   res.render('trip', { urlMaps, photos })
 })
