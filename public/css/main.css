@@ -9300,33 +9300,33 @@ button.close {
 
 /* line 37, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .content-space-all {
-  padding: 0px;
-  margin-bottom: 0px;
+  padding: 200px 0px;
+  margin: 0px;
   color: inherit;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 200px;
-  padding-bottom: 200px;
 }
 
-/* line 48, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 46, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .content-space-one {
   background: url(/img/space-one.jpeg) no-repeat center center fixed;
+  background-position: 0px 50px;
+  background-size: cover;
 }
 
 /* line 51, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .content-space-two {
   background: url(/img/space-two.jpeg) no-repeat center center fixed;
+  background-position: 0px 50px;
+  background-size: cover;
 }
 
-/* line 54, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 56, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .content-space-three {
   background: url(/img/space-three.jpeg) no-repeat center center fixed;
+  background-position: 0px 50px;
+  background-size: cover;
 }
 
-/* line 57, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 61, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .page-break {
   width: 50%;
   height: 3px;
@@ -9334,7 +9334,7 @@ button.close {
   margin: 0 auto;
 }
 
-/* line 63, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 67, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .objective-section {
   text-align: center;
   color: #555753;
@@ -9344,28 +9344,28 @@ button.close {
   padding: 1rem 0;
 }
 
-/* line 70, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 74, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .objective-section .btn {
   margin-left: 2rem;
 }
 
-/* line 73, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 77, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 #myCarousel {
   padding-top: 50px;
   width: 100%;
 }
 
-/* line 79, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 83, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .item img {
   width: 100%;
 }
 
-/* line 82, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 86, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .carousel-indicators {
   display: block;
 }
 
-/* line 85, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 89, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .carousel-caption .first-motto {
   width: 50%;
   background-color: #909F2C;
@@ -9375,7 +9375,7 @@ button.close {
   opacity: .85;
 }
 
-/* line 93, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 97, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .carousel-caption .second-motto {
   background-color: #7C1A73;
   opacity: .80;
@@ -9384,7 +9384,7 @@ button.close {
   width: 40%;
 }
 
-/* line 99, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 103, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .carousel-caption .third-motto {
   width: 50%;
   padding: 5px 15px;
@@ -9394,7 +9394,7 @@ button.close {
   margin-bottom: 30%;
 }
 
-/* line 106, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 110, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .carousel-caption h2 {
   font-size: 4rem;
 }
