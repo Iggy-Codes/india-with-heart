@@ -9399,6 +9399,21 @@ button.close {
   font-size: 4rem;
 }
 
+/* line 114, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+#index-why-section {
+  background-color: #638D85;
+}
+
+/* line 118, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+#index-responsible-section {
+  background-color: #AFC9B0;
+}
+
+/* line 123, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+#index-trip-section {
+  background-color: #B8C9AF;
+}
+
 /* line 22, /home/iggy/Documents/skylab-project/india-with-heart/src/trip.sass */
 .space-before-block {
   margin-top: 65px;
