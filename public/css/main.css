@@ -353,8 +353,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 
 /* line 24, /home/iggy/Documents/skylab-project/india-with-heart/public/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_glyphicons.scss */
@@ -9342,6 +9342,22 @@ button.close {
   background: #FFF07B;
   font-size: 2rem;
   margin-left: 1rem;
+}
+
+/* line 71, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+#myCarousel {
+  padding-top: 50px;
+  width: 100%;
+}
+
+/* line 76, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.item img {
+  width: 100%;
+}
+
+/* line 80, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.carousel-caption :first-of-type {
+  background-color: blue;
 }
 
 /* line 22, /home/iggy/Documents/skylab-project/india-with-heart/src/trip.sass */

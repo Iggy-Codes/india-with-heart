@@ -1,26 +1,75 @@
 extends layout.pug
 block content
-  #startchange
-  #carousel-example-generic.carousel.slide.spacing_title(data-ride='carousel')
+  #myCarousel.carousel.slide(data-interval='3000', data-ride='carousel')
     ol.carousel-indicators
-      li.active(data-target='#carousel-example-generic', data-slide-to='0')
-      li(data-target='#carousel-example-generic', data-slide-to='1')
-      li(data-target='#carousel-example-generic', data-slide-to='2')
+      li.active(data-target='#myCarousel', data-slide-to='0')
+      li(data-target='#myCarousel', data-slide-to='1')
+      li(data-target='#myCarousel', data-slide-to='2')
     .carousel-inner
-      .item.active
-        img(src='img/1280x500/carrousel_1_1280x500.jpeg', alt='...', width='100%')
-        .carousel-caption  ...
+      .active.item
+        img(src='img/1280x500/carrousel_1_1280x500.jpeg', alt='First Slide')
+        .carousel-caption
+          h3 First slide label
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       .item
-        img(src='img/1280x500/carrousel_2_1280x500.jpeg', alt='...', width='100%')
-        .carousel-caption  ...
+        img(src='img/1280x500/carrousel_2_1280x500.jpeg', alt='Second Slide')
+        .carousel-caption
+          h3 Second slide label
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       .item
-        img(src='img/1280x500/carrousel_3_1280x500.jpeg', alt='...', width='100%')
-        .carousel-caption  ...
-    a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+        img(src='img/1280x500/carrousel_3_1280x500.jpeg', alt='Third Slide')
+        .carousel-caption
+          h3 Third slide label
+          p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+    a.carousel-control.left(href='#myCarousel', data-slide='prev')
       span.glyphicon.glyphicon-chevron-left
-    a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+    a.carousel-control.right(href='#myCarousel', data-slide='next')
       span.glyphicon.glyphicon-chevron-right
-  .content-block-one.objective-section 
+  //- #carousel-example-generic.carousel.slide.spacing_title(data-ride='carousel')
+  //-   ol.carousel-indicators
+  //-     li.active(data-target='#carousel-example-generic', data-slide-to='0')
+  //-     li(data-target='#carousel-example-generic', data-slide-to='1')
+  //-     li(data-target='#carousel-example-generic', data-slide-to='2')
+  //-   .carousel-inner
+  //-     .item.active
+  //-       img(src='img/1280x500/carrousel_1_1280x500.jpeg', alt='...', width='100%')
+  //-       .carousel-caption  ...
+  //-     .item
+  //-       img(src='img/1280x500/carrousel_2_1280x500.jpeg', alt='...', width='100%')
+  //-       .carousel-caption  ...
+  //-     .item
+  //-       img(src='img/1280x500/carrousel_3_1280x500.jpeg', alt='...', width='100%')
+  //-       .carousel-caption  ...
+  //-   a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+  //-     span.glyphicon.glyphicon-chevron-left
+  //-   a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+    //-     span.glyphicon.glyphicon-chevron-right
+    #myCarousel.carousel.slide(data-interval='3000', data-ride='carousel')
+    ol.carousel-indicators
+      li.active(data-target='#myCarousel', data-slide-to='0')
+      li(da../p/public/img/ )    //- -target='#myCarousel', data-slide-to='1')
+      li(data-target='#myCarousel', data-slide-to='2')
+    .carousel-inner
+      .active.item
+        img(src='../images/slide1.png', alt='First Slide')
+        .carousel-caption
+          h3 First slide label
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      .item
+        img(src='../images/slide2.png', alt='Second Slide')
+        .carousel-caption
+          h3 Second slide label
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      .item
+        img(src='../images/slide3.png', alt='Third Slide')
+        .carousel-caption
+          h3 Third slide label
+          p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+    a.carousel-control.left(href='#myCarousel', data-slide='prev')
+      span.glyphicon.glyphicon-chevron-left
+    a.carousel-control.right(href='#myCarousel', data-slide='next')
+      span.glyphicon.glyphicon-chevron-right
+    .content-block-one.objective-section 
     .container
       span Recibe gratis nuestra guía de turismo responsable
       a(href="#").btn.btn-primary La quiero
