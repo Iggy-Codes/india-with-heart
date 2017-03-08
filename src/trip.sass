@@ -1,5 +1,21 @@
-$path-color: darkblue
+// #3A7F7C
+//#178AA9 light blue
+//#093CF9 blue
+//#5B9A3A
+//#CD4B33 red
+//#D0634E salmon
+//#F93A0C dark orange
+//#DB864F orange
+//#E5A752 light yellow
+//verds
+// #306149
+// #439061
+// blaus
+// #347370
+// #63A6A3
 
+$title-color: #347370
+$path-color: #347370
 // h3
 //   margin-top: 0px
 
@@ -41,7 +57,7 @@ $path-color: darkblue
   display: table-cell
   text-align: center
   position: relative
-  color: blue
+  color: $path-color
   p
     margin-top: -55px
     // margin-bottom: 50px
@@ -83,23 +99,31 @@ $path-color: darkblue
   float: right
   background-color: red
 
-// .myThumbnails
-//   width: 80%
-//   margin: 30px auto 10px auto
-//   white-space: nowrap
-//   overflow-x: scroll
-//   overflow-y: hidden
-//   height: 160px   
-//   ul
-//     list-style-type: none
-//     overflow-x: visible
-//     width: 100%
-//     li
-//       display: inline-block
-//       position: relative;
-//       float: left;
-//   img
-//     height: 133px
+.myThumbnails
+  // width: 80%
+  // margin: 30px auto 10px auto
+  // white-space: nowrap
+  // overflow-x: scroll
+  // overflow-y: hidden
+  // height: 160px   
+  ul
+    list-style: none;
+    display: flex;
+    width: 80vw;
+    border: 2px solid #CCC;
+    margin: 30px auto 10px;
+    overflow-x: scroll;
+    background-color: yellow;
+    padding: 0
+    img
+      height: 150px;
+    // list-style-type: none
+    // overflow-x: visible
+    // width: 10000px
+    // li
+      // display: inline-block
+      // position: relative;
+      // float: left;
 
 .cover-container
   height: 180px
@@ -118,3 +142,42 @@ $path-color: darkblue
   background-position: top left
   background-repeat: no-repeat
   background-size: cover
+
+.trip-block
+  background-color: #FAEDC3 
+  font-family: 'Lato', Helvetica, Sans-Serif
+  h1, h2, h3, h4, h5, h6
+    color: $title-color
+
+.btn-facebook
+  color: #ffffff
+  -webkit-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+  background-color: #2b4b90
+  *background-color: #133783
+  background-image: -moz-linear-gradient(top, #3b5998, #133783)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b5998), to(#133783))
+  background-image: -webkit-linear-gradient(top, #3b5998, #133783)
+  background-image: -o-linear-gradient(top, #3b5998, #133783)
+  background-image: linear-gradient(to bottom, #3b5998, #133783)
+  background-repeat: repeat-x
+  border-color: #133783 #133783 #091b40
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff133783', GradientType=0)
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #133783 !important
+    *background-color: #102e6d !important
+  &:active, &.active
+    background-color: #0d2456 \9 !important
+
+.btn-experience
+  border-color: #306149
+  background-color: #439061
+  color: white
+  :hover
+
+
+.block-experience
+  font-family: "Kalam", Georgia, Serif;
