@@ -9341,23 +9341,62 @@ button.close {
   font-size: 3.5rem;
   background: #FFF07B;
   font-size: 2rem;
-  margin-left: 1rem;
+  padding: 1rem 0;
 }
 
-/* line 71, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 70, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.objective-section .btn {
+  margin-left: 2rem;
+}
+
+/* line 73, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 #myCarousel {
   padding-top: 50px;
   width: 100%;
 }
 
-/* line 76, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+/* line 79, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
 .item img {
   width: 100%;
 }
 
-/* line 80, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
-.carousel-caption :first-of-type {
-  background-color: blue;
+/* line 82, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.carousel-indicators {
+  display: block;
+}
+
+/* line 85, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.carousel-caption .first-motto {
+  width: 50%;
+  background-color: #909F2C;
+  margin-bottom: 20%;
+  margin-right: 60%;
+  padding: 5px 15px;
+  opacity: .85;
+}
+
+/* line 93, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.carousel-caption .second-motto {
+  background-color: #7C1A73;
+  opacity: .80;
+  text-align: center;
+  margin-bottom: -5%;
+  width: 40%;
+}
+
+/* line 99, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.carousel-caption .third-motto {
+  width: 50%;
+  padding: 5px 15px;
+  background-color: #F76432;
+  opacity: .85;
+  margin-left: 70%;
+  margin-bottom: 30%;
+}
+
+/* line 106, /home/iggy/Documents/skylab-project/india-with-heart/src/india-with-heart.sass */
+.carousel-caption h2 {
+  font-size: 4rem;
 }
 
 /* line 22, /home/iggy/Documents/skylab-project/india-with-heart/src/trip.sass */
