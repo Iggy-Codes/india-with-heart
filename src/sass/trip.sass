@@ -79,6 +79,8 @@ $path-color: #347370
   border-radius: 50%
   border-color: $path-color
   border-width: 2px
+.btn-bullet
+  background-color: $path-color
 
 #map
   height: 300px
@@ -138,6 +140,14 @@ $path-color: #347370
   // font-family: 'Lato', Helvetica, Sans-Serif
   h1, h2, h3, h4, h5, h6
     color: $title-color
+    width: 100%
+  h1
+    // font-weight: bolder
+    text-shadow: 1px 1px gray
+  p
+    font-size: 2rem
+  i
+    display: none
 
 .btn-facebook
   color: #ffffff
@@ -168,9 +178,15 @@ $path-color: #347370
   color: white
   :hover
 
-
 .block-experience
   font-family: "Kalam", Georgia, Serif;
 
-.btn-bullet
-  background-color: $path-color
+.trip-photo
+  display: flex
+  justify-content: center
+  align-items: center
+
+@media(max-width: 992px)
+  .trip-block
+    i
+      display: inline-block !important
