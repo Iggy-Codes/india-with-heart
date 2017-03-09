@@ -1,4 +1,6 @@
 extends layout.pug
+block stylesheet
+  link(href='https://fonts.googleapis.com/css?family=Bad+Script', rel="stylesheet")
 block content
   .row
     #myCarousel.carousel.slide(data-interval='3000', data-ride='carousel').hidden-xs
@@ -8,26 +10,21 @@ block content
         li(data-target='#myCarousel', data-slide-to='2')
       .carousel-inner
         .active.item
-          img(src='img/1280x400/carrousel_1_1280x400.jpeg', alt='First Slide')
-          //- .carousel-caption
-          //-   .first-motto
-          //-     h2 La India te transforma
+          img
+          .carousel-caption
+            h2 El viaje que ...
         .item
-          img(src='img/1280x400/carrousel_2_1280x400.jpeg', alt='Second Slide')
-          //- .carousel-caption
-          //-   .second-motto
-          //-     h2 La India salvaje
+          img
+          .carousel-caption
+            h2 ... te hace ...
         .item
-          img(src='img/1280x400/carrousel_3_1280x400.jpeg', alt='Third Slide')
-          //- .carousel-caption
-          //-   .third-motto
-          //-     h2 La India te transforma
+          img
+          .carousel-caption
+            h2 abrir los ojos!!!
       a.carousel-control.left(href='#myCarousel', data-slide='prev')
         span.glyphicon.glyphicon-chevron-left
       a.carousel-control.right(href='#myCarousel', data-slide='next')
         span.glyphicon.glyphicon-chevron-right 
-  #filter-carousel
-    h2#motto Descubre la India real
   .row.objective-section
     .container
       span Recibe gratis nuestra guía de turismo responsable
@@ -71,15 +68,3 @@ block content
     .container
       span Recibe gratis nuestra guía de turismo responsable
       a(href="#").btn.btn-primary La quiero
-block javascript
-  script.
-    (function(){
-      var myCarouselStyle = window.getComputedStyle(document.getElementById("myCarousel"));
-      var height = myCarouselStyle.height
-      console.log(height)
-      var pixels = Number(height.substring(0, height.length-2))
-      pixels = parseInt(pixels/2)
-      console.log(pixels)
-      document.getElementById('filter-carousel').style.height = height
-      document.getElementById('motto').style.marginTop = (pixels+'px')
-    })()
