@@ -1,11 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'theganesha_regular';
-  src: url("/fonts/thenewganesha45-webfont.woff2") format("woff2"), url("/fonts/thenewganesha45-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -9197,6 +9190,11 @@ button.close {
   }
 }
 
+/* line 8, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/main.sass */
+body {
+  font-family: 'Laila', Verdana, Arial, Helvetica, sans-serif;
+}
+
 /* navbar */
 /* line 3, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/navbar.sass */
 .row {
@@ -9354,60 +9352,72 @@ button.close {
 
 /* line 69, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 .objective-section {
-  height: 50px;
   margin-right: 0px;
   margin-left: 0px;
   text-align: center;
   color: #555753;
   font-size: 2.5rem;
   background: #FFF07B;
-  line-height: 50px;
-  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 0;
 }
 
-/* line 79, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 81, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 .objective-section .btn {
   margin-left: 2rem;
   font-size: 1.5rem;
-  margin-top: -5px;
 }
 
-/* line 84, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+@media (max-width: 768px) {
+  /* line 86, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+  .objective-section {
+    padding-top: 50px;
+  }
+}
+
+/* line 89, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 .objective-white {
   background-color: white;
 }
 
-/* line 88, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 93, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel {
   padding-top: 50px;
   width: 100%;
 }
 
-/* line 96, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 101, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .item img {
   width: 100%;
   height: 85vh;
 }
 
-/* line 101, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 106, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .carousel-inner .item:nth-child(1) img {
   background: url("/img/carousel-1.jpeg") no-repeat top center;
   background-size: cover;
 }
 
-/* line 106, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 111, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .carousel-inner .item:nth-child(2) img {
   background: url("/img/carousel-2.jpeg") no-repeat top center;
   background-size: cover;
 }
 
-/* line 110, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 115, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .carousel-inner .item:nth-child(3) img {
   background: url("/img/carousel-3.jpeg") no-repeat top center;
   background-size: cover;
 }
 
-/* line 113, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 118, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+#myCarousel .carousel-indicators {
+  display: block;
+}
+
+/* line 120, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .carousel-caption {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
@@ -9420,37 +9430,11 @@ button.close {
   align-items: center;
 }
 
-/* line 123, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
+/* line 130, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .carousel-caption h2 {
   font-family: 'Bad Script', cursive;
   font-size: 10vw;
   text-shadow: 2px 2px gray;
-}
-
-/* line 128, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
-.carousel-indicators {
-  display: block;
-}
-
-/* line 168, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
-#filter-carousel {
-  position: absolute;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  height: 300px;
-  top: 0px;
-  left: 0px;
-  text-align: center;
-}
-
-/* line 176, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
-#filter-carousel h2 {
-  color: white;
-  font-size: 10rem;
-  margin-top: 60px;
-  font-family: 'theganesha_regular';
-  text-shadow: 4px 4px gray;
-  padding: 0px;
 }
 
 /* line 25, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/trip.sass */
@@ -9607,7 +9591,6 @@ button.close {
 /* line 136, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/trip.sass */
 .trip-block {
   background-color: #FAEDC3;
-  font-family: 'Lato', Helvetica, Sans-Serif;
 }
 
 /* line 139, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/trip.sass */

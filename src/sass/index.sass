@@ -67,19 +67,24 @@
   margin: 0 auto
 
 .objective-section
-  height: 50px
   margin-right: 0px
   margin-left: 0px
   text-align: center
   color: #555753
   font-size: 2.5rem
   background: #FFF07B
-  line-height: 50px
-  vertical-align: middle
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: .5rem 0
+
   .btn
     margin-left: 2rem
     font-size: 1.5rem
-    margin-top: -5px
+
+@media(max-width: 768px)
+  .objective-section
+    padding-top: 50px  
 
 .objective-white
   background-color: white
@@ -110,6 +115,8 @@
       img
         background: url("/img/carousel-3.jpeg") no-repeat top center
         background-size: cover
+  .carousel-indicators
+    display: block
   .carousel-caption 
     background-color: rgba(0,0,0,.4)
     width: 100%
@@ -124,61 +131,3 @@
       font-family: 'Bad Script', cursive
       font-size: 10vw
       text-shadow: 2px 2px gray
-
-.carousel-indicators
-  display: block
-// .carousel-caption
-//   .first-motto
-//     width: 50%
-//     background-color: #909F2C
-//     margin-bottom: 20%
-//     // margin-right: 70%
-//     margin-right: 60%
-//     padding: 5px 15px 
-//     opacity: .85
-//   .second-motto
-//     background-color: #7C1A73
-//     opacity: .80
-//     text-align: center
-//     margin-bottom: -5%
-//     width: 40%
-//   .third-motto
-//     width: 50%
-//     padding: 5px 15px
-//     background-color: #F76432
-//     opacity: .85
-//     margin-left: 70%
-//     margin-bottom: 30%
-//   h2
-//     font-size: 4rem
-
-
-// #index-why-section
-//   background-color: #638D85 
-//   //#5394A6
-
-// #index-responsible-section
-//   background-color: #AFC9B0 
-//   //#806064 
-//   //#EBD28D
-
-// #index-trip-section
-//   background-color: #B8C9AF
-
-#filter-carousel
-  position: absolute
-  width: 100%
-  background: rgba(0,0,0,.3)
-  height: 300px
-  top: 0px
-  left: 0px
-  text-align: center
-  h2
-    color: white
-    font-size: 10rem
-    margin-top: 60px
-    font-family: 'theganesha_regular'
-    text-shadow: 4px 4px gray
-    padding: 0px
-
-
