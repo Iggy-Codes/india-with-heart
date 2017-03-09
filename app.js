@@ -16,18 +16,22 @@ console.log(urlMaps)
 
 app.get('/trip', (req, res) => {
   const photos = [
-    { url: '/img/1280x760/india_1_1280x760.jpeg',
+    { url: '/img/gallery/001.jpg',
       des: 'Photo number 1' },
-    { url: '/img/1280x760/india_2_1280x760.jpeg',
+    { url: '/img/gallery/002.jpg',
       des: 'Photo number 2' },
-    { url: '/img/1280x760/india_3_1280x760.jpeg',
+    { url: '/img/gallery/003.jpg',
       des: 'Photo number 3' },
-    { url: '/img/1280x760/india_4_1280x760.jpeg',
+    { url: '/img/gallery/004.jpg',
       des: 'Photo number 4' },
-    { url: '/img/1280x760/india_5_1280x760.jpeg',
+    { url: '/img/gallery/005.jpg',
       des: 'Photo number 5' },
-    { url: '/img/1280x760/india_6_1280x760.jpeg',
-      des: 'Photo number 6' }
+    { url: '/img/gallery/006.jpg',
+      des: 'Photo number 6' },
+    { url: '/img/gallery/007.jpg',
+      des: 'Photo number 7' },
+    { url: '/img/gallery/008.jpg',
+      des: 'Photo number 8' }
   ]
   res.render('trip', { urlMaps, photos })
 })
