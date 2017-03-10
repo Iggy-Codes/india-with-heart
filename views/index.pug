@@ -2,69 +2,65 @@ extends layout.pug
 block stylesheet
   link(href='https://fonts.googleapis.com/css?family=Bad+Script', rel="stylesheet")
 block content
-  .row
-    #myCarousel.carousel.slide(data-interval='3000', data-ride='carousel').hidden-xs
-      ol.carousel-indicators
-        li.active(data-target='#myCarousel', data-slide-to='0')
-        li(data-target='#myCarousel', data-slide-to='1')
-        li(data-target='#myCarousel', data-slide-to='2')
-      .carousel-inner
-        .active.item
-          img
-          .carousel-caption
-            h2 El viaje que ...
-        .item
-          img
-          .carousel-caption
-            h2 ... te hace ...
-        .item
-          img
-          .carousel-caption
-            h2 abrir los ojos!!!
-      a.carousel-control.left(href='#myCarousel', data-slide='prev')
-        span.glyphicon.glyphicon-chevron-left
-      a.carousel-control.right(href='#myCarousel', data-slide='next')
-        span.glyphicon.glyphicon-chevron-right 
-  .row.objective-section
-    .container
-      span Recibe gratis nuestra guía de turismo responsable
-      a(href="#").btn.btn-primary La quiero
-  .content-block-one.content-block-height#index-why-section
-    .container
-      h2 El porqué de viajar con India con corazón
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  .content-space-one.content-space-all.hidden-xs
-    .text-center
-      //- h1 This separates content!
-      //- .page-break
-      //- p Other information can go here
-  .content-block-one.content-block-height#index-responsible-section
-    .container
-      h2 Turismo Responsable en la India
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  .content-space-two.content-space-all.hidden-xs
-    .text-center
-      //- h1 This separates content!
-      //- .page-break
-      //- p Other information can go here
-  .content-block-one.content-block-height#index-trip-section
-    .container
-      h2 Nuestro viaje
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        |tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        |quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        |proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  .content-space-three.content-space-all.hidden-xs
-    .text-center
-      //- h1 This separates content!
-      //- .page-break
-      //- p Other information can go here
-  .row.objective-section.objective-white.hidden-xs
-    .container
-      span Recibe gratis nuestra guía de turismo responsable
-      a(href="#").btn.btn-primary La quiero
+  main
+    .row
+      #myCarousel.carousel.slide(data-interval='3000', data-ride='carousel').hidden-xs
+        ol.carousel-indicators
+          li.active(data-target='#myCarousel', data-slide-to='0')
+          li(data-target='#myCarousel', data-slide-to='1')
+          li(data-target='#myCarousel', data-slide-to='2')
+        .carousel-inner
+          .active.item
+            img
+            .carousel-caption
+              h2 El viaje que ...
+          .item
+            img
+            .carousel-caption
+              h2 ... te hace ...
+          .item
+            img
+            .carousel-caption
+              h2 abrir los ojos!!!
+        a.carousel-control.left(href='#myCarousel', data-slide='prev')
+          span.glyphicon.glyphicon-chevron-left
+        a.carousel-control.right(href='#myCarousel', data-slide='next')
+          span.glyphicon.glyphicon-chevron-right 
+    .row.objective-section
+      .container
+        span Recibe gratis nuestra guía de turismo responsable
+        a(href="#").btn.btn-primary La quiero
+    section.content-block-one.content-block-height#index-why-section
+      article.container
+        h2 El porqué de viajar con India con corazón
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .content-space-one.content-space-all.hidden-xs
+      .text-center
+        //- h1 This separates content!
+        //- .page-break
+        //- p Other information can go here
+    section.content-block-one.content-block-height#index-responsible-section
+      article.container
+        h2 Turismo Responsable en la India
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .content-space-two.content-space-all.hidden-xs
+      .text-center
+        //- h1 This separates content!
+        //- .page-break
+        //- p Other information can go here
+    section.content-block-one.content-block-height#index-trip-section
+      article.container
+        h2 Nuestro viaje
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .content-space-three.content-space-all.hidden-xs
+      .text-center
+        //- h1 This separates content!
+        //- .page-break
+        //- p Other information can go here
+    .row.objective-section.hidden-xs
+      .container
+        span Recibe gratis nuestra guía de turismo responsable
+        a(href="#").btn.btn-primary La quiero

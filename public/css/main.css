@@ -9280,11 +9280,6 @@ body {
   border-top-color: #d5d5d5;
 }
 
-/* line 15, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
-.content-block-height {
-  height: 400px;
-}
-
 /* line 18, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 .container .content-block-one {
   border-radius: 6px;
@@ -9356,18 +9351,18 @@ body {
   margin-left: 0px;
   text-align: center;
   color: #555753;
-  font-size: 2.5rem;
+  font-size: 3rem;
   background: #FFF07B;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .5rem 0;
+  padding: 2rem 0;
 }
 
 /* line 81, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 .objective-section .btn {
   margin-left: 2rem;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
 @media (max-width: 768px) {
@@ -9391,7 +9386,7 @@ body {
 /* line 101, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .item img {
   width: 100%;
-  height: 85vh;
+  height: 65vh;
 }
 
 /* line 106, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
@@ -9433,7 +9428,7 @@ body {
 /* line 130, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 #myCarousel .carousel-caption h2 {
   font-family: 'Bad Script', cursive;
-  font-size: 10vw;
+  font-size: 9vw;
   text-shadow: 2px 2px gray;
 }
 
@@ -9679,17 +9674,16 @@ body {
 /* line 1, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .footer {
   bottom: 0;
-  padding-top: 10px;
+  padding: 1rem 0;
   width: 100%;
-  height: 70px;
   background-color: #111;
   text-align: center;
 }
 
 /* line 8, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .footer p {
-  margin-bottom: 0px;
-  color: grey;
+  margin-bottom: 0.5rem;
+  color: lightgrey;
 }
 
 /* line 12, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
@@ -9697,49 +9691,53 @@ body {
   color: #4099FF;
 }
 
-/* line 15, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 16, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa-facebook {
   color: #3B5998;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
-/* line 18, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 22, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa-youtube-play {
   color: #e52d27;
 }
 
-/* line 21, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 25, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa-rss {
   color: #FF6600;
 }
 
-/* line 24, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 28, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa-vine {
   color: #00a478;
 }
 
-/* line 27, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 31, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa-flickr {
   color: #ff0084;
 }
 
-/* line 30, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 34, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa-twitch {
   color: #6441A5;
 }
 
-/* line 33, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 37, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa-linkedin {
   color: #007bb6;
 }
 
-/* line 36, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 40, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa {
+  padding: 0.5rem 0;
+  display: inline-block;
   opacity: 0.7;
   transition: 1s;
   -webkit-transition: 1s;
 }
 
-/* line 40, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
+/* line 46, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/footer.sass */
 .fa:hover {
   opacity: 1;
   transition: 1s;
