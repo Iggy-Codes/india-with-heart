@@ -85,7 +85,8 @@ $path-color: #347370
   margin: 0 auto
   margin-top: 40px
 
-// .city-title
+
+
 //   width: 66%
 //   float: right
 //   background-color: blue
@@ -140,6 +141,11 @@ $path-color: #347370
   h1
     // font-weight: bolder
     text-shadow: 1px 1px gray
+    font-size: 8rem
+  h3
+    margin-top: 0px
+    :nth-of-type(0)
+      padding-top: 65px
   p
     font-size: 2rem
   i
@@ -184,7 +190,16 @@ $path-color: #347370
     justify-content: center
     align-items: center
 
-@media(max-width: 992px)
+  .city-explanation, .city-activities
+    margin-bottom: 4rem
+
+  .space-before-block
+    margin-top: 65px
+
+  .space-after-block
+    margin-bottom: 30px
+
+@media(max-width: 768px)
   .trip-title
     width: 100%
     display: flex
@@ -193,19 +208,23 @@ $path-color: #347370
     align-items: center;
     i
       display: inline-block !important
-      font-size: 4rem
+      font-size: 5rem
       color: $title-color
     h1
       // display: inline
       max-width: 85%
+      font-size: 5rem
 
-@media(max-width: 768px)
+@media(max-width: 992px)
+  .trip-row
+    margin-top: -30px
+    margin-bottom: 20px
+    display: block
+    width: 100%;
   .trip-block
     input:first-of-type
       margin-bottom: 30px
   .myThumbnails
-    text-align: center
-    margin: 0 auto
     ul
       list-style: none;
       display: flex;
