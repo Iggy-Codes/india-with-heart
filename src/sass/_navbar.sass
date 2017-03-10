@@ -47,10 +47,16 @@
 @media(max-width: 768px)
   .navbar
     display: inline-block
-    margin-left: 10px
+    padding-left: 10px
+  ul
+    flex-direction: column !important
   .navbar-toggle.collapsed
     display: block
     margin-right: 10px
-  .navbar-brand
-    a 
-      display: inline-block
+  .nav
+    li
+      a
+        text-align: right
+        margin-top: 20px 
+        margin-bottom: 20px
+        font-size: 2rem
