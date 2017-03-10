@@ -9256,6 +9256,23 @@ body {
   border: 0px;
 }
 
+@media (max-width: 768px) {
+  /* line 48, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/navbar.sass */
+  .navbar {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  /* line 51, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/navbar.sass */
+  .navbar-toggle.collapsed {
+    display: block;
+    margin-right: 10px;
+  }
+  /* line 55, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/navbar.sass */
+  .navbar-brand a {
+    display: inline-block;
+  }
+}
+
 /* line 2, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/index.sass */
 .content-block-one {
   margin-bottom: 0px;
