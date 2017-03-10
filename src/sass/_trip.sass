@@ -187,6 +187,16 @@ $path-color: #347370
   align-items: center
 
 @media(max-width: 992px)
-  .trip-block
+  .trip-title
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center;
     i
       display: inline-block !important
+      font-size: 4rem
+      color: $title-color
+    h1
+      // display: inline
+      max-width: 85%
