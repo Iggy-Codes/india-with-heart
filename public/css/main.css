@@ -9254,24 +9254,25 @@ body {
 .navbar {
   padding: 0px;
   border: 0px;
+  font-size: 1.75rem;
 }
 
 @media (max-width: 768px) {
-  /* line 48, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
+  /* line 49, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
   .navbar {
     display: inline-block;
     padding-left: 10px;
   }
-  /* line 51, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
+  /* line 52, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
   ul {
     flex-direction: column !important;
   }
-  /* line 53, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
+  /* line 54, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
   .navbar-toggle.collapsed {
     display: block;
     margin-right: 10px;
   }
-  /* line 58, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
+  /* line 59, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_navbar.sass */
   .nav li a {
     text-align: right;
     margin-top: 20px;
