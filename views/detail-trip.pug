@@ -1,0 +1,157 @@
+extends layout.pug
+//- block stylesheet
+//-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
+block content
+  main.row.trip-block
+    - var lng = ""
+    - var lat = ""
+    - var cityName = ""
+    each city in cities
+      - lat = lat + "," + city.coor.lat
+      - lng = lng + "," + city.coor.lng
+      - cityName = cityName + "," + city.name
+    input(type="hidden", id="tripDay", value=tripDay, data-lat=lat, data-lng=lng, data-city=cityName)
+    .container
+      .row
+        h1.space-before-block.space-after-block.text-center Viajes a la india
+        ul.trip-detail
+          li 
+            h2=title
+            p=description
+            nav.row.hidden-xs  
+              .trip.center-block
+                .trip-row
+                  each city,i in cities
+                    .trip-step
+                      if (i == tripDay)
+                        button.btn.btn-bullet.btn-circle(type='button')
+                      else 
+                        button.btn.btn-default.btn-circle(type='button')
+                      p
+                        a(href="/"+titleUri+"/"+i)=city.name
+      .row
+        #map.hidden-xs
+      .row.trip-title
+        i.fa.fa-caret-left
+        h1.text-center=cities[tripDay].name 
+        i.fa.fa-caret-right
+      section.row.city-explanation 
+        .col-md-8.col-sm-12
+          h3=cities[tripDay].tourismTitle
+          p=cities[tripDay].tourismDescription
+        .col-md-4.trip-photo.hidden-sm
+            img.img-responsive.img-rounded(src=cities[tripDay].tourismImg)
+      section.row.city-activities
+        .col-md-4.trip-photo.hidden-xs.hidden-sm
+            img.img-responsive.img-rounded(src=cities[tripDay].npoImg)
+        .col-md-8.col-sm-12
+            h3=cities[tripDay].npoTitle
+            p=cities[tripDay].npoDescription
+      section.row  
+        .col-md-8
+          h3.text-center 
+            i.fa.fa-heartbeat
+            =cities[tripDay].heartTitle
+            i.fa.fa-heartbeat
+          blockquote.blockquote-reverse.block-experience
+            p=cities[tripDay].heartMessages[0].message
+            footer
+              | Nuestro amigo viajero 
+              cite=cities[tripDay].heartMessages[0].author
+          .col-lg-6.text-center
+            input.btn.btn-facebook.btn-block(type='submit', value='Comparte via facebook')
+          .col-lg-6.text-center
+            input.btn.btn-default.btn-block.btn-experience(type='submit', value='Ver todas las experiencias')
+        .col-md-4.trip-photo.hidden-sm.hidden-xs
+            img.img-responsive(src=cities[tripDay].heartImg)
+      .trip-row
+        .myThumbnails
+          ul
+            each photo, i in cities[tripDay].photos
+              li
+              a(href=photo.url,data-toggle="lightbox" data-gallery="example-gallery")
+                img(src=photo.url, alt=photo.des)
+
+   
+block javascript
+  script(src='/bower_components/tether/dist/js/tether.min.js')
+  script(src='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.js')
+  script.
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+    function initMap() {
+      let tripDay = document.getElementById('tripDay')
+      let lats = tripDay.getAttribute('data-lat')
+      console.log('lats ' + lats)
+      let lngs = tripDay.getAttribute('data-lng')
+      let cities = tripDay.getAttribute('data-city')
+      lats = lats.substr(1,lats.length-1).split(",")
+      lngs = lngs.substr(1,lngs.length-1).split(",")
+      cities = cities.substr(1,cities.length-1).split(",")
+      console.log(lats)
+      let centerLat  = lats.reduce((acc, val) => (Number(val) + acc ), 0) / lats.length
+      let centerLng = lngs.reduce((acc, val) => (Number(val) + acc ), 0) / lngs.length
+
+      let center = {
+        lat: centerLat,
+        lng: centerLng
+      } 
+      //- console.log(center)
+      //- //- console.log('lngs' + lngs)
+      let markers = []
+      for(var i=0; i < lats.length; i++) {
+        let icon = (i === +tripDay.value) ? '/img/trip/blue-marker-40.png' : '/img/trip/red-marker-40.png'
+        markers.push({coor: {lat: Number(lats[i]), lng: Number(lngs[i])}, icon, title: cities[i]})
+      }
+      console.log(markers)
+      console.log(markers.length)
+      //- console.log('tripday ' + tripDay.value + '\n' + lats + '\n' + lngs)
+      //- console.log(markers)
+           //- var locations = [
+      //-   { name: 'Delhi', coor: { lat: 28.6618976, lng: 77.22739580000007 }},
+      //-   { name: 'Jodhpur', coor: { lat: 26.23894689999999, lng: 73.02430939999999 }},
+      //-   { name: 'Udaipur', coor: { lat: 24.585445, lng: 73.712479 }},
+      //-   { name: 'Bundi', coor: { lat: 25.430514, lng: 75.649903 }} ,
+      //-   { name: 'Jaipur', coor: { lat: 26.912434, lng: 75.787271 }},
+      //-   { name: 'Agra', coor: { lat: 27.17667, lng: 78.008075 }}]
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center
+      });
+      markers.forEach(element => {
+        console.log(element.coor)
+        let point = new google.maps.Marker({
+          position: element.coor,
+          icon: element.icon,
+          map,
+          title: element.title
+        })
+      })
+    
+      //- var coorLocations = []
+      //- locations.forEach((element) => {
+      //-   var icon = (element.name === 'Udaipur') ? '/img/trip/blue-marker-40.png' : '/img/trip/red-marker-40.png'
+      //-   var marker = new google.maps.Marker({
+      //-    position: element.coor,
+      //-    icon,
+      //-    map: map,
+      //-    title: element.name
+      //-     });
+      //-   coorLocations.push(element.coor)
+      //-   })
+      //- coorLocations.push(locations[0].coor)
+      //- console.log(coorLocations)
+      //- var travelPath = new google.maps.Polyline({
+      //-   path: coorLocations,
+      //-   geodesic: true,
+      //-   strokeColor: '#FF0000',
+      //-   strokeOpacity: 1.0,
+      //-   strokeWeight: 2
+      //- });
+
+      //- travelPath.setMap(map);
+    }
+  script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDX4newU7Fpvpp_6-GjJOHfxf1PSigPiRA&callback=initMap')
+
