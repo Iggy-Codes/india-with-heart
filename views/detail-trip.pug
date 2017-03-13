@@ -6,29 +6,29 @@ block content
     - var lng = ""
     - var lat = ""
     - var cityName = ""
-    each city in cities
+    - var tripDay = 0
+    each city, i in cities
       - lat = lat + "," + city.coor.lat
       - lng = lng + "," + city.coor.lng
       - cityName = cityName + "," + city.name
+      if (city.name == tripCity)
+        - tripDay = i
     input(type="hidden", id="tripDay", value=tripDay, data-lat=lat, data-lng=lng, data-city=cityName)
     .container
       .row
-        h1.space-before-block.space-after-block.text-center Viajes a la india
-        ul.trip-detail
-          li 
-            h2=title
-            p=description
-            nav.row.hidden-xs  
-              .trip.center-block
-                .trip-row
-                  each city,i in cities
-                    .trip-step
-                      if (i == tripDay)
-                        button.btn.btn-bullet.btn-circle(type='button', data-target="/trip/" + titleUri + "/" + i)
-                      else 
-                        button.btn.btn-default.btn-circle(type='button', data-target="/trip/" + titleUri+"/" + i)
-                      p
-                        a(href="/trip/"+titleUri+"/"+i)=city.name
+        h2.space-before-block.space-after-block.text-center=title
+        p=description
+      nav.row.hidden-xs  
+        .trip.center-block
+          .trip-row
+            each city,i in cities
+              .trip-step
+                if (i == tripDay)
+                  button.btn.btn-bullet.btn-circle(type='button', data-target="/trip/" + titleUri + "/" + city.name)
+                else 
+                  button.btn.btn-default.btn-circle(type='button', data-target="/trip/" + titleUri  +"/" + city.name)
+                p
+                  a(href="/trip/" + titleUri + "/" + city.name)=city.name
       .row
         #map.hidden-xs
       .row.trip-title

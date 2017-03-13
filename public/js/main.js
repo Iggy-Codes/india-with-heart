@@ -24,14 +24,64 @@ $(document).ready(function () {
   // $(infoWindow).html(txt)
 })
 
-// function initMap () {
-//   var uluru = {lat: -25.363, lng: 131.044}
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 4,
-//     center: uluru
-//   })
-//   var marker = new google.maps.Marker({
-//     position: uluru,
-//     map: map
-//   })
-// }
+function initMap () {
+  let tripDay = document.getElementById('tripDay')
+  let lats = tripDay.getAttribute('data-lat')
+  // console.log('lats ' + lats)
+  let lngs = tripDay.getAttribute('data-lng')
+  let cities = tripDay.getAttribute('data-city')
+  lats = lats.substr(1, lats.length - 1).split(',')
+  lngs = lngs.substr(1, lngs.length - 1).split(',')
+  cities = cities.substr(1, cities.length - 1).split(',')
+  // console.log(lats)
+  let centerLat = lats.reduce((acc, val) => (Number(val) + acc), 0) / lats.length
+  let centerLng = lngs.reduce((acc, val) => (Number(val) + acc), 0) / lngs.length
+
+  let center = {
+    lat: centerLat,
+    lng: centerLng
+  }
+      // - console.log(center)
+      // - //- console.log('lngs' + lngs)
+  let markers = []
+  for (var i = 0; i < lats.length; i++) {
+    let icon = (i === +tripDay.value) ? '/img/trip/blue-marker-40.png' : '/img/trip/red-marker-40.png'
+    markers.push({coor: {lat: Number(lats[i]), lng: Number(lngs[i])}, icon, title: cities[i]})
+  }
+  // console.log(markers)
+  // console.log(markers.length)
+      // - console.log('tripday ' + tripDay.value + '\n' + lats + '\n' + lngs)
+      // - console.log(markers)
+           // - var locations = [
+      // -   { name: 'Delhi', coor: { lat: 28.6618976, lng: 77.22739580000007 }},
+      // -   { name: 'Jodhpur', coor: { lat: 26.23894689999999, lng: 73.02430939999999 }},
+      // -   { name: 'Udaipur', coor: { lat: 24.585445, lng: 73.712479 }},
+      // -   { name: 'Bundi', coor: { lat: 25.430514, lng: 75.649903 }} ,
+      // -   { name: 'Jaipur', coor: { lat: 26.912434, lng: 75.787271 }},
+      // -   { name: 'Agra', coor: { lat: 27.17667, lng: 78.008075 }}]
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 6,
+    center
+  })
+  var coorLocations = []
+  markers.forEach(element => {
+    coorLocations.push(element.coor)
+        // - console.log(element.coor)
+    let point = new google.maps.Marker({
+      position: element.coor,
+      icon: element.icon,
+      map,
+      title: element.title
+    })
+  })
+  coorLocations.push(coorLocations[0])
+  var travelPath = new google.maps.Polyline({
+    path: coorLocations,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  })
+
+  travelPath.setMap(map)
+}

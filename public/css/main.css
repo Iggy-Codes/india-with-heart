@@ -9741,6 +9741,18 @@ body {
   }
 }
 
+/* line 243, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_trip.sass */
+.trip-list {
+  text-decoration: none;
+  padding-left: 0px;
+  list-style: none;
+}
+
+/* line 247, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_trip.sass */
+.trip-list li {
+  padding-bottom: 3rem;
+}
+
 /* line 1, /home/iggy/Documents/skylab-project/india-with-heart/src/sass/_footer.sass */
 .footer {
   bottom: 0;
