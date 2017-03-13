@@ -1,0 +1,152 @@
+extends layout.pug
+//- block stylesheet
+//-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
+block content
+  //- #myModal.modal.fade
+  //-   .modal-dialog
+  //-     .modal-content
+  //-       .modal-header
+  //-         .pull-left My Gallery Title
+  //-         |  
+  //-         button.close(type='button', data-dismiss='modal', title='Close')
+  //-           span.glyphicon.glyphicon-remove
+  main.row.trip-block
+    .container
+      h1.space-before-block.space-after-block.text-center Viajes a la india
+      ul.trip-list
+        each trip, i in atrips
+          li 
+            h2
+              a(href="/trip/"+trip.title)=trip.title
+            p=trip.description
+            nav.row.hidden-xs  
+              .trip.center-block
+                .trip-row
+                each city in trip.cities
+                  .trip-step
+                    button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+                    p 
+                      a(href="/city/"+city.name)=city.name
+//- //-             .trip-step
+//-               button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+//-                 //- i.fa.fa-comments-o.fa-3x
+//-               p  
+//-                 a(href="") Jodhpur
+//-             .trip-step
+//-               button.btn.btn-bullet.btn-circle(type='button', disabled='disabled')
+//-                 //- i.fa.fa-thumbs-up.fa-3x
+//-               p  
+//-                 a(href="") Udaipur
+//-             .trip-step
+//-               button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+//-                 //- i.fa.fa-eur.fa-3x
+//-               p 
+//-                 a(href="") Bundi
+//-             .trip-step
+//-               button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+//-                 //- i.fa.fa-eur.fa-3x
+//-               p 
+//-                 a(href="") Jaipur
+//-             .trip-step
+//-               button.btn.btn-default.btn-circle(type='button', disabled='disabled')
+//-                 //- i.fa.fa-eur.fa-3x
+//-               p 
+//-                 a(href="") Agra
+//-       .row
+//-         #map.hidden-xs
+//-       .row.trip-title
+//-         i.fa.fa-caret-left
+//-         h1.text-center Udaipur 
+//-         i.fa.fa-caret-right
+//-       section.row.city-explanation 
+//-         .col-md-8.col-sm-12
+//-           h3 La Venecia del Este
+//-           p
+//-             strong Jodhpur - Udaipur
+//-           p  Por la ma&ntilde;ana, visitaremos uno de los fuertes mejor conservados del Rajasthan, el impresionante fuerte amurallado Mehrangarh del S. XVII, con su museo interior que protege el palacio de los Rajputs. A la hora convenida, partiremos hacia Udaipur, conocida como la Venecia del Este por sus preciosos lagos dentro de la ciudad. De camino visitaremos uno de los m&aacute;s importantes e impresionantes templos jainistas, el templo de Ranakpur que fueron construidos entre los siglos XII y XV y est&aacute;n dedicadas a Rikhabdev y Sambhavanth. Hay 1444 columnas en el templo y ningunos son similares.
+//-         .col-md-4.trip-photo.hidden-sm
+//-             img.img-responsive.img-rounded(src='/img/trip/udaipur-1.png')
+//-       section.row.city-activities
+//-         .col-md-4.trip-photo.hidden-xs.hidden-sm
+//-             img.img-responsive.img-rounded(src='/img/trip/udaipur-2.png')
+//-         .col-md-8.col-sm-12
+//-             h3 Los proyectos solidarios en Udaipur
+//-             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+//-       section.row
+//-         .col-md-8
+//-           h3.text-center 
+//-             i.fa.fa-heartbeat
+//-             |  Los latidos de nuestros viajeros 
+//-             i.fa.fa-heartbeat
+//-           blockquote.blockquote-reverse.block-experience
+//-             p
+//-               | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+//-             footer
+//-               | Someone famous in 
+//-               cite(title='Source Title') Source Title
+//-           .col-lg-6.text-center
+//-             input.btn.btn-facebook.btn-block(type='submit', value='Comparte via facebook')
+//-           .col-lg-6.text-center
+//-             input.btn.btn-default.btn-block.btn-experience(type='submit', value='Ver todas las experiencias')
+//-         .col-md-4.trip-photo.hidden-sm.hidden-xs
+//-             img.img-responsive(src='/img/corason-color.png')
+
+//-       .trip-row
+//-         .myThumbnails
+//-           ul
+//-             each photo, i in photos
+//-               li
+//-               a(href=photo.url,data-toggle="lightbox" data-gallery="example-gallery")
+//-                 img(src=photo.url, alt=photo.des)
+
+   
+//- block javascript
+//-   script(src='/bower_components/tether/dist/js/tether.min.js')
+//-   script(src='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.js')
+//-   script.
+//-     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+//-         event.preventDefault();
+//-         $(this).ekkoLightbox();
+//-     });
+//-     function initMap() {
+//-       var locations = [
+//-         { name: 'Delhi', coor: { lat: 28.6618976, lng: 77.22739580000007 }},
+//-         { name: 'Jodhpur', coor: { lat: 26.23894689999999, lng: 73.02430939999999 }},
+//-         { name: 'Udaipur', coor: { lat: 24.585445, lng: 73.712479 }},
+//-         { name: 'Bundi', coor: { lat: 25.430514, lng: 75.649903 }} ,
+//-         { name: 'Jaipur', coor: { lat: 26.912434, lng: 75.787271 }},
+//-         { name: 'Agra', coor: { lat: 27.17667, lng: 78.008075 }}]
+//-       var map = new google.maps.Map(document.getElementById('map'), {
+//-         zoom: 6,
+//-         center: locations[4].coor
+//-       });
+//-       var coorLocations = []
+//-       locations.forEach((element) => {
+//-         var icon = (element.name === 'Udaipur') ? '/img/trip/blue-marker-40.png' : '/img/trip/red-marker-40.png'
+//-         var marker = new google.maps.Marker({
+//-          position: element.coor,
+//-          icon,
+//-          map: map,
+//-          title: element.name
+//-           });
+//-         coorLocations.push(element.coor)
+//-         })
+//-       coorLocations.push(locations[0].coor)
+//-       console.log(coorLocations)
+//-       var travelPath = new google.maps.Polyline({
+//-         path: coorLocations,
+//-         geodesic: true,
+//-         strokeColor: '#FF0000',
+//-         strokeOpacity: 1.0,
+//-         strokeWeight: 2
+//-       });
+
+//-       travelPath.setMap(map);
+//-     }
+//-   script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDX4newU7Fpvpp_6-GjJOHfxf1PSigPiRA&callback=initMap')
+//-   //- script.
+//-   //-   $(document).ready(function() {
+//-   //-     $('#myCarousel').carousel({
+//-   //-     interval: 10000
+//-   //-     })
+//-   //-   });
