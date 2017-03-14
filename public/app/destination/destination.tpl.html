@@ -1,0 +1,98 @@
+<form class="container" action="/destination" method="post">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label for="cityName ">Ciudad</label>
+            <input type="text" class="form-control" id="cityName" name="cityName" placeholder="Nombre de la ciudad" />
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div>
+            <h4>Coordenadas</h4>
+            <div class="form-group">
+                <label for="lat">Latitud</label>
+                <input name="lat" id="lat" type='number' step='0.001' value='0.000' placeholder='0.000' required/>
+            </div>
+            <div class="form-group">
+                <label for="lng">Longitud</label>
+                <input name="lng" id="lng" type='number' step='0.001' value='0.000' placeholder='0.000' required/>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <h4>Turismo</h4>
+        <div class="form-group">
+            <label for="tourismTitle">Titulo</label>
+            <input type="text" class="form-control" id="tourismTitle" name="tourismTitle" placeholder="Título turismo" />
+        </div>
+        <div class="form-group">
+            <label for="tourismDes">Descripción</label>
+            <textarea class="form-control" id="tourismDes" name="tourismDes" placeholder="Descripción del turismo "></textarea>
+        </div>
+        <div class="form-group">
+            <label for="tourismImg">Imagen</label>
+            <input type="text" class="form-control" id="cityName" placeholder="Título turismo" />
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="tourismCheck" checked> Visible
+            </label>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <h4>ONG Locales</h4>
+        <div class="form-group">
+            <label for="npoTitle">Titulo</label>
+            <input type="text " class="form-control" id="npoTitle" name="npoTitle" placeholder="Título ONG" />
+        </div>
+        <div class="form-group">
+            <label for="tourismDes">Descripción</label>
+            <textarea class="form-control" id="tourismDes" name="tourismDes" placeholder="Descripción del turismo"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="tourismImg">Imagen</label>
+            <input type="text" class="form-control" id="cityName" placeholder="Imagen Turismo" />
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="tourismCheck" checked> Visible
+            </label>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <h4>Latidos</h4>
+        <div class="form-group">
+            <label for="heartTitle">Titulo</label>
+            <input type="text" class="form-control" id="heartTitle" name="heartTitle" placeholder="Título turismo" />
+        </div>
+        <div class="form-group">
+            <label for="heartMsg">Mensaje</label>
+            <textarea class="form-control" id="heartMsg" name="heartMsg" placeholder="Descripción del turismo "></textarea>
+        </div>
+        <div class="form-group">
+            <label for="heartImg">Imagen</label>
+            <input type="text" class="form-control" id="heartImg" name="heartImg" placeholder="Título turismo"/>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="tourismCheck" checked> Visible
+            </label>
+        </div>
+    </div>
+    <!--     <div class="form-group">
+        <label for="exampleInputFile ">File input</label>
+        <input type="file " id="exampleInputFile ">
+        <p class="help-block ">Example block-level help text here.</p>
+    </div> -->
+    <div class="text-center">
+    <button type="submit " class="btn btn-default">Submit</button>
+    </div>
+</form>
+<!-- 
+  blocks: [{
+    title: String,
+    description: String,
+    img: String,
+    visible: Boolean,
+    category: String
+  }],
+  photo: [{ url: String, des: String  -->

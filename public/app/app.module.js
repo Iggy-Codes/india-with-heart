@@ -1,5 +1,6 @@
 /* eslint no-undef: "off" */
 angular.module('adminApp', [
-  // 'ngRoute',
+  'ngRoute'
+  // ,
   // 'ngResource'
 ])

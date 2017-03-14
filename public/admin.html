@@ -3,11 +3,24 @@
   <head>
     <title>India con corazon - Administración</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
-    {{ 5 + 6 }}
-  <script src="app/app.module.js"></script>
-  </body>
+ <!--     <header ng-include src="'app/header/header.tpl.html'">
+    </header>
+ -->    {{ 5 + 6 }}
+    <main ng-view></main>
+<!--     <footer ng-include src="'app/footer/footer.tpl.html'">
+    </footer>
+ -->    <script src="/app/app.module.js"></script>
+    <script src="/app/app.constant.js"></script>
+    <!-- <script src="app/factory/bookStore.factory.js"></script> -->
+    <!-- <script src="app/home/home.controller.js"></script> -->
+    <!-- <script src="app/category/category.controller.js"></script> -->
+    <!-- <script src="app/author/author.controller.js"></script> -->
+    <script src="/app/destination/destination.controller.js"></script>
+    <script src="/app/app.config.js"></script>
+</body>
 </html>

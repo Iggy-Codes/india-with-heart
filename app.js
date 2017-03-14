@@ -3,7 +3,13 @@ const path = require('path')
 
 const app = express()
 
+const mongoose = require('mongoose')
+
 const PORT = process.env.PORT || 3000
+
+const URLDB = process.env.URLDB || 'mongodb://localhost:27017/indiaHeart'
+console.log(URLDB)
+mongoose.connect(URLDB)
 
 app.use(express.static(path.join(__dirname, 'public')))
 
