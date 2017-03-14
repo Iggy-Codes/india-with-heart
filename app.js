@@ -26,7 +26,7 @@ app.get('/trip/:trip', (req, res, next) => {
   // res.render('detail-trip', deluxeTrip)
   // res.redirect('/trip/:trip/0')
   let trip = req.params.day
-  res.redirect('/trip/' + trip + '/ ')
+  res.redirect('/trip/' + trip + '/_')
   next()
 })
 
@@ -36,25 +36,25 @@ app.get('/trip/:trip/:day', (req, res) => {
   res.render('detail-trip', deluxeTrip)
 })
 
-app.get('/trip', (req, res) => {
-  const photos = [
-    { 'url': '/img/gallery/001.jpg',
-      'des': 'Photo number 1' },
-    { 'url': '/img/gallery/002.jpg',
-      'des': 'Photo number 2' },
-    { 'url': '/img/gallery/003.jpg',
-      'des': 'Photo number 3' },
-    { 'url': '/img/gallery/004.jpg',
-      'des': 'Photo number 4' },
-    { 'url': '/img/gallery/005.jpg',
-      'des': 'Photo number 5' },
-    { 'url': '/img/gallery/006.jpg',
-      'des': 'Photo number 6' },
-    { 'url': '/img/gallery/007.jpg',
-      'des': 'Photo number 7' }
-  ]
-  res.render('trip', { urlMaps, photos })
-})
+// app.get('/trip', (req, res) => {
+//   const photos = [
+//     { 'url': '/img/gallery/001.jpg',
+//       'des': 'Photo number 1' },
+//     { 'url': '/img/gallery/002.jpg',
+//       'des': 'Photo number 2' },
+//     { 'url': '/img/gallery/003.jpg',
+//       'des': 'Photo number 3' },
+//     { 'url': '/img/gallery/004.jpg',
+//       'des': 'Photo number 4' },
+//     { 'url': '/img/gallery/005.jpg',
+//       'des': 'Photo number 5' },
+//     { 'url': '/img/gallery/006.jpg',
+//       'des': 'Photo number 6' },
+//     { 'url': '/img/gallery/007.jpg',
+//       'des': 'Photo number 7' }
+//   ]
+//   res.render('trip', { urlMaps, photos })
+// })
 
 // app.get('/home', (req, res) => {
 app.use((req, res) => {
