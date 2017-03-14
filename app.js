@@ -1,7 +1,16 @@
 const express = require('express')
 const path = require('path')
+const bodyParser = require('body-parser')
+
+const routerLocation = require('./routes/destination')
 
 const app = express()
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 const mongoose = require('mongoose')
 
@@ -13,7 +22,11 @@ mongoose.connect(URLDB)
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use('/admin', express.static(path.join(__dirname, 'client')))
+
 app.set('view engine', 'pug')
+
+app.use('/destination', routerLocation)
 
 console.log('api: ' + process.env.API_GOOGLE_MAPS)
 
@@ -27,6 +40,10 @@ app.get('/trips', (req, res) => {
   console.log(trips)
   res.render('trips', trips)
 })
+
+// app.post('/destination', (req, res) => {
+
+// })
 
 app.get('/trip/:trip', (req, res, next) => {
   // res.render('detail-trip', deluxeTrip)
@@ -63,8 +80,9 @@ app.get('/trip/:trip/:day', (req, res) => {
 // })
 
 // app.get('/home', (req, res) => {
-app.use((req, res) => {
-  res.render('index')
-})
+
+// app.use((req, res) => {
+//   res.render('index')
+// })
 
 app.listen(PORT, () => console.log(`Listening at port ${PORT}`))

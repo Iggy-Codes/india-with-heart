@@ -12,7 +12,7 @@ const CustomerSchema = new mongoose.Schema({
     description: String,
     img: String,
     visible: Boolean,
-    category: String
+    section: String
   }],
   photo: [{ url: String, des: String }]
 }, { collection })
