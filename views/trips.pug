@@ -22,11 +22,11 @@ block content
             nav.row.hidden-xs  
               .trip.center-block
                 .trip-row
-                each city in trip.cities
+                each destination in trip.destinations
                   .trip-step
                     button.btn.btn-default.btn-circle(type='button', disabled='disabled')
                     p 
-                      a(href="/city/"+city.name)=city.name
+                      a(href=trip.titleUri+'/'+destination.name)=destination.name
 //- //-             .trip-step
 //-               button.btn.btn-default.btn-circle(type='button', disabled='disabled')
 //-                 //- i.fa.fa-comments-o.fa-3x

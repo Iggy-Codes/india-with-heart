@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const Destination = mongoose.model('Destination')
 const collection = 'trips'
 
-const CustomerSchema = new mongoose.Schema({
+const CustomerSchema = new Schema({
   title: { type: String, required: true },
   titleUri: { type: String, required: true },
   description: { type: String, required: true },

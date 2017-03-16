@@ -1,10 +1,13 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+const http = require('http')
 
 const routerLocation = require('./routes/api/destination')
 const routerTrip = require('./routes/api/trip')
 const routerImg = require('./routes/api/img')
+
+// global __base = __dirname
 
 const app = express()
 
@@ -20,7 +23,6 @@ mongoose.Promise = global.Promise
 const PORT = process.env.PORT || 3000
 
 const URLDB = process.env.URLDB || 'mongodb://localhost:27017/indiaHeart'
-console.log(URLDB)
 mongoose.connect(URLDB)
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -38,12 +40,34 @@ console.log('api: ' + process.env.API_GOOGLE_MAPS)
 var urlMaps = 'https://maps.googleapis.com/maps/api/js?key=' + process.env.API_GOOGLE_MAPS + '&callback=initMap'
 console.log(urlMaps)
 
-var trips = require('./db/trips.json')
+// var trips = require('./db/trips.json')
 var deluxeTrip = require('./db/deluxe-trip.json')
 
 app.get('/trips', (req, res) => {
-  console.log(trips)
-  res.render('trips', trips)
+  // console.log(trips)
+  const Trip = require('./models/Trip')
+  const Destination = require('./models/Destination')
+
+  Trip.find({}, function (err, trips) {
+    Destination.populate(trips, {path: 'destinations'}, function (err, libros) {
+      if (err) throw (err)
+      console.log(trips)
+      res.render('trips', {atrips: trips})
+      // res.send('hola')
+    })
+  })
+
+  // Trip
+  //   .find()
+  //   .populate('destinations')
+  //   .exec(function (err, trips) {
+  // // console.log('The creator is %s', story._creator.name);
+  // // // prints "The creator is Aaron"
+  // //   .then(trips => {
+  // //     console.log({atrips: trips})
+    // })
+    // .then(tasks => res.json({tasks}))
+    .catch(err => { throw err })
 })
 
 // app.post('/destination', (req, res) => {
