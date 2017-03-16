@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 
 const routerLocation = require('./routes/api/destination')
 const routerTrip = require('./routes/api/trip')
+const routerImg = require('./routes/api/img')
 
 const app = express()
 
@@ -30,6 +31,7 @@ app.set('view engine', 'pug')
 
 app.use('/api/destination', routerLocation)
 app.use('/api/trip', routerTrip)
+app.use('/api/img', routerImg)
 
 console.log('api: ' + process.env.API_GOOGLE_MAPS)
 
