@@ -5,7 +5,7 @@ module.exports = (req, res) => {
   console.log('id value ' + id)
   Trip.findByIdAndRemove(id)
     .then(task => {
-      console.log(`tasks has been removed succesfully`)
+      console.log(`trip has been removed succesfully`)
       res.status(200).json(task)
     })
     .catch(err => res.status(500).json(err))

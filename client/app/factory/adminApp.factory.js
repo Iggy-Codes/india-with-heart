@@ -5,10 +5,6 @@
     .factory('adminAppFactory', adminAppFactory)
 
   function adminAppFactory ($http, cfg, $rootScope) {
-    function getDestinations () {
-      return $http.get(cfg.urlDestinations)
-    }
-
     function getTrips () {
       return $http.get(cfg.urlTrips)
     }
@@ -26,12 +22,23 @@
       return $http.get(cfg.urlTrips + '/' + $rootScope.tripId)
     }
 
+    function newDestination () {
+      console.log('factory')
+      console.log($rootScope.newDestination)
+      return $http.post(cfg.urlDestinations, { postDestination: $rootScope.newDestination })
+    }
+
+    function getDestinations () {
+      return $http.get(cfg.urlDestinations)
+    }
+
     return {
-      getDestinations,
       getTrips,
       addTrip,
       removeTripById,
-      getTripById
+      getTripById,
+      newDestination,
+      getDestinations
     }
   }
 })()

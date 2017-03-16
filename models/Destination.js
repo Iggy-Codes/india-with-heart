@@ -13,8 +13,7 @@ const CustomerSchema = new mongoose.Schema({
     img: String,
     visible: Boolean,
     section: String
-  }],
-  photo: [{ url: String, des: String }]
+  }]
 }, { collection })
 
 module.exports = mongoose.model('Destination', CustomerSchema)

@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 const getAll = require('./handlers/getAll')
-const addDestination = require('./handlers/addDestination')
+const addOne = require('./handlers/addOne')
 
 router.get('/', getAll)
-router.post('/', addDestination)
+router.post('/', addOne)
 
 module.exports = router
