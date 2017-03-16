@@ -17,10 +17,21 @@
       return $http.post(cfg.urlTrips, $rootScope.newTrip)
     }
 
+    function removeTripById () {
+      console.log(cfg.urlTrips + '/' + $rootScope.tripId)
+      return $http.delete(cfg.urlTrips + '/' + $rootScope.tripId)
+    }
+
+    function getTripById () {
+      return $http.get(cfg.urlTrips + '/' + $rootScope.tripId)
+    }
+
     return {
       getDestinations,
       getTrips,
-      addTrip
+      addTrip,
+      removeTripById,
+      getTripById
     }
   }
 })()

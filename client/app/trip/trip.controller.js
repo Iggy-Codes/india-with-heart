@@ -7,7 +7,7 @@
   function TripController (adminAppFactory, $rootScope, $route) {
     var vm = this
 
-    vm.titlePage = 'Alta de Viaje'
+    vm.titleForm = 'Alta de Viaje'
 
     adminAppFactory.getDestinations()
       .then(({data}) => {
@@ -23,12 +23,25 @@
         console.log(data)
       })
 
-    vm.edit = (e) => {
-      e.preventDefault()
-    }
+    // vm.editTrip = (e, id) => {
+    //   e.preventDefault()
+    //   $rootScope.tripId = id
+    //   adminAppFactory.getTripById()
+    //     .then((response) => {
+    //       const trip = response.data
+    //       vm.title = trip.title
+    //       vm.titleUri = trip.titleUri
+    //       vm.description = trip.description
+    //       console.log(response.data)
+    //     })
+    // }
 
-    vm.delete = (e) => {
+    vm.removeTrip = (e, id) => {
       e.preventDefault()
+      console.log('we are here ' + id)
+      $rootScope.tripId = id
+      adminAppFactory.removeTripById()
+        .then($route.reload())
     }
 
     vm.addTrip = (e) => {
@@ -41,12 +54,7 @@
           destinations.push(e.srcElement[i].value)
         }
       }
-      // console.log(destinations)
-      // // console.log(e.srcElement.length)
-      // console.log(vm.title)
-      // console.log(vm.titleUri)
-      // console.log(vm.description)
-      // console.log(vm.destinations)
+
       $rootScope.newTrip = {
         title: vm.title,
         titleUri: vm.titleUri,
