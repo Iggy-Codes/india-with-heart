@@ -19,17 +19,20 @@
         vm.destinations = data
       })
 
+    adminAppFactory.getImgs()
+      .then(({data}) => { vm.imgs = data.files })
+
     vm.addDestination = (e) => {
       e.preventDefault()
-      console.log(e)
+      // console.log(e)
 
       const { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartMsg, heartImg, heartCheck } = vm
-      // console.log('Tourism Check ' + tourismCheck)
-      // console.log(npoCheck)
+
       const blocks = []
-      blocks.push({ title: tourismTitle, description: tourismDes, image: tourismImg, visible: tourismCheck, section: 'tourism' })
-      blocks.push({ title: npoTitle, description: npoDes, image: npoImg, visible: npoCheck, section: 'npo' })
-      blocks.push({ title: heartTitle, description: heartMsg, image: heartImg, visible: heartCheck, section: 'heart' })
+      blocks.push({ title: tourismTitle, description: tourismDes, img: tourismImg, visible: tourismCheck, section: 'tourism' })
+      console.log(blocks)
+      blocks.push({ title: npoTitle, description: npoDes, img: npoImg, visible: npoCheck, section: 'npo' })
+      blocks.push({ title: heartTitle, description: heartMsg, img: heartImg, visible: heartCheck, section: 'heart' })
 
       $rootScope.newDestination = {
         name: cityName,

@@ -6,8 +6,10 @@ module.exports = (req, res) => {
   try {
     let folderImg = path.join(__dirname, '../../../../public/img/trip')
     let files = read(folderImg)
-    res.status(200).json(files)
+    // let jsonFiles = {'imgs': JSON.stringify(files)}
+    res.status(200).json({files})
   } catch (err) {
     res.status(500).json(err)
   }
 }
+// .map((element) => ({element}))

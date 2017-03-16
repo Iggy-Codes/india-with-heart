@@ -4,6 +4,7 @@
     .module('adminApp')
     .constant('cfg', {
       urlDestinations: '/api/destination',
-      urlTrips: '/api/trip'
+      urlTrips: '/api/trip',
+      urlImgs: '/api/img'
     })
 })()

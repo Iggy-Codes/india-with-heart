@@ -23,8 +23,6 @@
     }
 
     function newDestination () {
-      console.log('factory')
-      console.log($rootScope.newDestination)
       return $http.post(cfg.urlDestinations, { postDestination: $rootScope.newDestination })
     }
 
@@ -32,13 +30,18 @@
       return $http.get(cfg.urlDestinations)
     }
 
+    function getImgs () {
+      console.log(cfg.urlImgs)
+      return $http.get(cfg.urlImgs)
+    }
     return {
       getTrips,
       addTrip,
       removeTripById,
       getTripById,
       newDestination,
-      getDestinations
+      getDestinations,
+      getImgs
     }
   }
 })()

@@ -43,11 +43,13 @@
             </div>
             <div class="form-group">
                 <label for="tourismImg">Imagen</label>
-                <input type="text" class="form-control" id="tourismImg" ng-model="vm.tourismImg" placeholder="imagen turismo" />
+                <select id="tourismImg" data-ng-model="vm.tourismImg" data-ng-options="img for img in vm.imgs">
+                    <option value="" selected>Selecciona una foto</option>
+                </select>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" ng-model="vm.tourismCheck" > Visible
+                    <input type="checkbox" ng-model="vm.tourismCheck" > Sección Visible
                 </label>
             </div>
         </div>
@@ -63,7 +65,9 @@
             </div>
             <div class="form-group">
                 <label for="npoImg">Imagen</label>
-                <input type="text" class="form-control" id="npoImg" ng-model="vm.npoImg" placeholder="Imagen Ong" />
+                <select id="npoImg" data-ng-model="vm.npoImg" data-ng-options="img for img in vm.imgs">
+                    <option value="" selected>Selecciona una foto</option>
+                </select>
             </div>
             <div class="checkbox">
                 <label>
@@ -83,7 +87,9 @@
             </div>
             <div class="form-group">
                 <label for="heartImg">Imagen</label>
-                <input type="text" class="form-control" id="heartImg" ng-model="vm.heartImg" placeholder="Título turismo" />
+                <select id="heartImg" data-ng-model="vm.heartImg" data-ng-options="img for img in vm.imgs">
+                    <option value="" selected>Selecciona una foto</option>
+                </select>
             </div>
             <div class="checkbox">
                 <label>
