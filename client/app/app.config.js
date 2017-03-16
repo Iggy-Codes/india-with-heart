@@ -9,6 +9,11 @@
 
   function routerConfig ($routeProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'app/trip/trip.tpl.html',
+        controller: 'TripController',
+        controllerAs: 'vm'
+      })
       .when('/destination', {
         templateUrl: 'app/destination/destination.tpl.html',
         controller: 'DestinationController',

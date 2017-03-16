@@ -3,6 +3,7 @@
   angular
     .module('adminApp')
     .constant('cfg', {
-      myConstant: 4
+      urlDestinations: '/api/destination',
+      urlTrips: '/api/trip'
     })
 })()

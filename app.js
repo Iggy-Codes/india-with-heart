@@ -2,7 +2,8 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 
-const routerLocation = require('./routes/destination')
+const routerLocation = require('./routes/api/destination')
+const routerTrip = require('./routes/api/trip')
 
 const app = express()
 
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
 
 const PORT = process.env.PORT || 3000
 
@@ -26,7 +28,8 @@ app.use('/admin', express.static(path.join(__dirname, 'client')))
 
 app.set('view engine', 'pug')
 
-app.use('/destination', routerLocation)
+app.use('/api/destination', routerLocation)
+app.use('/api/trip', routerTrip)
 
 console.log('api: ' + process.env.API_GOOGLE_MAPS)
 

@@ -1,4 +1,4 @@
-const Destination = require('../../../models/Destination')
+const Destination = require('../../../../models/Destination')
 // const Task = require('../../../models/Task')
 
 module.exports = (req, res) => {
@@ -18,8 +18,8 @@ module.exports = (req, res) => {
   const destination = new Destination({
     name: cityName,
     coord: {
-      lat: lat,
-      lng: lng
+      lat,
+      lng
     },
     blocks,
     photos })
