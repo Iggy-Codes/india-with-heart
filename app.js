@@ -4,9 +4,11 @@ const bodyParser = require('body-parser')
 // const http = require('http')
 // const marked = require('marked')
 
-const routerLocation = require('./routes/api/destination')
-const routerTrip = require('./routes/api/trip')
-const routerImg = require('./routes/api/img')
+// const routerLocation = require('./routes/api/destination')
+// const routerTrip = require('./routes/api/trip')
+// const routerImg = require('./routes/api/img')
+
+const routerApi = require('./routes/api')
 
 // global __base = __dirname
 
@@ -32,9 +34,11 @@ app.use('/admin', express.static(path.join(__dirname, 'client')))
 
 app.set('view engine', 'pug')
 
-app.use('/api/destination', routerLocation)
-app.use('/api/trip', routerTrip)
-app.use('/api/img', routerImg)
+// app.use('/api/destination', routerLocation)
+// app.use('/api/trip', routerTrip)
+// app.use('/api/img', routerImg)
+
+app.use('/api', routerApi)
 
 console.log('api: ' + process.env.API_GOOGLE_MAPS)
 

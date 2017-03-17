@@ -2,7 +2,6 @@ const Trip = require('../../../../models/Trip')
 
 module.exports = (req, res) => {
   Trip.find()
-    .then(tasks => res.json(tasks))
-    // .then(tasks => res.json({tasks}))
+    .then(trip => res.json(trip))
     .catch(err => { throw err })
 }
