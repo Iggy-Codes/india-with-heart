@@ -29,6 +29,6 @@
       //   controller: 'AuthorController',
       //   controllerAs: 'vm'
       // })
-      .otherwise('/destination')
+      .otherwise('/')
   }
 })()
