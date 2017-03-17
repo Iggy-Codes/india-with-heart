@@ -40,7 +40,7 @@ block content
             section.row.city-explanation 
               .col-md-8.col-sm-12
                 h3=block.title
-                p=block.description
+                div!=marked(block.description)
               .col-md-4.trip-photo.hidden-sm
                   img.img-responsive.img-rounded(src="/img/trip/" + block.img)
         each block in destinations[tripDay].blocks
@@ -50,7 +50,7 @@ block content
                   img.img-responsive.img-rounded(src="/img/trip/" + block.img)
               .col-md-8.col-sm-12
                 h3=block.title
-                p=block.description
+                div!=marked(block.description)
         each block in destinations[tripDay].blocks
           if (block.section == "heart" && block.visible)
             .col-md-8
@@ -58,7 +58,7 @@ block content
                 i.fa.fa-heartbeat
                 | Los latidos de nuestros viajeros
               blockquote.blockquote-reverse.block-experience
-                p=block.description
+                p!=marked(block.description)
                 footer
                   | Nuestro amigo viajero 
                   cite=block.title

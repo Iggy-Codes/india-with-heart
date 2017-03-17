@@ -1,13 +1,7 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-// const marked = require('node-markdown').Markdown
-// const http = require('http')
 const marked = require('marked')
-
-// const routerLocation = require('./routes/api/destination')
-// const routerTrip = require('./routes/api/trip')
-// const routerImg = require('./routes/api/img')
 
 const routerApi = require('./routes/api')
 
@@ -127,6 +121,8 @@ app.get('/trip/:tripUri/:city', (req, res) => {
         // console.log(city)
         tripToRender['tripCity'] = city
         tripToRender['photos'] = photos
+        tripToRender['marked'] = marked
+        tripToRender['layout'] = false
         // console.log(tripToRender.tripCity)
         res.render('detail-trip', tripToRender)
         // res.json(tripToRender)
@@ -143,10 +139,8 @@ app.get('/trip/:tripUri/:city', (req, res) => {
 //   res.render('trip', { urlMaps, photos })
 // })
 
-// app.get('/home', (req, res) => {
-
-// app.use((req, res) => {
-//   res.render('index')
-// })
+app.get('/', (req, res) => {
+  res.render('index')
+})
 
 app.listen(PORT, () => console.log(`Listening at port ${PORT}`))
