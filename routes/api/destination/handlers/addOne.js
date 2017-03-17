@@ -2,7 +2,10 @@ const Destination = require('../../../../models/Destination')
 // const Task = require('../../../models/Task')
 
 module.exports = (req, res) => {
-  const newDestination = new Destination(req.body.postDestination)
+  const { postDestination } = req.body
+  console.log('jajaja')
+  console.log(postDestination)
+  const newDestination = new Destination(postDestination)
 
   newDestination.save()
     .then(task => {

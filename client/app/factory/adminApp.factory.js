@@ -22,8 +22,22 @@
       return $http.get(cfg.urlTrips + '/' + $rootScope.tripId)
     }
 
-    function newDestination () {
-      return $http.post(cfg.urlDestinations, { postDestination: $rootScope.newDestination })
+    function newDestination (rawData) {
+      const blocks = []
+      blocks.push({ title: rawData.tourismTitle, description: rawData.tourismDes, img: rawData.tourismImg, visible: rawData.tourismCheck, section: 'tourism' })
+      console.log(blocks)
+      blocks.push({ title: rawData.npoTitle, description: rawData.npoDes, img: rawData.npoImg, visible: rawData.npoCheck, section: 'npo' })
+      blocks.push({ title: rawData.heartTitle, description: rawData.heartMsg, img: rawData.heartImg, visible: rawData.heartCheck, section: 'heart' })
+      const coord = {
+        lat: rawData.lat,
+        lng: rawData.lng
+      }
+      const postDestination = {
+        name: rawData.cityName,
+        coord,
+        blocks
+      }
+      return $http.post(cfg.urlDestinations, {postDestination})
     }
 
     function getDestinations () {
