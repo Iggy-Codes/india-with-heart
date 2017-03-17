@@ -43,36 +43,38 @@ block content
                 p=block.description
               .col-md-4.trip-photo.hidden-sm
                   img.img-responsive.img-rounded(src="/img/trip/" + block.img)
-      //- section.row.city-activities
-      //-   .col-md-4.trip-photo.hidden-xs.hidden-sm
-      //-       img.img-responsive.img-rounded(src=trip.destinations[tripDay].npoImg)
-      //-   .col-md-8.col-sm-12
-      //-       h3=trip.destinations[tripDay].npoTitle
-      //-       p=trip.destinations[tripDay].npoDescription
-      //- section.row  
-      //-   .col-md-8
-      //-     h3.text-center 
-      //-       i.fa.fa-heartbeat
-      //-       =trip.destinations[tripDay].heartTitle
-      //-       i.fa.fa-heartbeat
-      //-     blockquote.blockquote-reverse.block-experience
-      //-       p=trip.destinations[tripDay].heartMessages[0].message
-      //-       footer
-      //-         | Nuestro amigo viajero 
-      //-         cite=trip.destinations[tripDay].heartMessages[0].author
-      //-     .col-lg-6.text-center
-      //-       input.btn.btn-facebook.btn-block(type='submit', value='Comparte via facebook')
-      //-     .col-lg-6.text-center
-      //-       input.btn.btn-default.btn-block.btn-experience(type='submit', value='Ver todas las experiencias')
-      //-   .col-md-4.trip-photo.hidden-sm.hidden-xs
-      //-       img.img-responsive(src=trip.destinations[tripDay].heartImg)
-      //- //- .trip-row
-      //- //-   .myThumbnails
-      //- //-     ul
-      //- //-       each photo, i in destinations[tripDay].photos
-      //- //-         li
-      //- //-         a(href=photo.url,data-toggle="lightbox" data-gallery="example-gallery")
-      //- //-           img(src=photo.url, alt=photo.des)
+        each block in destinations[tripDay].blocks
+          if (block.section == "npo" && block.visible)
+            section.row.city-explanation 
+              .col-md-4.trip-photo.hidden-sm
+                  img.img-responsive.img-rounded(src="/img/trip/" + block.img)
+              .col-md-8.col-sm-12
+                h3=block.title
+                p=block.description
+        each block in destinations[tripDay].blocks
+          if (block.section == "heart" && block.visible)
+            .col-md-8
+              h3.text-center 
+                i.fa.fa-heartbeat
+                | Los latidos de nuestros viajeros
+              blockquote.blockquote-reverse.block-experience
+                p=block.description
+                footer
+                  | Nuestro amigo viajero 
+                  cite=block.title
+              .col-lg-6.text-center
+                input.btn.btn-facebook.btn-block(type='submit', value='Comparte via facebook')
+              .col-lg-6.text-center
+                input.btn.btn-default.btn-block.btn-experience(type='submit', value='Ver todas las experiencias')
+            .col-md-4.trip-photo.hidden-sm.hidden-xs
+                img.img-responsive.img-rounded(src="/img/trip/" + block.img)
+        .trip-row
+          .myThumbnails
+            ul
+              each photo, i in photos
+                li
+                a(href=photo.url,data-toggle="lightbox" data-gallery="example-gallery")
+                  img(src=photo.url, alt=photo.des)
 
    
 block javascript

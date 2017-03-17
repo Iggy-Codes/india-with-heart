@@ -1,8 +1,9 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+// const marked = require('node-markdown').Markdown
 // const http = require('http')
-// const marked = require('marked')
+const marked = require('marked')
 
 // const routerLocation = require('./routes/api/destination')
 // const routerTrip = require('./routes/api/trip')
@@ -54,11 +55,17 @@ app.get('/trips', (req, res) => {
   const Destination = require('./models/Destination')
 
   Trip.find({}, function (err, trips) {
+    if (err) throw err
     Destination.populate(trips, {path: 'destinations'}, function (err, libros) {
-      // if (err) throw (err)
-      console.log(trips)
-      res.render('trips', {atrips: trips})
-      // res.send('hola')
+      if (err) throw (err)
+      // console.log(trips)
+      // trips = trips.map((element) => {
+      //   element.title = marked(element.title)
+      //   element.description = marked(element.description)
+      //   return element
+      // })
+      res.render('trips', {atrips: trips, marked, layout: false})
+      // res.json({trips})
     })
   })
 
@@ -89,6 +96,22 @@ app.get('/trip/:trip', (req, res, next) => {
 
 app.get('/trip/:tripUri/:city', (req, res) => {
   // const trip = req.params.trip
+  const photos = [
+    { 'url': '/img/gallery/001.jpg',
+      'des': 'Photo number 1' },
+    { 'url': '/img/gallery/002.jpg',
+      'des': 'Photo number 2' },
+    { 'url': '/img/gallery/003.jpg',
+      'des': 'Photo number 3' },
+    { 'url': '/img/gallery/004.jpg',
+      'des': 'Photo number 4' },
+    { 'url': '/img/gallery/005.jpg',
+      'des': 'Photo number 5' },
+    { 'url': '/img/gallery/006.jpg',
+      'des': 'Photo number 6' },
+    { 'url': '/img/gallery/007.jpg',
+      'des': 'Photo number 7' }
+  ]
   let { tripUri, city } = req.params
   const Trip = require('./models/Trip')
   const Destination = require('./models/Destination')
@@ -103,6 +126,7 @@ app.get('/trip/:tripUri/:city', (req, res) => {
         const tripToRender = trips[0]
         // console.log(city)
         tripToRender['tripCity'] = city
+        tripToRender['photos'] = photos
         // console.log(tripToRender.tripCity)
         res.render('detail-trip', tripToRender)
         // res.json(tripToRender)
@@ -115,22 +139,7 @@ app.get('/trip/:tripUri/:city', (req, res) => {
 })
 
 // app.get('/trip', (req, res) => {
-//   const photos = [
-//     { 'url': '/img/gallery/001.jpg',
-//       'des': 'Photo number 1' },
-//     { 'url': '/img/gallery/002.jpg',
-//       'des': 'Photo number 2' },
-//     { 'url': '/img/gallery/003.jpg',
-//       'des': 'Photo number 3' },
-//     { 'url': '/img/gallery/004.jpg',
-//       'des': 'Photo number 4' },
-//     { 'url': '/img/gallery/005.jpg',
-//       'des': 'Photo number 5' },
-//     { 'url': '/img/gallery/006.jpg',
-//       'des': 'Photo number 6' },
-//     { 'url': '/img/gallery/007.jpg',
-//       'des': 'Photo number 7' }
-//   ]
+//
 //   res.render('trip', { urlMaps, photos })
 // })
 

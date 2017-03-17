@@ -2,6 +2,7 @@ extends layout.pug
 //- block stylesheet
 //-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
 block content
+  //- var marked = require('marked');
   //- #myModal.modal.fade
   //-   .modal-dialog
   //-     .modal-content
@@ -17,8 +18,8 @@ block content
         each trip, i in atrips
           li 
             h2
-              a(href="/trip/"+trip.titleUri+"/_")=trip.title
-            p=trip.description
+              a(href="/trip/" + trip.titleUri + "/_")!= marked(trip.title)
+            p!= marked(trip.description)
             nav.row.hidden-xs  
               .trip.center-block
                 .trip-row
