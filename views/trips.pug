@@ -17,7 +17,7 @@ block content
         each trip, i in atrips
           li 
             h2
-              a(href="/trip/"+trip.title)=trip.title
+              a(href="/trip/"+trip.titleUri+"/_")=trip.title
             p=trip.description
             nav.row.hidden-xs  
               .trip.center-block

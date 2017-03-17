@@ -29,10 +29,10 @@ function initMap () {
   let lats = tripDay.getAttribute('data-lat')
   // console.log('lats ' + lats)
   let lngs = tripDay.getAttribute('data-lng')
-  let cities = tripDay.getAttribute('data-city')
+  let destinations = tripDay.getAttribute('data-destination')
   lats = lats.substr(1, lats.length - 1).split(',')
   lngs = lngs.substr(1, lngs.length - 1).split(',')
-  cities = cities.substr(1, cities.length - 1).split(',')
+  destinations = destinations.substr(1, destinations.length - 1).split(',')
   // console.log(lats)
   let centerLat = lats.reduce((acc, val) => (Number(val) + acc), 0) / lats.length
   let centerLng = lngs.reduce((acc, val) => (Number(val) + acc), 0) / lngs.length
@@ -45,8 +45,8 @@ function initMap () {
       // - //- console.log('lngs' + lngs)
   let markers = []
   for (var i = 0; i < lats.length; i++) {
-    let icon = (i === +tripDay.value) ? '/img/trip/blue-marker-40.png' : '/img/trip/red-marker-40.png'
-    markers.push({coor: {lat: Number(lats[i]), lng: Number(lngs[i])}, icon, title: cities[i]})
+    let icon = (i === +tripDay.value) ? '/img/markers/blue-marker-40.png' : '/img/markers/red-marker-40.png'
+    markers.push({coor: {lat: Number(lats[i]), lng: Number(lngs[i])}, icon, title: destinations[i]})
   }
   // console.log(markers)
   // console.log(markers.length)

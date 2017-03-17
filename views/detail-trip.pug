@@ -5,15 +5,15 @@ block content
   main.row.trip-block
     - var lng = ""
     - var lat = ""
-    - var cityName = ""
+    - var destinationName = ""
     - var tripDay = 0
-    each city, i in cities
-      - lat = lat + "," + city.coor.lat
-      - lng = lng + "," + city.coor.lng
-      - cityName = cityName + "," + city.name
-      if (city.name == tripCity)
+    each destination, i in destinations
+      - lat = lat + "," + destination.coord.lat
+      - lng = lng + "," + destination.coord.lng
+      - destinationName = destinationName + "," + destination.name
+      if (destination.name == tripCity)
         - tripDay = i
-    input(type="hidden", id="tripDay", value=tripDay, data-lat=lat, data-lng=lng, data-city=cityName)
+    input(type="hidden", id="tripDay", value=tripDay, data-lat=lat, data-lng=lng, data-destination=destinationName)
     .container
       .row
         h2.space-before-block.space-after-block.text-center=title
@@ -21,56 +21,58 @@ block content
       nav.row.hidden-xs  
         .trip.center-block
           .trip-row
-            each city,i in cities
+            each destination,i in destinations
               .trip-step
                 if (i == tripDay)
-                  button.btn.btn-bullet.btn-circle(type='button', data-target="/trip/" + titleUri + "/" + city.name)
+                  button.btn.btn-bullet.btn-circle(type='button', data-target="/trip/" + titleUri + "/" + destination.name)
                 else 
-                  button.btn.btn-default.btn-circle(type='button', data-target="/trip/" + titleUri  +"/" + city.name)
+                  button.btn.btn-default.btn-circle(type='button', data-target="/trip/" + titleUri  +"/" + destination.name)
                 p
-                  a(href="/trip/" + titleUri + "/" + city.name)=city.name
+                  a(href="/trip/" + titleUri + "/" + destination.name)=destination.name
       .row
         #map.hidden-xs
       .row.trip-title
         i.fa.fa-caret-left
-        h1.text-center=cities[tripDay].name 
+        h1.text-center=destinations[tripDay].name 
         i.fa.fa-caret-right
-      section.row.city-explanation 
-        .col-md-8.col-sm-12
-          h3=cities[tripDay].tourismTitle
-          p=cities[tripDay].tourismDescription
-        .col-md-4.trip-photo.hidden-sm
-            img.img-responsive.img-rounded(src=cities[tripDay].tourismImg)
-      section.row.city-activities
-        .col-md-4.trip-photo.hidden-xs.hidden-sm
-            img.img-responsive.img-rounded(src=cities[tripDay].npoImg)
-        .col-md-8.col-sm-12
-            h3=cities[tripDay].npoTitle
-            p=cities[tripDay].npoDescription
-      section.row  
-        .col-md-8
-          h3.text-center 
-            i.fa.fa-heartbeat
-            =cities[tripDay].heartTitle
-            i.fa.fa-heartbeat
-          blockquote.blockquote-reverse.block-experience
-            p=cities[tripDay].heartMessages[0].message
-            footer
-              | Nuestro amigo viajero 
-              cite=cities[tripDay].heartMessages[0].author
-          .col-lg-6.text-center
-            input.btn.btn-facebook.btn-block(type='submit', value='Comparte via facebook')
-          .col-lg-6.text-center
-            input.btn.btn-default.btn-block.btn-experience(type='submit', value='Ver todas las experiencias')
-        .col-md-4.trip-photo.hidden-sm.hidden-xs
-            img.img-responsive(src=cities[tripDay].heartImg)
-      .trip-row
-        .myThumbnails
-          ul
-            each photo, i in cities[tripDay].photos
-              li
-              a(href=photo.url,data-toggle="lightbox" data-gallery="example-gallery")
-                img(src=photo.url, alt=photo.des)
+        each block in destinations[tripDay].blocks
+          if (block.section == "tourism" && block.visible)
+            section.row.city-explanation 
+              .col-md-8.col-sm-12
+                h3=block.title
+                p=block.description
+              .col-md-4.trip-photo.hidden-sm
+                  img.img-responsive.img-rounded(src="/img/trip/" + block.img)
+      //- section.row.city-activities
+      //-   .col-md-4.trip-photo.hidden-xs.hidden-sm
+      //-       img.img-responsive.img-rounded(src=trip.destinations[tripDay].npoImg)
+      //-   .col-md-8.col-sm-12
+      //-       h3=trip.destinations[tripDay].npoTitle
+      //-       p=trip.destinations[tripDay].npoDescription
+      //- section.row  
+      //-   .col-md-8
+      //-     h3.text-center 
+      //-       i.fa.fa-heartbeat
+      //-       =trip.destinations[tripDay].heartTitle
+      //-       i.fa.fa-heartbeat
+      //-     blockquote.blockquote-reverse.block-experience
+      //-       p=trip.destinations[tripDay].heartMessages[0].message
+      //-       footer
+      //-         | Nuestro amigo viajero 
+      //-         cite=trip.destinations[tripDay].heartMessages[0].author
+      //-     .col-lg-6.text-center
+      //-       input.btn.btn-facebook.btn-block(type='submit', value='Comparte via facebook')
+      //-     .col-lg-6.text-center
+      //-       input.btn.btn-default.btn-block.btn-experience(type='submit', value='Ver todas las experiencias')
+      //-   .col-md-4.trip-photo.hidden-sm.hidden-xs
+      //-       img.img-responsive(src=trip.destinations[tripDay].heartImg)
+      //- //- .trip-row
+      //- //-   .myThumbnails
+      //- //-     ul
+      //- //-       each photo, i in destinations[tripDay].photos
+      //- //-         li
+      //- //-         a(href=photo.url,data-toggle="lightbox" data-gallery="example-gallery")
+      //- //-           img(src=photo.url, alt=photo.des)
 
    
 block javascript

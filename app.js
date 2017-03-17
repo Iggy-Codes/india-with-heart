@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-const http = require('http')
+// const http = require('http')
+// const marked = require('marked')
 
 const routerLocation = require('./routes/api/destination')
 const routerTrip = require('./routes/api/trip')
@@ -41,7 +42,7 @@ var urlMaps = 'https://maps.googleapis.com/maps/api/js?key=' + process.env.API_G
 console.log(urlMaps)
 
 // var trips = require('./db/trips.json')
-var deluxeTrip = require('./db/deluxe-trip.json')
+// var deluxeTrip = require('./db/deluxe-trip.json')
 
 app.get('/trips', (req, res) => {
   // console.log(trips)
@@ -50,7 +51,7 @@ app.get('/trips', (req, res) => {
 
   Trip.find({}, function (err, trips) {
     Destination.populate(trips, {path: 'destinations'}, function (err, libros) {
-      if (err) throw (err)
+      // if (err) throw (err)
       console.log(trips)
       res.render('trips', {atrips: trips})
       // res.send('hola')
@@ -82,10 +83,31 @@ app.get('/trip/:trip', (req, res, next) => {
   next()
 })
 
-app.get('/trip/:trip/:day', (req, res) => {
+app.get('/trip/:tripUri/:city', (req, res) => {
   // const trip = req.params.trip
-  deluxeTrip.tripCity = req.params.day
-  res.render('detail-trip', deluxeTrip)
+  let { tripUri, city } = req.params
+  const Trip = require('./models/Trip')
+  const Destination = require('./models/Destination')
+
+  Trip.find({titleUri: {$eq: tripUri}}, function (err, trips) {
+    if (err) throw (err)
+    Destination.populate(trips, {path: 'destinations'}, function (err, destinations) {
+      if (err) throw (err)
+      if (trips.length !== 1) res.redirect('/trips')
+      else {
+        // console.log('length result ' + trips.length)
+        const tripToRender = trips[0]
+        // console.log(city)
+        tripToRender['tripCity'] = city
+        // console.log(tripToRender.tripCity)
+        res.render('detail-trip', tripToRender)
+        // res.json(tripToRender)
+      }
+    })
+  })
+
+  // deluxeTrip.tripCity = req.params.day
+  // res.render('detail-trip', deluxeTrip)
 })
 
 // app.get('/trip', (req, res) => {
