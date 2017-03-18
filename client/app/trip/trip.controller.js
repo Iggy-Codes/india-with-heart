@@ -11,16 +11,12 @@
 
     adminAppFactory.getDestinations()
       .then(({data}) => {
-        // console.log(response)
         vm.destinations = data
       })
 
     adminAppFactory.getTrips()
       .then(({data}) => {
-        // if(data.length === 0) {
-        // }
         vm.trips = data
-        console.log(data)
       })
 
     // vm.editTrip = (e, id) => {
@@ -38,32 +34,26 @@
 
     vm.removeTrip = (e, id) => {
       e.preventDefault()
-      console.log('we are here ' + id)
-      $rootScope.tripId = id
-      adminAppFactory.removeTripById()
+      adminAppFactory.removeTripById(id)
         .then($route.reload())
     }
 
     vm.addTrip = (e) => {
       e.preventDefault()
       let destinations = []
-      // console.log(e)
       for (var i = 4; i < 12; i++) {
-        console.log()
         if (+e.srcElement[i].value !== 0 && destinations.indexOf(e.srcElement[i].value) < 0) {
           destinations.push(e.srcElement[i].value)
         }
       }
       let { title, titleUri, description } = vm
-      $rootScope.newTrip = {
+      let newTrip = {
         title,
         titleUri,
         description,
         destinations
       }
-      // console.log('action ' + vm.action)
-      // console.log($rootScope.newTrip)
-      adminAppFactory.addTrip()
+      adminAppFactory.addTrip(newTrip)
         .then($route.reload())
     }
   }
