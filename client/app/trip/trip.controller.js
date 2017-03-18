@@ -41,15 +41,14 @@
     vm.addTrip = (e) => {
       e.preventDefault()
       let destinations = []
-      for (var i = 4; i < 12; i++) {
+      for (var i = 3; i < 11; i++) {
         if (+e.srcElement[i].value !== 0 && destinations.indexOf(e.srcElement[i].value) < 0) {
           destinations.push(e.srcElement[i].value)
         }
       }
-      let { title, titleUri, description } = vm
+      let { title, description } = vm
       let newTrip = {
         title,
-        titleUri,
         description,
         destinations
       }
