@@ -37,60 +37,6 @@ module.exports = app
 
 // })
 
-// app.get('/trip/:trip', (req, res, next) => {
-//   // res.render('detail-trip', deluxeTrip)
-//   // res.redirect('/trip/:trip/0')
-//   let trip = req.params.day
-//   res.redirect('/trip/' + trip + '/_')
-//   next()
-// })
-
-// app.get('/trip/:tripUri/:city', (req, res) => {
-//   // const trip = req.params.trip
-//   const photos = [
-//     { 'url': '/img/gallery/001.jpg',
-//       'des': 'Photo number 1' },
-//     { 'url': '/img/gallery/002.jpg',
-//       'des': 'Photo number 2' },
-//     { 'url': '/img/gallery/003.jpg',
-//       'des': 'Photo number 3' },
-//     { 'url': '/img/gallery/004.jpg',
-//       'des': 'Photo number 4' },
-//     { 'url': '/img/gallery/005.jpg',
-//       'des': 'Photo number 5' },
-//     { 'url': '/img/gallery/006.jpg',
-//       'des': 'Photo number 6' },
-//     { 'url': '/img/gallery/007.jpg',
-//       'des': 'Photo number 7' }
-//   ]
-//   let { tripUri, city } = req.params
-//   const Trip = require('./models/Trip')
-//   const Destination = require('./models/Destination')
-
-//   Trip.find({titleUri: {$eq: tripUri}}, function (err, trips) {
-//     if (err) throw (err)
-//     Destination.populate(trips, {path: 'destinations'}, function (err, destinations) {
-//       if (err) throw (err)
-//       if (trips.length !== 1) res.redirect('/trips')
-//       else {
-//         // console.log('length result ' + trips.length)
-//         const tripToRender = trips[0]
-//         // console.log(city)
-//         tripToRender['tripCity'] = city
-//         tripToRender['photos'] = photos
-//         tripToRender['marked'] = marked
-//         tripToRender['layout'] = false
-//         // console.log(tripToRender.tripCity)
-//         res.render('detail-trip', tripToRender)
-//         // res.json(tripToRender)
-//       }
-//     })
-//   })
-
-//   // deluxeTrip.tripCity = req.params.day
-//   // res.render('detail-trip', deluxeTrip)
-// })
-
 // app.get('/trip', (req, res) => {
 //
 //   res.render('trip', { urlMaps, photos })

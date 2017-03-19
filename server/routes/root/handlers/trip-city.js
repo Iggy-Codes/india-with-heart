@@ -1,0 +1,31 @@
+const path = require('path')
+const Trip = require(path.join(__base, 'models/Trip')) // eslint-disable-line no-undef
+const Destination = require(path.join(__base, 'models/Destination')) // eslint-disable-line no-undef
+const marked = require('marked')
+
+module.exports = (req, res) => {
+  const photos = [ { 'url': '/img/gallery/001.jpg', 'des': 'Photo number 1' },
+    { 'url': '/img/gallery/002.jpg', 'des': 'Photo number 2' },
+    { 'url': '/img/gallery/003.jpg', 'des': 'Photo number 3' },
+    { 'url': '/img/gallery/004.jpg', 'des': 'Photo number 4' },
+    { 'url': '/img/gallery/005.jpg', 'des': 'Photo number 5' },
+    { 'url': '/img/gallery/006.jpg', 'des': 'Photo number 6' },
+    { 'url': '/img/gallery/007.jpg', 'des': 'Photo number 7' }]
+  let { tripUri, city } = req.params
+
+  Trip.find({titleUri: {$eq: tripUri}}, function (err, trips) {
+    if (err) throw (err)
+    Destination.populate(trips, {path: 'destinations'}, function (err, destinations) {
+      if (err) throw (err)
+      if (trips.length !== 1) res.redirect('/trips')
+      else {
+        const tripToRender = trips[0]
+        tripToRender['tripCity'] = city
+        tripToRender['photos'] = photos
+        tripToRender['marked'] = marked
+        tripToRender['layout'] = false
+        res.render('detail-trip', tripToRender)
+      }
+    })
+  })
+}
