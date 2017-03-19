@@ -21,8 +21,8 @@
       return $http.delete(cfg.urlTrips + '/' + id)
     }
 
-    function getTripById () {
-      return $http.get(cfg.urlTrips + '/' + $rootScope.tripId)
+    function getTripById (id) {
+      return $http.get(cfg.urlTrips + '/' + id)
     }
 
     function newDestination (rawData) {

@@ -2,13 +2,13 @@
   "name": "india-with-heart",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "engines": {
     "node": "6.10.0"
   },
   "scripts": {
     "prestart": "npm install",
-    "dev": "nodemon app",
+    "dev": "nodemon index",
     "postinstall": "./node_modules/bower/bin/bower install",
     "start": "node app"
   },
