@@ -1,7 +1,6 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-const marked = require('marked')
 
 const routerApi = require('./routes/api')
 const routerRoot = require('./routes/root')
@@ -40,10 +39,6 @@ module.exports = app
 // app.get('/trip', (req, res) => {
 //
 //   res.render('trip', { urlMaps, photos })
-// })
-
-// app.get('/', (req, res) => {
-//   res.render('index')
 // })
 
 // const mongoose = require('mongoose')

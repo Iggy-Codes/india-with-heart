@@ -24,6 +24,7 @@ module.exports = (req, res) => {
         tripToRender['photos'] = photos
         tripToRender['marked'] = marked
         tripToRender['layout'] = false
+        tripToRender['map'] = 'https://maps.googleapis.com/maps/api/js?key=' + process.env.API_GOOGLE_MAPS + '&callback=initMap'
         res.render('detail-trip', tripToRender)
       }
     })
