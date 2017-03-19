@@ -1,4 +1,5 @@
-const Destination = require('../../../../models/Destination')
+const path = require('path')
+const Destination = require(path.join(__base, 'models/Destination'))// eslint-disable-line no-undef
 
 module.exports = (req, res) => {
   Destination.find()

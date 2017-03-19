@@ -13,10 +13,9 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api', routerApi)
+app.use('/admin', express.static(path.join(__dirname, '../client')))
 
 module.exports = app
-
-// app.use('/admin', express.static(path.join(__dirname, '../client')))
 
 // app.set('view engine', 'pug')
 
