@@ -1,4 +1,5 @@
-const Trip = require('../../../../models/Trip')
+const path = require('path')
+const Trip = require(path.join(__base, 'models/Trip'))// eslint-disable-line no-undef
 
 module.exports = (req, res) => {
   const { title, titleUri, description, destinations } = req.body
@@ -9,8 +10,6 @@ module.exports = (req, res) => {
     description,
     destinations
   })
-  console.log(trip)
-  // res.send(title)
 
   trip.save()
     .then(task => {

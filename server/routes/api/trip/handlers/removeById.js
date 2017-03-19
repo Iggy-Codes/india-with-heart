@@ -1,9 +1,8 @@
-const Trip = require('../../../../models/Trip')
+const path = require('path')
+const Trip = require(path.join(__base, 'models/Trip'))// eslint-disable-line no-undef
 
 module.exports = (req, res) => {
-  const id = req.params.id
-  console.log('id value ' + id)
-  Trip.findByIdAndRemove(id)
+  Trip.findByIdAndRemove(req.params.id)
     .then(task => {
       console.log(`trip has been removed succesfully`)
       res.status(200).json(task)
