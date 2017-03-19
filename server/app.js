@@ -4,42 +4,23 @@ const bodyParser = require('body-parser')
 const marked = require('marked')
 
 const routerApi = require('./routes/api')
+const routerRoot = require('./routes/root')
 
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+app.set('view engine', 'pug')
+app.set('views', (path.join(__dirname, 'views')))
+
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api', routerApi)
 app.use('/admin', express.static(path.join(__dirname, '../client')))
+app.use('/', routerRoot)
 
 module.exports = app
-
-// app.set('view engine', 'pug')
-
-// app.get('/trips', (req, res) => {
-//   // console.log(trips)
-//   const Trip = require('./models/Trip')
-//   const Destination = require('./models/Destination')
-
-//   Trip.find({}, function (err, trips) {
-//     if (err) throw err
-//     Destination.populate(trips, {path: 'destinations'}, function (err, libros) {
-//       if (err) throw (err)
-//       // console.log(trips)
-//       // trips = trips.map((element) => {
-//       //   element.title = marked(element.title)
-//       //   element.description = marked(element.description)
-//       //   return element
-//       // })
-//       res.render('trips', {atrips: trips, marked, layout: false})
-//       // res.json({trips})
-//     })
-//   })
-//     .catch(err => { throw err })
-// })
 
   // Trip
   //   .find()
