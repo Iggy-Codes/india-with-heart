@@ -10,12 +10,12 @@
   function routerConfig ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'app/trip/trip.tpl.html',
+        templateUrl: 'app/pages/trip/trip.tpl.html',
         controller: 'TripController',
         controllerAs: 'vm'
       })
       .when('/destination', {
-        templateUrl: 'app/destination/destination.tpl.html',
+        templateUrl: 'app/pages/destination/destination.tpl.html',
         controller: 'DestinationController',
         controllerAs: 'vm'
       })

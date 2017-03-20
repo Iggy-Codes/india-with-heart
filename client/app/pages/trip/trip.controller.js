@@ -33,7 +33,6 @@
 
     adminAppFactory.getTrips()
       .then(({data}) => {
-        console.log(data)
         vm.trips = data
       })
 
@@ -43,7 +42,7 @@
         .then((response) => {
           const trip = response.data
           vm.titleForm = 'Modificación viaje ' + trip.title
-          vm.tripId = id
+          vm.id = id
           vm.title = trip.title
           vm.titleUri = trip.titleUri
           vm.description = trip.description
@@ -60,17 +59,12 @@
 
     vm.addTrip = (e) => {
       e.preventDefault()
-      let destinations = []
-      for (var i = 3; i < 11; i++) {
-        if (+e.srcElement[i].value !== 0 && destinations.indexOf(e.srcElement[i].value) < 0) {
-          destinations.push(e.srcElement[i].value)
-        }
-      }
-      let { title, description } = vm
+      let { id, title, description, stops } = vm
       let newTrip = {
         title,
         description,
-        destinations
+        stops,
+        id
       }
       adminAppFactory.addTrip(newTrip)
         .then($route.reload())

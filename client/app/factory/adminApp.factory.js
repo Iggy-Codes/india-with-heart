@@ -11,8 +11,33 @@
 
     function addTrip (newTrip) {
       newTrip['titleUri'] = urlTitle(newTrip.title)
+      let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
+      console.log('before')
+      console.log(stops)
+      let destinations = []
+      stops.forEach(stop => {
+        if (!(!stop) && destinations.indexOf(stop) < 0) {
+          destinations.push(stop)
+        }
+      })
+      console.log('after')
+      console.log(destinations)
+      newTrip['destinations'] = destinations
       console.log(newTrip)
       return $http.post(cfg.urlTrips, newTrip)
+      // for (var i = 3; i < 11; i++) {
+      //   if (+e.srcElement[i].value !== 0 ) {
+      //   }
+      // }
+
+      // let idx = stops.indexOf('')
+      // while (idx !== -1) {
+      //   stops.splice(idx, 1)
+      //   idx = stops.indexOf('')
+      // }
+      // {
+
+      // }
 
       // var desired = stringToReplace.replace(/[^a-z0-9\-]/gi, '')
     }
