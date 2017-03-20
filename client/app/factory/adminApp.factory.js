@@ -11,20 +11,71 @@
 
     function addTrip (newTrip) {
       newTrip['titleUri'] = urlTitle(newTrip.title)
-      let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
-      console.log('before')
-      console.log(stops)
-      let destinations = []
-      stops.forEach(stop => {
-        if (!(!stop) && destinations.indexOf(stop) < 0) {
-          destinations.push(stop)
-        }
-      })
-      console.log('after')
-      console.log(destinations)
-      newTrip['destinations'] = destinations
-      console.log(newTrip)
+      // let destinations = []
+      // if (newTrip.stops) {
+      //   let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
+      //   if (stops) {
+      //     stops.forEach(stop => {
+      //       if (!(!stop) && destinations.indexOf(stop) < 0) {
+      //         destinations.push(stop)
+      //       }
+      //     })
+      //   }
+      // }
+      // newTrip['destinations'] = destinations
+      newTrip['destinations'] = checkDestinations(newTrip.stops)
       return $http.post(cfg.urlTrips, newTrip)
+    }
+
+    function updateTrip (newTrip) {
+      newTrip['titleUri'] = urlTitle(newTrip.title)
+      console.log(newTrip)
+
+      let posNewStops = []
+      if (newTrip.stops) {
+        posNewStops = Object.keys(newTrip.stops).map((k) => +k)
+      }
+      console.log('Position New Stops')
+      console.log(posNewStops)
+
+      let destinationsToCheck = newTrip.trip_destinations
+      console.log(destinationsToCheck)
+
+      posNewStops.forEach(pos => {
+        destinationsToCheck[pos] = newTrip.stops[pos.toString()]
+      })
+
+      console.log('destinationsToCheck')
+      console.log(destinationsToCheck)
+      debugger
+
+      let destinations = []
+      if (newTrip.stops) {
+        let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
+        if (stops) {
+          stops.forEach(stop => {
+            if (!(!stop) && destinations.indexOf(stop) < 0) {
+              destinations.push(stop)
+            }
+          })
+        }
+      }
+      newTrip['destinations'] = destinations
+
+      let trip_destinations = newTrip.trip_destinations
+      console.log('old destinations')
+      console.log(trip_destinations)
+      return $http.put(cfg.urlTrips, newTrip)
+    }
+
+      // console.log('before')
+      // console.log(stops)
+
+      // console.log('after')
+      // console.log(destinations)
+      // console.log(newTrip)
+      // if (newTrip.id === '')
+      // else
       // for (var i = 3; i < 11; i++) {
       //   if (+e.srcElement[i].value !== 0 ) {
       //   }
@@ -40,7 +91,7 @@
       // }
 
       // var desired = stringToReplace.replace(/[^a-z0-9\-]/gi, '')
-    }
+    // }
 
     function removeTripById (id) {
       return $http.delete(cfg.urlTrips + '/' + id)
@@ -79,12 +130,28 @@
     return {
       getTrips,
       addTrip,
+      updateTrip,
       removeTripById,
       getTripById,
       newDestination,
       getDestinations,
       getImgs
     }
+  }
+
+  function checkDestinations (newTripStops) {
+    let destinations = []
+    if (newTripStops) {
+      let stops = Object.keys(newTripStops).map((k) => newTripStops[k])
+      if (stops) {
+        stops.forEach(stop => {
+          if (!(!stop) && destinations.indexOf(stop) < 0) {
+            destinations.push(stop)
+          }
+        })
+      }
+    }
+    return destinations
   }
 
   function urlTitle (title) {

@@ -6,8 +6,8 @@ module.exports = (req, res) => {
   Trip
     .findById(id)
     .populate('destinations')
-    .then(task => {
-      res.status(200).json(task)
+    .then(trip => {
+      res.status(200).json(trip)
     })
     .catch(err => res.status(500).json(err))
 }
