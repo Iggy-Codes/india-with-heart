@@ -2,16 +2,18 @@ const path = require('path')
 const Trip = require(path.join(__base, 'models/Trip'))// eslint-disable-line no-undef
 
 module.exports = (req, res) => {
-  const { title, titleUri, description, destinations } = req.body
-  const trip = new Trip({
+  const { id, title, titleUri, description, destinations } = req.body
+  const trip = {
     title,
     titleUri,
     description,
     destinations
-  })
+  }
 
+  console.log(trip)
+  console.log(id)
   Trip
-    .findByIdAndUpdate(req.params.id, trip)
+    .findByIdAndUpdate(id, trip)
     .then(response => {
       console.log('trip has been updated succesfully')
       res.status(200).json(trip)

@@ -11,6 +11,33 @@
 
     function addTrip (newTrip) {
       newTrip['titleUri'] = urlTitle(newTrip.title)
+      newTrip['destinations'] = checkDestinations(newTrip.stops)
+      return $http.post(cfg.urlTrips, newTrip)
+    }
+
+    function updateTrip (newTrip) {
+      newTrip['titleUri'] = urlTitle(newTrip.title)
+
+      let posNewStops = (newTrip.stops) ? Object.keys(newTrip.stops).map((k) => +k) : []
+      let destinationsToCheck = (newTrip.trip_destinations) ? newTrip.trip_destinations : []
+      posNewStops.forEach(pos => {
+        destinationsToCheck[pos] = newTrip.stops[pos.toString()]
+      })
+      newTrip['destinations'] = checkDestinations(destinationsToCheck)
+      return $http.put(cfg.urlTrips, newTrip)
+    }
+
+      // console.log(newTrip)
+      // console.log('Position New Stops')
+      // console.log(posNewStops)
+
+      // console.log('destinationsToCheck')
+      // console.log(destinationsToCheck)
+      // newTrip['destinations'] = checkDestinations(destinationsToCheck)
+
+      // console.log(newTrip.destinations)
+
+      // debugger
       // let destinations = []
       // if (newTrip.stops) {
       //   let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
@@ -23,50 +50,10 @@
       //   }
       // }
       // newTrip['destinations'] = destinations
-      newTrip['destinations'] = checkDestinations(newTrip.stops)
-      return $http.post(cfg.urlTrips, newTrip)
-    }
 
-    function updateTrip (newTrip) {
-      newTrip['titleUri'] = urlTitle(newTrip.title)
-      console.log(newTrip)
-
-      let posNewStops = []
-      if (newTrip.stops) {
-        posNewStops = Object.keys(newTrip.stops).map((k) => +k)
-      }
-      console.log('Position New Stops')
-      console.log(posNewStops)
-
-      let destinationsToCheck = newTrip.trip_destinations
-      console.log(destinationsToCheck)
-
-      posNewStops.forEach(pos => {
-        destinationsToCheck[pos] = newTrip.stops[pos.toString()]
-      })
-
-      console.log('destinationsToCheck')
-      console.log(destinationsToCheck)
-      debugger
-
-      let destinations = []
-      if (newTrip.stops) {
-        let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
-        if (stops) {
-          stops.forEach(stop => {
-            if (!(!stop) && destinations.indexOf(stop) < 0) {
-              destinations.push(stop)
-            }
-          })
-        }
-      }
-      newTrip['destinations'] = destinations
-
-      let trip_destinations = newTrip.trip_destinations
-      console.log('old destinations')
-      console.log(trip_destinations)
-      return $http.put(cfg.urlTrips, newTrip)
-    }
+      // let trip_destinations = newTrip.trip_destinations
+      // console.log('old destinations')
+      // console.log(trip_destinations)
 
       // console.log('before')
       // console.log(stops)
@@ -164,3 +151,15 @@
   }
 })()
 
+      // let destinations = []
+      // if (newTrip.stops) {
+      //   let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
+      //   if (stops) {
+      //     stops.forEach(stop => {
+      //       if (!(!stop) && destinations.indexOf(stop) < 0) {
+      //         destinations.push(stop)
+      //       }
+      //     })
+      //   }
+      // }
+      // newTrip['destinations'] = destinations
