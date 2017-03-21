@@ -50,8 +50,6 @@
         coord,
         blocks
       }
-      console.log(postDestination)
-      console.log('now post petition server')
       return $http.post(cfg.urlDestinations, {postDestination})
     }
 

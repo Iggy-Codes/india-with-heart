@@ -40,6 +40,7 @@
           // const data = response.data
           // console.log(data)
           Object.keys(response.data).forEach(key => { vm[key] = response.data[key] })
+          vm.titleForm = 'Modificación de: ' + response.data.cityName
         })
     }
 
