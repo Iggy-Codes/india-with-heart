@@ -25,11 +25,11 @@
     vm.addDestination = (e) => {
       e.preventDefault()
       const { id, cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck } = vm
-      const rawData = { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck }
-      if (id === '') {
-        adminAppFactory.newDestination(rawData)
+      const rawData = { id, cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck }
+      console.log('controller add destination')
+      console.log(rawData)
+      adminAppFactory.newDestination(rawData)
           .then($route.reload())
-      }
     }
 
     vm.editDestination = (e, id) => {
@@ -38,9 +38,10 @@
       adminAppFactory.getDestinationById(id)
         .then(response => {
           // const data = response.data
-          // console.log(data)
+          console.log(response)
           Object.keys(response.data).forEach(key => { vm[key] = response.data[key] })
           vm.titleForm = 'Modificación de: ' + response.data.cityName
+          vm.id = response.data.id
         })
     }
 

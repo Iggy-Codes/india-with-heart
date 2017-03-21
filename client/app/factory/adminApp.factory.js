@@ -50,7 +50,10 @@
         coord,
         blocks
       }
-      return $http.post(cfg.urlDestinations, {postDestination})
+      console.log('factory before petition')
+      console.log(postDestination)
+      if (rawData.id === '') return $http.post(cfg.urlDestinations, {postDestination})
+      else return $http.put(cfg.urlDestinations + '/' + rawData.id, {postDestination})
     }
 
     function getDestinations () {
@@ -62,7 +65,9 @@
       return $http.get(cfg.urlDestinations + '/' + id)
         .then(response => {
           const destination = response.data
+          console.log('received')
           console.log(destination)
+          rawData['id'] = destination._id
           rawData['cityName'] = destination.name
           rawData['lat'] = destination.coord.lat
           rawData['lng'] = destination.coord.lng
