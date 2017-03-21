@@ -57,12 +57,11 @@
             vm.lng = +response.location.longitude
           })
           .catch(reason => {
-            if (!reason.success) {
-              alert('Ciudad no encontrada.')
-              vm.lat = ''
-              vm.lng = ''
-              vm.setFocus('cityName')
-            }
+            alert('Ciudad no encontrada.')
+            vm.lat = ''
+            vm.lng = ''
+            vm.cityName = ''
+            vm.setFocus('cityName')
           })
       }
     }
