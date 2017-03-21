@@ -27,59 +27,6 @@
       return $http.put(cfg.urlTrips, newTrip)
     }
 
-      // console.log(newTrip)
-      // console.log('Position New Stops')
-      // console.log(posNewStops)
-
-      // console.log('destinationsToCheck')
-      // console.log(destinationsToCheck)
-      // newTrip['destinations'] = checkDestinations(destinationsToCheck)
-
-      // console.log(newTrip.destinations)
-
-      // debugger
-      // let destinations = []
-      // if (newTrip.stops) {
-      //   let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
-      //   if (stops) {
-      //     stops.forEach(stop => {
-      //       if (!(!stop) && destinations.indexOf(stop) < 0) {
-      //         destinations.push(stop)
-      //       }
-      //     })
-      //   }
-      // }
-      // newTrip['destinations'] = destinations
-
-      // let trip_destinations = newTrip.trip_destinations
-      // console.log('old destinations')
-      // console.log(trip_destinations)
-
-      // console.log('before')
-      // console.log(stops)
-
-      // console.log('after')
-      // console.log(destinations)
-      // console.log(newTrip)
-      // if (newTrip.id === '')
-      // else
-      // for (var i = 3; i < 11; i++) {
-      //   if (+e.srcElement[i].value !== 0 ) {
-      //   }
-      // }
-
-      // let idx = stops.indexOf('')
-      // while (idx !== -1) {
-      //   stops.splice(idx, 1)
-      //   idx = stops.indexOf('')
-      // }
-      // {
-
-      // }
-
-      // var desired = stringToReplace.replace(/[^a-z0-9\-]/gi, '')
-    // }
-
     function removeTripById (id) {
       return $http.delete(cfg.urlTrips + '/' + id)
     }
@@ -163,3 +110,55 @@
       //   }
       // }
       // newTrip['destinations'] = destinations
+      // console.log(newTrip)
+      // console.log('Position New Stops')
+      // console.log(posNewStops)
+
+      // console.log('destinationsToCheck')
+      // console.log(destinationsToCheck)
+      // newTrip['destinations'] = checkDestinations(destinationsToCheck)
+
+      // console.log(newTrip.destinations)
+
+      // debugger
+      // let destinations = []
+      // if (newTrip.stops) {
+      //   let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
+      //   if (stops) {
+      //     stops.forEach(stop => {
+      //       if (!(!stop) && destinations.indexOf(stop) < 0) {
+      //         destinations.push(stop)
+      //       }
+      //     })
+      //   }
+      // }
+      // newTrip['destinations'] = destinations
+
+      // let trip_destinations = newTrip.trip_destinations
+      // console.log('old destinations')
+      // console.log(trip_destinations)
+
+      // console.log('before')
+      // console.log(stops)
+
+      // console.log('after')
+      // console.log(destinations)
+      // console.log(newTrip)
+      // if (newTrip.id === '')
+      // else
+      // for (var i = 3; i < 11; i++) {
+      //   if (+e.srcElement[i].value !== 0 ) {
+      //   }
+      // }
+
+      // let idx = stops.indexOf('')
+      // while (idx !== -1) {
+      //   stops.splice(idx, 1)
+      //   idx = stops.indexOf('')
+      // }
+      // {
+
+      // }
+
+      // var desired = stringToReplace.replace(/[^a-z0-9\-]/gi, '')
+    // }

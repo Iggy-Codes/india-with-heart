@@ -21,6 +21,7 @@
     "ekko-lightbox": "^5.1.1",
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
-    "marked": "^0.3.6"
+    "marked": "^0.3.6",
+    "angular-google-maps": "^2.4.1"
   }
 }
