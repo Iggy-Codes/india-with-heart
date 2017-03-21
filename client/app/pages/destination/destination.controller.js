@@ -45,6 +45,22 @@
         })
     }
 
+    vm.removeDestination = (e, id) => {
+      e.preventDefault()
+      if (confirm('Are you sure?')) {
+        adminAppFactory.checkTripDestination(id)
+          .then(result => {
+            if (result) {
+              alert('City in use\n It can NOT be removed')
+                .then($route.reload())
+            } else {
+              adminAppFactory.removeDestinationById(id)
+                  .then($route.reload())
+            }
+          })
+      }
+    }
+
     vm.changeEnterForTab = (e, elementId) => {
       vm.lat = ''
       vm.lng = ''

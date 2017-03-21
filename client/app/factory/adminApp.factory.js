@@ -35,6 +35,11 @@
       return $http.get(cfg.urlTrips + '/' + id)
     }
 
+    function checkTripDestination (id) {
+      return $http.get(cfg.urlTrips + '/checkDestination/' + id)
+        .then(response => response.data.result)
+    }
+
     function newDestination (rawData) {
       const blocks = []
       blocks.push({ title: rawData.tourismTitle, description: rawData.tourismDes, img: rawData.tourismImg, visible: rawData.tourismCheck, section: 'tourism' })
@@ -89,6 +94,10 @@
           // const rawData = { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartMsg, heartImg, heartCheck }
     }
 
+    function removeDestinationById (id) {
+      return $http.delete(cfg.urlDestinations + '/' + id)
+    }
+
     function getImgs () {
       return $http.get(cfg.urlImgs)
     }
@@ -98,9 +107,11 @@
       updateTrip,
       removeTripById,
       getTripById,
+      checkTripDestination,
       newDestination,
       getDestinations,
       getDestinationById,
+      removeDestinationById,
       getImgs
     }
   }
