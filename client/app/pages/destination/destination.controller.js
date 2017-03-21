@@ -8,11 +8,11 @@
     var vm = this
 
     vm.titleForm = 'Alta de Destinación'
+    vm.id = ''
 
     vm.tourismCheck = true
     vm.npoCheck = true
     vm.heartCheck = true
-    vm.cityNameFocus = true
 
     adminAppFactory.getDestinations()
       .then(({data}) => {
@@ -24,14 +24,23 @@
 
     vm.addDestination = (e) => {
       e.preventDefault()
-      console.log(e)
+      const { id, cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck } = vm
+      const rawData = { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck }
+      if (id === '') {
+        adminAppFactory.newDestination(rawData)
+          .then($route.reload())
+      }
+    }
 
-      const { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartMsg, heartImg, heartCheck } = vm
-
-      const rawData = { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartMsg, heartImg, heartCheck }
-
-      adminAppFactory.newDestination(rawData)
-        .then($route.reload())
+    vm.editDestination = (e, id) => {
+      e.preventDefault()
+      console.log(id)
+      adminAppFactory.getDestinationById(id)
+        .then(response => {
+          // const data = response.data
+          // console.log(data)
+          Object.keys(response.data).forEach(key => { vm[key] = response.data[key] })
+        })
     }
 
     vm.changeEnterForTab = (e, elementId) => {
@@ -52,7 +61,6 @@
       if (e.srcElement.value !== '') {
         addressGeocoderFactory.getLocation(vm.cityName)
           .then((response) => {
-            console.log(response)
             vm.lat = +response.location.latitude
             vm.lng = +response.location.longitude
           })

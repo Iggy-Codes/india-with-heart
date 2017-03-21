@@ -3,7 +3,6 @@ const Destination = require(path.join(__base, 'models/Destination'))// eslint-di
 
 module.exports = (req, res) => {
   const { postDestination } = req.body
-  console.log('jajaja')
   console.log(postDestination)
   const newDestination = new Destination(postDestination)
 

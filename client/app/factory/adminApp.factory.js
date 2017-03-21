@@ -50,6 +50,8 @@
         coord,
         blocks
       }
+      console.log(postDestination)
+      console.log('now post petition server')
       return $http.post(cfg.urlDestinations, {postDestination})
     }
 
@@ -57,8 +59,34 @@
       return $http.get(cfg.urlDestinations)
     }
 
+    function getDestinationById (id) {
+      var rawData = {}
+      return $http.get(cfg.urlDestinations + '/' + id)
+        .then(response => {
+          const destination = response.data
+          console.log(destination)
+          rawData['cityName'] = destination.name
+          rawData['lat'] = destination.coord.lat
+          rawData['lng'] = destination.coord.lng
+          destination.blocks.forEach(block => {
+            const titles = [block.section + 'Title', block.section + 'Des', block.section + 'Check', block.section + 'Img']
+            rawData[titles[0]] = block.title
+            rawData[titles[1]] = block.description
+            rawData[titles[2]] = block.visible
+            rawData[titles[3]] = block.img
+          })
+          console.log(rawData)
+          response.data = rawData
+          console.log(response)
+          // const promise = new Promise((resolve, reject) => resolve(rawData))
+          // console.log(promise)
+          return response
+        })
+
+          // const rawData = { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartMsg, heartImg, heartCheck }
+    }
+
     function getImgs () {
-      console.log(cfg.urlImgs)
       return $http.get(cfg.urlImgs)
     }
     return {
@@ -69,6 +97,7 @@
       getTripById,
       newDestination,
       getDestinations,
+      getDestinationById,
       getImgs
     }
   }
