@@ -2,8 +2,9 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 
-const routerApi = require('./routes/api')
-const routerRoot = require('./routes/root')
+const routesApi = require('./routes/api')
+const routesRoot = require('./routes/root')
+const routesAuth = require('./routes/auth')
 
 const app = express()
 
@@ -15,8 +16,9 @@ app.set('views', (path.join(__dirname, 'views')))
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/api', routerApi)
+app.use('/api', routesApi)
 app.use('/admin', express.static(path.join(__dirname, '../client')))
-app.use('/', routerRoot)
+app.use('/', routesRoot)
+app.use('/auth', routesAuth)
 
 module.exports = app

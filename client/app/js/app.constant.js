@@ -5,6 +5,7 @@
     .constant('cfg', {
       urlDestinations: '/api/destination',
       urlTrips: '/api/trip',
-      urlImgs: '/api/img'
+      urlImgs: '/api/img',
+      urlAuth: '/auth/login'
     })
 })()

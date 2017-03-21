@@ -1,0 +1,33 @@
+<form class="form-horizontal" ng-submit="vm.login()">
+<fieldset>
+
+<!-- Form Name -->
+<!-- <legend>Form Name</legend> -->
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Login">Login</label>  
+  <div class="col-md-4">
+  <input id="Login" ng-model="vm.username" type="text" placeholder="" class="form-control input-md">
+  <span class="help-block">Enter login</span>  
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="passwordinput">Password</label>
+  <div class="col-md-4">
+    <input id="passwordinput" ng-model="vm.password" type="password" placeholder="" class="form-control input-md">
+    <span class="help-block">Enter password</span>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="buttonLogin"></label>
+  <div class="col-md-8">
+    <button id="buttonLogin" name="buttonLogin" class="btn btn-success" ng-click="vm.login()">Login</button>
+  </div>
+</div>
+
+</form>
