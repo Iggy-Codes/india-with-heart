@@ -23,6 +23,7 @@ angular
     function logout () {
       delete $rootScope.loggedUser
       StorageFactory.removeToken()
+      $rootScope.$broadcast('eventLogin', false)
     }
 
     function isLoggedIn () {
@@ -35,6 +36,7 @@ angular
     function setCredentials (token) {
       var tokenPayload = jwtHelper.decodeToken(token)
       $rootScope.loggedUser = tokenPayload
+      $rootScope.$broadcast('eventLogin', true)
     }
 
     return { login, logout, isLoggedIn, setCredentials }

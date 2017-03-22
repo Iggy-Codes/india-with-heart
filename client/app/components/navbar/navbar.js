@@ -9,13 +9,17 @@
   })
   .controller('NavbarController', NavbarController)
 
-  function NavbarController ($scope) {
+  function NavbarController ($scope, $rootScope, $location, AuthFactory) {
     const vm = this
     vm.textButton = 'Logout'
-
+    vm.loggedUser = !(!$rootScope.loggedUser)
     vm.logout = (e) => {
       e.preventDefault()
-      alert('hola')
+      AuthFactory.logout()
+      $location.path('/')
     }
+    $scope.$on('eventLogin', (event, data) => {
+      vm.loggedUser = data
+    })
   }
 })()

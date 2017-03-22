@@ -11,12 +11,12 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="/admin/">Viajes</a></li>
-        <li><a href="/admin/#!/destination">Destinaciones</a></li>
+        <li><a href="/admin/"  ng-show="vm.loggedUser">Viajes</a></li>
+        <li><a href="/admin/#!/destination" ng-show="vm.loggedUser">Destinaciones</a></li>
       </ul>
-      <div class="navbar-right">
-            <a href="#" ng-show="!loggedUser" class="btn btn-danger" ng-click="vm.logout($event)">{{ vm.textButton }}</button>
-      </div>
+      <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" ng-show="vm.loggedUser" class="btn btn-danger" ng-click="vm.logout($event)">{{ vm.textButton }}</a></li>
+      </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->
 </nav>
