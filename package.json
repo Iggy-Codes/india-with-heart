@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/Iggy-Codes/india-with-heart#readme",
   "dependencies": {
-    "_User": "./server/models/User",
     "body-parser": "^1.17.1",
     "bower": "^1.8.0",
     "dotenv": "^4.0.0",
@@ -32,6 +31,7 @@
     "fs-readdir-recursive": "^1.0.0",
     "marked": "^0.3.6",
     "mongoose": "^4.9.0",
+    "nodemailer": "^3.1.8",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "passport-local-mongoose": "^4.0.0",
