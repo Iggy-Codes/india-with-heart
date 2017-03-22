@@ -22,7 +22,7 @@
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
     "marked": "^0.3.6",
-    "angular-google-maps": "^2.4.1",
-    "angular-jwt": "^0.1.9"
+    "angular-jwt": "^0.1.9",
+    "lodash": "^4.17.4"
   }
 }
