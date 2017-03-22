@@ -10,7 +10,7 @@
     "prestart": "npm install",
     "dev": "nodemon index",
     "postinstall": "./node_modules/bower/bin/bower install",
-    "start": "node app"
+    "start": "node index"
   },
   "repository": {
     "type": "git",
