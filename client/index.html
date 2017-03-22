@@ -6,8 +6,9 @@
 
   </head>
   <body>
-    <header ng-include src="'/admin/app/pages/header/header.tpl.html'">
-    </header>
+<!--     <header ng-include src="'/admin/app/pages/header/header.tpl.html'">
+    </header> -->
+    <nav-bar></nav-bar>
     <h1> {{ 5 + 6 }} </h1>
     <main ng-view></main>
     <script src="/bower_components/angular/angular.min.js"></script>
@@ -17,6 +18,10 @@
     <script src="/bower_components/lodash/vendor/underscore/underscore-min.js"></script>
     <script src="/bower_components/lodash/dist/lodash.min.js"></script>
     <script src="app/js/angular-google-maps.min.js"></script>
+
+    <script src="/admin/app/components/index.js"></script>
+    <script src="/admin/app/components/navbar/navbar.js"></script>
+
     <script src="/admin/app/js/app.module.js"></script>
     <script src="/admin/app/js/app.constant.js"></script>
     <script src="/admin/app/js/app.config.js"></script>
@@ -26,6 +31,7 @@
     <script src="/admin/app/js/services/geocoder.factory.js"></script>
     <script src="/admin/app/js/services/api.factory.js"></script>
     <script src="/admin/app/js/interceptors/AuthInterceptor.js"></script>
+
     <script src="/admin/app/pages/trip/trip.controller.js"></script>
     <script src="/admin/app/pages/destination/destination.controller.js"></script>
     <script src="/admin/app/pages/login/login.controller.js"></script>

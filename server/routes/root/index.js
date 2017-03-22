@@ -13,6 +13,11 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
+router.get('/contact', (req, res) => {
+  res.render('contact-form')
+})
+
 router.get('/trip/:tripUri/:city', routerDetailTrip)
 router.get('/trips', routerTrips)
+
 module.exports = router

@@ -2,7 +2,8 @@
 angular.module('adminApp', [
   'ngRoute',
   'google-maps',
-  'angular-jwt'
+  'angular-jwt',
+  'components'
   // ,
   // 'ngResource'
 ])

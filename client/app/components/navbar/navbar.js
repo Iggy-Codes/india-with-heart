@@ -1,8 +1,14 @@
 /* eslint no-undef: "off" */
 (function () {
   angular
-  .module('adminApp')
+  .module('components')
+  .component('navBar', {
+    templateUrl: 'app/components/navbar/navbar.html',
+    controller: 'NavbarController',
+    controllerAs: 'vm'
+  })
   .controller('NavbarController', NavbarController)
+
   function NavbarController ($scope) {
     const vm = this
     vm.textButton = 'Logout'

@@ -15,7 +15,7 @@
         <li><a href="/admin/#!/destination">Destinaciones</a></li>
       </ul>
       <div class="navbar-right">
-            <a href="#" ng-show="!loggedUser" class="btn btn-danger" ng-click="logout()">{{ vm.textButton }}</button>
+            <a href="#" ng-show="!loggedUser" class="btn btn-danger" ng-click="vm.logout($event)">{{ vm.textButton }}</button>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->
