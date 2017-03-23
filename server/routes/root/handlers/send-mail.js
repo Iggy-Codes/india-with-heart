@@ -26,11 +26,13 @@ module.exports = (req, res) => {
     let result = true
     if (error) {
       result = false
+      res.json({error})
       // const formValues = Object.assign(name, email, phone, message)
+    } else {
+      console.log('Message sent')
+      res.render('contact-result', {result})
     }
     // console.log('Message %s sent: %s', info.messageId, info.response)
-    console.log('Message sent')
-    res.render('contact-result', {result})
   })
 
   // res.send('hola')
