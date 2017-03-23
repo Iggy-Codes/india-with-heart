@@ -4,7 +4,7 @@
   .module('adminApp')
   .controller('DestinationController', DestinationController)
 
-  function DestinationController (adminAppFactory, $rootScope, $route, addressGeocoderFactory, $window) {
+  function DestinationController (adminAppFactory, $rootScope, $route, addressGeoFactory, $window) {
     var vm = this
 
     vm.titleForm = 'Alta de Destinación'
@@ -72,17 +72,20 @@
 
     vm.lookGoogleMaps = (e) => {
       if (e.srcElement.value !== '') {
-        addressGeocoderFactory.getLocation(vm.cityName)
+        addressGeoFactory.getCoordinates(vm.cityName)
           .then((response) => {
-            vm.lat = +response.location.latitude
-            vm.lng = +response.location.longitude
-          })
-          .catch(reason => {
-            alert('Ciudad no encontrada.')
-            vm.lat = ''
-            vm.lng = ''
-            vm.cityName = ''
-            vm.setFocus('cityName')
+            console.log(response)
+            debugger
+            if (response.lat === 0 && response.lng === 0) {
+              alert('Ciudad no encontrada.')
+              vm.lat = ''
+              vm.lng = ''
+              vm.cityName = ''
+              vm.setFocus('cityName')
+            } else {
+              vm.lat = +response.lat
+              vm.lng = +response.lng
+            }
           })
       }
     }

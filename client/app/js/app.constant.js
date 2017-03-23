@@ -6,6 +6,7 @@
       urlDestinations: '/api/destination',
       urlTrips: '/api/trip',
       urlImgs: '/api/img',
-      urlAuth: '/auth/login'
+      urlAuth: '/auth/login',
+      urlGeocoding: 'https://maps.google.com/maps/api/geocode/json?address='
     })
 })()
