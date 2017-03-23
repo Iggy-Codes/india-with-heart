@@ -75,7 +75,7 @@
         addressGeoFactory.getCoordinates(vm.cityName)
           .then((response) => {
             console.log(response)
-            debugger
+            // debugger
             if (response.lat === 0 && response.lng === 0) {
               alert('Ciudad no encontrada.')
               vm.lat = ''
