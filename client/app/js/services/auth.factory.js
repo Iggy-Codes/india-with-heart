@@ -7,8 +7,6 @@ angular
       return $http.post(cfg.urlAuth, credentials)
         .then(response => response.data.token)
         .then(token => {
-          console.log('token')
-          console.log(token)
           StorageFactory.saveToken(token)
           return token
         })
