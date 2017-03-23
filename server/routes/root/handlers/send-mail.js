@@ -14,19 +14,21 @@ module.exports = (req, res) => {
     from: process.env.MAIL_GOOGLE_USER,
     to: process.env.MAIL_GOOGLE_USER,
     subject: 'Nuevo contacto web',
-    text: `Nuevo contacto\nNombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`
-    // html: `<h2>Nuevo contacto WEB</h2>
-    //     <table>
-    //       <tr><th>Nombre:</th><th>Email:</th><th>Teléfono:</th></tr>
-    //       <tr><td><h3>${name}</h3></td><td><h3>${email}</td></h3><td><h3>${phone}</h3></td></tr>
-    //       <tr><td colspan="3"><h3>${message}</td></tr>
-    //     </table>`
+    text: `Nuevo contacto\nNombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`,
+    html: `<h2>Nuevo contacto WEB</h2>
+        <table>
+          <tr><th>Nombre:</th><th>Email:</th><th>Teléfono:</th></tr>
+          <tr><td><h3>${name}</h3></td><td><h3>${email}</td></h3><td><h3>${phone}</h3></td></tr>
+          <tr><td colspan="3"><h3>${message}</td></tr>
+        </table>`
   }
   transporter.sendMail(mailOptions, (error, info) => {
     let result = true
     if (error) {
       result = false
-      res.json({error})
+      const user = process.env.MAIL_GOOGLE_USER
+      const pass = process.env.MAIL_GOOGLE_PASS
+      res.json({error, user, pass})
       // const formValues = Object.assign(name, email, phone, message)
     } else {
       console.log('Message sent')
