@@ -2,38 +2,33 @@ extends layout.pug
 //- block stylesheet
 //-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
 block content
-  .container
-    .row
-      .col-md-12
-        .well.well-sm
-          form.form-horizontal(method='post')
-            fieldset
-              legend.text-center.header Contact us
-              .form-group
-                span.col-md-1.col-md-offset-2.text-center
-                  i.fa.fa-user.bigicon
-                .col-md-8
-                  input#fname.form-control(name='name', type='text', placeholder='First Name')
-              .form-group
-                span.col-md-1.col-md-offset-2.text-center
-                  i.fa.fa-user.bigicon
-                .col-md-8
-                  input#lname.form-control(name='name', type='text', placeholder='Last Name')
-              .form-group
-                span.col-md-1.col-md-offset-2.text-center
-                  i.fa.fa-envelope-o.bigicon
-                .col-md-8
-                  input#email.form-control(name='email', type='text', placeholder='Email Address')
-              .form-group
-                span.col-md-1.col-md-offset-2.text-center
-                  i.fa.fa-phone-square.bigicon
-                .col-md-8
-                  input#phone.form-control(name='phone', type='text', placeholder='Phone')
-              .form-group
-                span.col-md-1.col-md-offset-2.text-center
-                  i.fa.fa-pencil-square-o.bigicon
-                .col-md-8
-                  textarea#message.form-control(name='message', placeholder='Enter your massage for us here. We will get back to you within 2 business days.', rows='7')
-              .form-group
-                .col-md-12.text-center
-                  button.btn.btn-primary.btn-lg(type='submit') Submit
+  .row
+    //- .container
+    .col-md-12
+      .well.well-sm
+        form.form-horizontal(method='POST',action='/sendMail')
+          fieldset
+            legend.text-center.header Contact us
+            .form-group
+              span.col-md-1.col-md-offset-2.text-center
+                i.fa.fa-user.bigicon
+              .col-md-8
+                input#fname.form-control(name='name', type='text', placeholder='Nombre', required)
+            .form-group
+              span.col-md-1.col-md-offset-2.text-center
+                i.fa.fa-envelope-o.bigicon
+              .col-md-8
+                input#email.form-control(name='email', type='text', placeholder='Email', required)
+            .form-group
+              span.col-md-1.col-md-offset-2.text-center
+                i.fa.fa-phone-square.bigicon
+              .col-md-8
+                input#phone.form-control(name='phone', type='text', placeholder='Phone')
+            .form-group
+              span.col-md-1.col-md-offset-2.text-center
+                i.fa.fa-pencil-square-o.bigicon
+              .col-md-8
+                textarea#message.form-control(name='message', placeholder='Nos gustaría saber la razón de tu interés por India Con Corazón. Muchas gracias por tu mensaje', rows='7')
+            .form-group
+              .col-md-12.text-center
+                button.btn.btn-primary.btn-lg(type='submit') Enviar
