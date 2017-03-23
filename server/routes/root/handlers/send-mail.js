@@ -11,8 +11,8 @@ module.exports = (req, res) => {
     }
   })
   const mailOptions = {
-    from: '"Web" <indiaconcorazaon@gmail.com>',
-    to: '"Web" <indiaconcorazaon@gmail.com>',
+    from: process.env.MAIL_GOOGLE_USER,
+    to: process.env.MAIL_GOOGLE_USER,
     subject: 'Nuevo contacto web',
     text: `Nuevo contacto\nNombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`,
     html: `<h2>Nuevo contacto WEB</h2>
