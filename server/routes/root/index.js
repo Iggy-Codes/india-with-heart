@@ -3,7 +3,7 @@ const router = express.Router()
 
 const routerTrips = require('./handlers/trips')
 const routerDetailTrip = require('./handlers/detail-trip')
-const sendMail = require('./handlers/sendMail')
+const sendMail = require('./handlers/send-mail')
 
 router.get('/trip/:trip', (req, res, next) => {
   res.redirect('/trip/' + req.params.trip + '/_')

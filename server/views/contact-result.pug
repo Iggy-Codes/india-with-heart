@@ -1,0 +1,13 @@
+extends layout.pug
+//- block stylesheet
+//-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
+block content
+  .row.contact
+    .contact-dark
+      .col-sm-8.col-sm-offset-2.contact-content
+        .container
+          .well.well-sm
+            if (result)
+              <h2>Hemos recibido tu mensaje</h2>
+            else
+              <h2>Se ha producido un error</h2>
