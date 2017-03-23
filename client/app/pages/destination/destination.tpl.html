@@ -1,70 +1,72 @@
 <div class="container">
-  <div class="row">
-    <h2 class="text-center">{{ vm.titleForm }}</h2>
-    <form class="row" action="/api/destination" method="post" ng-submit="vm.addDestination($event)">
-        <div class="col-sm-4">
-            <div class="form-group">
-                <label for="cityName ">Ciudad</label>
-                <input type="text" class="form-control" id="cityName" ng-model="vm.cityName" placeholder="Nombre de la ciudad" ng-blur="vm.lookGoogleMaps($event)" ng-keydown="vm.changeEnterForTab($event,'tourismTitle')" required/>
-            </div> 
-            <div>
-                <h4>Coordenadas</h4>
-                <div class="form-group">
-                    <label for="lat">Latitud</label>
-                    <input ng-model="vm.lat" id="lat" type='number' step='0.001' value='0.000' placeholder='0.000' required readonly />
-                </div>
-                <div class="form-group">
-                    <label for="lng">Longitud</label>
-                    <input ng-model="vm.lng" id="lng" type='number' step='0.001' value='0.000' placeholder='0.000' required readonly />
-                </div>
-            </div>
+  <form class="row" action="/api/destination" method="post" ng-submit="vm.addDestination($event)">
+    <div class="row">
+      <h2 class="text-center">{{ vm.titleForm }}</h2>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="cityName ">Ciudad</label>
+          <input type="text" class="form-control" id="cityName" ng-model="vm.cityName" placeholder="Nombre de la ciudad" ng-blur="vm.lookGoogleMaps($event)" ng-keydown="vm.changeEnterForTab($event,'tourismTitle')" required/>
         </div>
-        <div class="col-sm-8">
-<!--             <ng-map id="map" center=("[" + vm.lat + ", " + vm.lng + "]")></ng-map> -->
+        <h4>Coordenadas</h4>
+        <div class="form-group">
+          <label for="lat">Latitud</label>
+          <input ng-model="vm.lat" id="lat" type='number' step='0.001' value='0.000' placeholder='0.000' required readonly />
+        </div>
+        <div class="form-group">
+          <label for="lng">Longitud</label>
+          <input ng-model="vm.lng" id="lng" type='number' step='0.001' value='0.000' placeholder='0.000' required readonly />
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <ng-map id="map" default-style="false" center="[ {{ vm.lat }}, {{ vm.lng }} ]" zoom="6">
+          <marker animation="DROP" position="{{vm.lat}}, {{vm.lng}}" on-click="map.showInfoWindow('info{{$index}}')"></marker>
+        </ng-map>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <h4>Turismo</h4>
+        <div class="form-group">
+            <label for="tourismTitle">Titulo</label>
+            <input type="text" class="form-control" id="tourismTitle" ng-model="vm.tourismTitle" placeholder="Título turismo" ng-keydown="vm.changeEnterForTab($event,'tourismDes')" />
+        </div>
+        <div class="form-group">
+            <label for="tourismDes">Descripción</label>
+            <textarea class="form-control" id="tourismDes" ng-model="vm.tourismDes" rows="4" placeholder="Descripción del turismo "></textarea>
+        </div>
+        <div class="form-group">
+              <label for="tourismImg">Imagen</label>
+              <select id="tourismImg" data-ng-model="vm.tourismImg" data-ng-options="img for img in vm.imgs">
+                  <option value="" selected>Selecciona una foto</option>
+              </select>
+          </div>
+          <div class="checkbox">
+            <label>
+                  <input type="checkbox" ng-model="vm.tourismCheck"> Sección Visible
+            </label>
+          </div>
         </div>
         <div class="col-sm-6 col-md-4">
-            <h4>Turismo</h4>
-            <div class="form-group">
-                <label for="tourismTitle">Titulo</label>
-                <input type="text" class="form-control" id="tourismTitle" ng-model="vm.tourismTitle" placeholder="Título turismo" ng-keydown="vm.changeEnterForTab($event,'tourismDes')"  />
-            </div>
-            <div class="form-group">
-                <label for="tourismDes">Descripción</label>
-                <textarea class="form-control" id="tourismDes" ng-model="vm.tourismDes" placeholder="Descripción del turismo "></textarea>
-            </div>
-            <div class="form-group">
-                <label for="tourismImg">Imagen</label>
-                <select id="tourismImg" data-ng-model="vm.tourismImg" data-ng-options="img for img in vm.imgs">
-                    <option value="" selected>Selecciona una foto</option>
-                </select>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" ng-model="vm.tourismCheck" > Sección Visible
-                </label>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <h4>ONG Locales</h4>
-            <div class="form-group">
-                <label for="npoTitle">Titulo</label>
-                <input type="text " class="form-control" id="npoTitle" ng-model="vm.npoTitle" placeholder="Título ONG" ng-keydown="vm.changeEnterForTab($event,'npoDes')" />
-            </div>
-            <div class="form-group">
-                <label for="npoDes">Descripción</label>
-                <textarea class="form-control" id="npoDes" ng-model="vm.npoDes" placeholder="Descripción de las ONG"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="npoImg">Imagen</label>
-                <select id="npoImg" data-ng-model="vm.npoImg" data-ng-options="img for img in vm.imgs">
-                    <option value="" selected>Selecciona una foto</option>
-                </select>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" ng-model="vm.npoCheck"> Visible
-                </label>
-            </div>
+          <h4>ONG Locales</h4>
+          <div class="form-group">
+              <label for="npoTitle">Titulo</label>
+              <input type="text " class="form-control" id="npoTitle" ng-model="vm.npoTitle" placeholder="Título ONG" ng-keydown="vm.changeEnterForTab($event,'npoDes')" />
+          </div>
+          <div class="form-group">
+              <label for="npoDes">Descripción</label>
+              <textarea class="form-control" id="npoDes" ng-model="vm.npoDes" rows="4" placeholder="Descripción de las ONG"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="npoImg">Imagen</label>
+              <select id="npoImg" data-ng-model="vm.npoImg" data-ng-options="img for img in vm.imgs">
+                  <option value="" selected>Selecciona una foto</option>
+              </select>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" ng-model="vm.npoCheck"> Visible
+              </label>
+          </div>
         </div>
         <div class="col-sm-6 col-md-4">
             <h4>Latidos</h4>
@@ -74,7 +76,7 @@
             </div>
             <div class="form-group">
                 <label for="heartMsg">Mensaje</label>
-                <textarea class="form-control" id="heart" ng-model="vm.heartDes" placeholder="Descripción del turismo"></textarea>
+                <textarea class="form-control" id="heart" ng-model="vm.heartDes" rows="4" placeholder="Descripción del turismo"></textarea>
             </div>
             <div class="form-group">
                 <label for="heartImg">Imagen</label>
@@ -88,32 +90,29 @@
                 </label>
             </div>
         </div>
-        <!--     <div class="form-group">
-        <label for="exampleInputFile ">File input</label>
-        <input type="file " id="exampleInputFile ">
-        <p class="help-block ">Example block-level help text here.</p>
-    </div> -->
+      </div>
+      <div class="row">
         <div class="text-center">
             <input type="hidden" ng-model="vm.id">
             <button type="submit " class="btn btn-default">Submit</button>
         </div>
-    </form>
-  </div>  
-  <div class="row">
-    <h1 class="text-center">Destinaciones disponibles</h1>
-    <ul>
-      <li ng-repeat="destination in vm.destinations">
-        {{destination.name}}
-        <a href="#" class="btn btn-primary btn-xs" ng-click="vm.editDestination($event, destination._id)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-        <a href="#" class="btn btn-danger btn-xs" ng-click="vm.removeDestination($event, destination._id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-      </li>
-      <li ng-show="vm.destinations.length==0">No hay ciudades disponibles</li>
-    </ul>
-  </div>
+    </div>
+    <div class="row">
+      <h1 class="text-center">Destinaciones disponibles</h1>
+      <ul>
+          <li ng-repeat="destination in vm.destinations">
+              {{destination.name}}
+              <a href="#" class="btn btn-primary btn-xs" ng-click="vm.editDestination($event, destination._id)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+              <a href="#" class="btn btn-danger btn-xs" ng-click="vm.removeDestination($event, destination._id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+          </li>
+          <li ng-show="vm.destinations.length==0">No hay ciudades disponibles</li>
+      </ul>
+    </div>
+  </form>
 </div>
-<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQReRbAJO4XaWQz1EsWlg1rRfcZJSArkQ&callback=initMap"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQReRbAJO4XaWQz1EsWlg1rRfcZJSArkQ&callback=initMap"></script>
  -->
-<!-- 
+    <!-- 
   blocks: [{
     title: String,
     description: String,
@@ -122,3 +121,8 @@
     category: String
   }],
   photo: [{ url: String, des: String  -->
+            <!--     <div class="form-group">
+    <label for="exampleInputFile ">File input</label>
+    <input type="file " id="exampleInputFile ">
+    <p class="help-block ">Example block-level help text here.</p>
+</div> -->
