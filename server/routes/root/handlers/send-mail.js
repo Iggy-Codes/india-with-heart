@@ -28,7 +28,8 @@ module.exports = (req, res) => {
       result = false
       // const formValues = Object.assign(name, email, phone, message)
     }
-    console.log('Message %s sent: %s', info.messageId, info.response)
+    // console.log('Message %s sent: %s', info.messageId, info.response)
+    console.log('Message sent')
     res.render('contact-result', {result})
   })
 
