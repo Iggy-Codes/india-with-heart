@@ -35,7 +35,7 @@ You will need a ```.env``` files containing
 SECRET=XXXXXXXXXXXX (seed for your web token)
 API_GOOGLE_MAPS=XXXXXXXXXXX (your Google Maps API Key)
 PORT=XXXX (Port where the server will listen petitions)
-MAIL_GOOGLE_USER=XXXXXXXXXX (mail of your Gmail account)
+MAIL_GOOGLE_USER=XXXXXXXXXX ( mail of your Gmail account)
 MAIL_GOOGLE_PASS=XXXXXXXXXX (password of your Gmail account)
 ```
 ## Parts
@@ -54,11 +54,12 @@ At ```server/``` the project will give the information of the organization, trip
 
 ## Coding Style
 
-All the code has been developed under the [JavaScript Standard Style](http://standardjs.com/)
+All the code has been developed under the [JavaScript Standard Style](http://standardjs.com/)   
+[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ## Built With
 
-* [SublimeText](http://https://https:/npmdejs.org/www.sublimetext.com) - Text editohttps://www.mongodb.com/r
+* [SublimeText](http://https://https:/npmdejs.org/www.sublimetext.com) - Text editor
 
 ## Authors
 
