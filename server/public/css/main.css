@@ -13492,6 +13492,30 @@ body {
   font-size: 2rem;
 }
 
+/* line 225, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+.trip-xs {
+  padding-bottom: 5px;
+  font-size: 2rem;
+  padding-right: 2rem;
+}
+
+/* line 229, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+.trip-xs ul {
+  padding-bottom: 5px;
+}
+
+/* line 231, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+.trip-xs li {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  /* line 236, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  .trip-list li {
+    padding-bottom: 5px;
+  }
+}
+
 /* line 1, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
 .contact {
   padding: 50px 0px 0px 0px;

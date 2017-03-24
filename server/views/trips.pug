@@ -1,23 +1,12 @@
 extends layout.pug
-//- block stylesheet
-//-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
 block content
-  //- var marked = require('marked');
-  //- #myModal.modal.fade
-  //-   .modal-dialog
-  //-     .modal-content
-  //-       .modal-header
-  //-         .pull-left My Gallery Title
-  //-         |  
-  //-         button.close(type='button', data-dismiss='modal', title='Close')
-  //-           span.glyphicon.glyphicon-remove
   main.row.trip-block
     .container
       h1.space-before-block.space-after-block.text-center Viajes a la india
       ul.trip-list
         each trip, i in atrips
           li 
-            h2
+            h2.text-center
               a(href="/trip/" + trip.titleUri + "/_")!= marked(trip.title)
             p!= marked(trip.description)
             nav.row.hidden-xs  
@@ -28,6 +17,11 @@ block content
                     button.btn.btn-default.btn-circle(type='button', disabled='disabled')
                     p 
                       a(href="/trip/" + trip.titleUri+'/'+destination.name)=destination.name
+            ul.row.visible-xs.list-unstyled.text-right.trip-xs
+              each destination in trip.destinations
+                li
+                  a(href="/trip/" + trip.titleUri+'/'+destination.name)=destination.name
+
     .row.objective-section
       .container
         span Nosotros te diseñamos tu viaje
