@@ -4,10 +4,6 @@ const Destination = require(path.join(__base, 'models/Destination')) // eslint-d
 module.exports = (req, res) => {
   const { id } = req.params
   const { postDestination } = req.body
-  // const newDestination = new Destination(postDestination)
-  console.log('before update')
-  console.log(postDestination)
-  console.log(id)
   Destination
     .findByIdAndUpdate(id, postDestination)
     .then(response => {

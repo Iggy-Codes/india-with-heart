@@ -7,8 +7,6 @@ module.exports = (req, res) => {
     .findById(id)
     .populate('destinations')
     .then(destination => {
-      console.log('server side')
-      console.log(destination)
       res.status(200).json(destination)
     })
     .catch(err => res.status(500).json(err))

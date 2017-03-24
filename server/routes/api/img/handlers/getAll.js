@@ -6,7 +6,6 @@ module.exports = (req, res) => {
     let { folder } = req.params
     folder = !folder ? 'trip' : folder
     const folderImg = path.join(__base, 'public/img/' + folder)// eslint-disable-line no-undef
-    console.log(folderImg)
     const files = read(folderImg)
     res.status(200).json({files})
   } catch (err) {

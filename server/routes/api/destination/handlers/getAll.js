@@ -6,6 +6,5 @@ module.exports = (req, res) => {
     .find()
     .sort({ name: 1 })
     .then(tasks => res.json(tasks))
-    // .then(tasks => res.json({tasks}))
     .catch(err => { throw err })
 }

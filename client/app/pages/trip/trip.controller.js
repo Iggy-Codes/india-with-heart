@@ -24,7 +24,7 @@
 
     vm.editTrip = (e, id) => {
       e.preventDefault()
-      trip.getTripById(id)
+      TripFactory.getTripById(id)
         .then((response) => {
           const trip = response.data
           vm.titleForm = 'Modificación de: ' + trip.title
