@@ -26,10 +26,18 @@ You need to have installed [NodeJS](https://nodejs.org/) with [npm](https://www.
 
 To run the server: 
 ```
-API_GOOGLE_MAPS= XXXXX npm start
+XXXXX npm start
 ```
 All dependencies will be installed automatically
 
+You will need a ```.env``` files containing
+```
+SECRET=XXXXXXXXXXXX (seed for your web token)
+API_GOOGLE_MAPS=XXXXXXXXXXX (your Google Maps API Key)
+PORT=XXXX (Port where the server will listen petitions)
+MAIL_GOOGLE_USER=XXXXXXXXXX (mail of your Gmail account)
+MAIL_GOOGLE_PASS=XXXXXXXXXX (password of your Gmail account)
+```
 ## Parts
 
 #### 1. Restfull API
