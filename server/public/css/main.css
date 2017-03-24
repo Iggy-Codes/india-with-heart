@@ -13220,22 +13220,22 @@ body {
   text-shadow: 2px 2px gray;
 }
 
-/* line 27, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 21, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .right-map {
   background-color: lightblue;
 }
 
-/* line 31, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 25, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .stepwizard-step p {
   margin-top: 10px;
 }
 
-/* line 34, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 28, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-row {
   display: table-row;
 }
 
-/* line 36, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 30, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip {
   display: table;
   width: 100%;
@@ -13243,13 +13243,13 @@ body {
   margin-top: 20px;
 }
 
-/* line 41, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 35, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-step button[disabled] {
   opacity: 1 !important;
   filter: alpha(opacity=100) !important;
 }
 
-/* line 44, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 38, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-row:before {
   top: 12px;
   bottom: 0;
@@ -13261,7 +13261,7 @@ body {
   z-order: 0;
 }
 
-/* line 55, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 49, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-step {
   display: table-cell;
   text-align: center;
@@ -13269,19 +13269,19 @@ body {
   color: #347370;
 }
 
-/* line 60, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 54, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-step p {
   margin-top: -55px;
   color: #347370;
   font-size: 20px;
 }
 
-/* line 65, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 59, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-step p a {
   color: #347370;
 }
 
-/* line 67, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 61, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .btn-circle {
   width: 24px;
   height: 24px;
@@ -13292,12 +13292,12 @@ body {
   border-width: 2px;
 }
 
-/* line 78, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 72, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .btn-bullet {
   background-color: #347370;
 }
 
-/* line 81, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 75, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 #map {
   height: 300px;
   width: 100%;
@@ -13306,7 +13306,7 @@ body {
   margin-top: 40px;
 }
 
-/* line 105, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 97, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .myThumbnails ul {
   list-style: none;
   display: flex;
@@ -13318,19 +13318,19 @@ body {
   padding: 0;
 }
 
-/* line 114, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 106, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .myThumbnails ul img {
   height: 150px;
 }
 
-/* line 117, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 109, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .cover-container {
   height: 180px;
   width: 100%;
   overflow-x: scroll;
 }
 
-/* line 122, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 114, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .cover-item {
   position: relative;
   float: left;
@@ -13345,112 +13345,72 @@ body {
   background-size: cover;
 }
 
-/* line 135, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 127, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block {
   background-color: #FAEDC3;
 }
 
-/* line 138, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 130, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block h1, .trip-block h2, .trip-block h3, .trip-block h4, .trip-block h5, .trip-block h6 {
   color: #347370;
   width: 100%;
 }
 
-/* line 141, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 133, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block h1 {
   text-shadow: 1px 1px gray;
   font-size: 8rem;
 }
 
-/* line 145, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 137, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block h3 {
   margin-top: 0px;
 }
 
-/* line 147, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 139, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block h3 :nth-of-type(0) {
   padding-top: 65px;
 }
 
-/* line 149, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 141, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block p {
   font-size: 2rem;
 }
 
-/* line 151, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 143, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block i {
   display: none;
 }
 
-/* line 154, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
-.trip-block .btn-facebook {
-  font-size: 2rem;
-  color: #ffffff;
-  -webkit-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #2b4b90;
-  *background-color: #133783;
-  background-image: -moz-linear-gradient(top, #3b5998, #133783);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b5998), to(#133783));
-  background-image: -webkit-linear-gradient(top, #3b5998, #133783);
-  background-image: -o-linear-gradient(top, #3b5998, #133783);
-  background-image: linear-gradient(to bottom, #3b5998, #133783);
-  background-repeat: repeat-x;
-  border-color: #133783 #133783 #091b40;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff133783', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-
-/* line 171, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
-.trip-block .btn-facebook:hover, .trip-block .btn-facebook:focus, .trip-block .btn-facebook:active, .trip-block .btn-facebook.active, .trip-block .btn-facebook.disabled, .trip-block .btn-facebook[disabled] {
-  color: #ffffff;
-  background-color: #133783 !important;
-  *background-color: #102e6d !important;
-}
-
-/* line 175, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
-.trip-block .btn-facebook:active, .trip-block .btn-facebook.active {
-  background-color: #0d2456 \9  !important;
-}
-
-/* line 178, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
-.trip-block .btn-experience {
-  border-color: #306149;
-  background-color: #439061;
-  color: white;
-  font-size: 2rem;
-}
-
-/* line 185, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 148, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block .block-experience {
   font-family: "Kalam", Georgia, Serif;
 }
 
-/* line 188, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 151, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block .trip-photo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* line 193, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 157, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block .city-explanation, .trip-block .city-activities {
   margin-bottom: 4rem;
 }
 
-/* line 196, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 160, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block .space-before-block {
   margin-top: 65px;
 }
 
-/* line 199, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 163, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-block .space-after-block {
   margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
-  /* line 203, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  /* line 167, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
   .trip-title {
     width: 100%;
     display: flex;
@@ -13458,13 +13418,13 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-  /* line 209, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  /* line 173, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
   .trip-title i {
     display: inline-block !important;
     font-size: 5rem;
     color: #347370;
   }
-  /* line 213, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  /* line 177, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
   .trip-title h1 {
     max-width: 85%;
     font-size: 5rem;
@@ -13472,18 +13432,18 @@ body {
 }
 
 @media (max-width: 992px) {
-  /* line 219, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  /* line 183, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
   .trip-row {
     margin-top: -30px;
     margin-bottom: 20px;
     display: block;
     width: 100%;
   }
-  /* line 225, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  /* line 189, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
   .trip-block input:first-of-type {
     margin-bottom: 30px;
   }
-  /* line 228, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  /* line 192, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
   .myThumbnails ul {
     list-style: none;
     display: flex;
@@ -13493,22 +13453,43 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
   }
-  /* line 240, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+  /* line 204, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
   .myThumbnails ul img {
     width: 285px;
   }
 }
 
-/* line 243, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 207, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-list {
   text-decoration: none;
   padding-left: 0px;
   list-style: none;
 }
 
-/* line 247, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+/* line 211, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
 .trip-list li {
   padding-bottom: 3rem;
+}
+
+/* line 214, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+.heart-title {
+  padding-top: 20px;
+}
+
+/* line 217, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+.blockquote {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/* line 220, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+.blockquote p {
+  font-size: 2.5rem;
+}
+
+/* line 222, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_trip.sass */
+.blockquote footer {
+  font-size: 2rem;
 }
 
 /* line 1, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */

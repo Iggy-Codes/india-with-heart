@@ -53,6 +53,7 @@ block content
                 div!=marked((!block.description) ? "" : block.description)
               .col-md-4.trip-photo
                   img.img-responsive.img-rounded(src="/img/trip/" + image)
+      .row  
         each block in destinations[tripDay].blocks
           if (block.section == "npo" && block.visible)
             -var image = (!block.img) ? 'Sorry-image-not-available.png' : block.img
@@ -62,21 +63,24 @@ block content
               .col-md-8.col-sm-12
                 h3=block.title
                 div!=marked((!block.description) ? "" : block.description)
+      .row
         each block in destinations[tripDay].blocks
           if (block.section == "heart" && block.visible)
             if(block.description)
-              -var image = (!block.img) ? 'Sorry-image-not-available.png' : block.img
-              .col-md-8
-                h3.text-center 
+              //- -var image = (!block.img) ? 'Sorry-image-not-available.png' : block.img
+              .col-sm-5.col-sm-offset-1.col-xs-6.heart-title
+                h3.text-right 
                   i.fa.fa-heartbeat
                   | Los latidos de nuestros viajeros
-                blockquote.blockquote-reverse.block-experience
+              .col-sm-5.col-xs-6
+                blockquote.blockquote.block-experience
                   p!=marked((!block.description) ? "" : block.description)
                   footer
                     | Nuestro amigo viajero 
                     cite=block.title
-              .col-md-4.trip-photo.hidden-sm.hidden-xs
-                  img.img-responsive.img-rounded(src="/img/trip/" + image)
+              //- .col-md-4.trip-photo.hidden-sm.hidden-xs.trip-photo-heart
+              //-     img.img-responsive.img-rounded(src="/img/trip/" + image)
+      .row
         .trip-row
           .myThumbnails
             ul
