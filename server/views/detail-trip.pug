@@ -24,17 +24,26 @@ block content
             each destination,i in destinations
               .trip-step
                 if (i == tripDay)
-                  button.btn.btn-bullet.btn-circle(type='button', data-target="/trip/" + titleUri + "/" + destination.name)
+                  button.btn.btn-bullet.btn-circle(type='button', data-target=urlTrip + destination.name)
                 else 
-                  button.btn.btn-default.btn-circle(type='button', data-target="/trip/" + titleUri  +"/" + destination.name)
+                  button.btn.btn-default.btn-circle(type='button', data-target=urlTrip + destination.name)
                 p
-                  a(href="/trip/" + titleUri + "/" + destination.name)=destination.name
+                  a(href=urlTrip + destination.name)=destination.name
       .row
         #map.hidden-xs
       .row.trip-title
-        i.fa.fa-caret-left
+        if(tripDay != 0)
+          each destination, i in destinations
+            if (i == (tripDay - 1))
+              a(href= urlTrip + destination.name)
+                i.fa.fa-caret-left
         h1.text-center=destinations[tripDay].name 
-        i.fa.fa-caret-right
+        if(tripDay != maxCities)
+          each destination, i in destinations
+            if (i == (tripDay + 1))
+              a(href=urlTrip + destination.name)
+                i.fa.fa-caret-right
+      .row
         each block in destinations[tripDay].blocks
           if (block.section == "tourism" && block.visible)
             -var image = (!block.img) ? 'Sorry-image-not-available.png' : block.img
@@ -42,13 +51,13 @@ block content
               .col-md-8.col-sm-12
                 h3=block.title
                 div!=marked((!block.description) ? "" : block.description)
-              .col-md-4.trip-photo.hidden-sm
+              .col-md-4.trip-photo
                   img.img-responsive.img-rounded(src="/img/trip/" + image)
         each block in destinations[tripDay].blocks
           if (block.section == "npo" && block.visible)
             -var image = (!block.img) ? 'Sorry-image-not-available.png' : block.img
             section.row.city-explanation 
-              .col-md-4.trip-photo.hidden-sm
+              .col-md-4.trip-photo.hidden-sm.hidden-xs
                   img.img-responsive.img-rounded(src="/img/trip/" + image)
               .col-md-8.col-sm-12
                 h3=block.title
@@ -66,10 +75,6 @@ block content
                   footer
                     | Nuestro amigo viajero 
                     cite=block.title
-              //- .col-lg-6.text-center
-              //-   input.btn.btn-facebook.btn-block(type='submit', value='Comparte via facebook')
-              //- .col-lg-6.text-center
-              //-   input.btn.btn-default.btn-block.btn-experience(type='submit', value='Ver todas las experiencias')
               .col-md-4.trip-photo.hidden-sm.hidden-xs
                   img.img-responsive.img-rounded(src="/img/trip/" + image)
         .trip-row
