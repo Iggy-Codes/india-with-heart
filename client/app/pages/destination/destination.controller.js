@@ -24,8 +24,9 @@
 
     vm.addDestination = (e) => {
       e.preventDefault()
-      const { id, cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck } = vm
-      const rawData = { id, cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck }
+      const { id, cityName, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck } = vm
+      const rawData = { id, cityName, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck }
+      console.log(rawData)
       adminAppFactory.newDestination(rawData)
           .then($route.reload())
     }
@@ -57,10 +58,16 @@
     }
 
     vm.changeEnterForTab = (e, elementId) => {
+      console.log(e)
       vm.lat = ''
       vm.lng = ''
       if (e.keyCode === 13) {
         e.preventDefault()
+        if (e.srcElement.id === 'cityName') {
+          vm.lookGoogleMaps(e)
+          vm.lat2 = vm.lat
+          vm.lng2 = vm.lng
+        }
         vm.setFocus(elementId)
       }
     }
@@ -72,14 +79,16 @@
 
     vm.lookGoogleMaps = (e) => {
       if (e.srcElement.value !== '') {
+        console.log('Searching for: ' + vm.cityName)
         addressGeoFactory.getCoordinates(vm.cityName)
           .then((response) => {
-            console.log(response)
-            // debugger
+            $rootScope.coord = response
+            // console.log(response)
+            // // debugger
             if (response.lat === 0 && response.lng === 0) {
               alert('Ciudad no encontrada.')
-              vm.lat = ''
-              vm.lng = ''
+              // vm.lat = 0
+              // vm.lng = 0
               vm.cityName = ''
               vm.setFocus('cityName')
             } else {

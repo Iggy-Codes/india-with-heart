@@ -46,10 +46,7 @@
       console.log(blocks)
       blocks.push({ title: rawData.npoTitle, description: rawData.npoDes, img: rawData.npoImg, visible: rawData.npoCheck, section: 'npo' })
       blocks.push({ title: rawData.heartTitle, description: rawData.heartDes, img: rawData.heartImg, visible: rawData.heartCheck, section: 'heart' })
-      const coord = {
-        lat: rawData.lat,
-        lng: rawData.lng
-      }
+      const coord = $rootScope.coord
       const postDestination = {
         name: rawData.cityName,
         coord,
