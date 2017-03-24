@@ -9755,54 +9755,58 @@ body {
 
 /* line 1, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
 .contact {
-  padding-top: 50px;
+  padding: 50px 0px 0px 0px;
   background: url(/img/index/space-three.jpeg) no-repeat top center;
   background-size: cover;
 }
 
 /* line 5, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
-.contact .contact-dark {
+.contact .contact-content {
+  padding: 0px;
   background-color: rgba(0, 0, 0, 0.5);
   border: 0px;
   padding: 0px;
   width: 100%;
 }
 
-/* line 10, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
-.contact .contact-dark .contact-content {
-  padding: 0px;
-}
-
-/* line 12, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
-.contact .contact-dark .contact-content .well {
+/* line 11, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
+.contact .contact-content .well {
   background: none;
   border: 0px;
 }
 
-/* line 15, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
-.contact .contact-dark .contact-content .well legend {
+/* line 14, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
+.contact .contact-content .well legend {
   color: white;
   font-size: 4rem;
   text-shadow: 2px 2px gray;
   border: 0px;
 }
 
-/* line 21, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
-.contact .contact-dark .contact-content .well .form-group span {
+/* line 20, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
+.contact .contact-content .well .form-group span {
   padding: 0px;
 }
 
-/* line 23, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
-.contact .contact-dark .contact-content .well .form-group span i {
+/* line 22, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
+.contact .contact-content .well .form-group span i {
   font-size: 3rem;
   color: white;
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
-/* line 28, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
-.contact .contact-dark .contact-content .well .form-group input, .contact .contact-dark .contact-content .well .form-group textarea {
+/* line 27, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
+.contact .contact-content .well .form-group input, .contact .contact-content .well .form-group textarea {
   font-size: 2rem;
+}
+
+/* line 29, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_contact.sass */
+.contact .contact-content .contact-result {
+  color: white;
+  padding-top: 100px;
+  height: 80vh;
+  font-size: 3rem;
 }
 
 /* line 1, /home/iggy/Documents/skylab-project/india-with-heart/server/src/sass/_footer.sass */

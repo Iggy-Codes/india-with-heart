@@ -3,11 +3,13 @@ extends layout.pug
 //-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
 block content
   .row.contact
-    .contact-dark
-      .col-sm-8.col-sm-offset-2.contact-content
-        .container
-          .well.well-sm
-            if (result)
-              <h2>Hemos recibido tu mensaje</h2>
-            else
-              <h2>Se ha producido un error</h2>
+    .col-xs-12.contact-content.text-center
+      .contact-result
+          if (result)
+            h1 Hemos recibido tu mensaje
+            p Gracias por contactar con India con corazón
+            p En breve nos pondremos en contacto contigo
+          else
+            h1 Se ha producido un error
+            p Gracias por contactar con India con corazón
+            p Lamentamos los incovenientes y te pedimos que lo vuelvas a intentar transcurridos unos minutos

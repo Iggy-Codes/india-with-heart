@@ -3,33 +3,32 @@ extends layout.pug
 //-   link(rel='stylesheet', href='/bower_components/ekko-lightbox/dist/ekko-lightbox.min.css')
 block content
   .row.contact
-    .contact-dark
-      .col-sm-8.col-sm-offset-2.contact-content
-        .container
-          .well.well-sm
-            form.form-horizontal(method='POST',action='/sendMail')
-              fieldset
-                legend.text-center.header Déjanos tu mensaje
-                .form-group
-                  span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
-                    i.fa.fa-user.bigicon
-                  .col-sm-8.col-xs-11
-                    input#fname.form-control(name='name', type='text', placeholder='Nombre', required)
-                .form-group
-                  span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
-                    i.fa.fa-envelope-o.bigicon
-                  .col-sm-8.col-xs-11
-                    input#email.form-control(name='email', type='text', placeholder='Email', required)
-                .form-group
-                  span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
-                    i.fa.fa-phone-square.bigicon
-                  .col-sm-8.col-xs-11
-                    input#phone.form-control(name='phone', type='phone', placeholder='555 5555 555')
-                .form-group
-                  span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
-                    i.fa.fa-pencil-square-o.bigicon
-                  .col-sm-8.col-xs-11
-                    textarea#message.form-control(name='message', placeholder='Nos gustaría saber la razón de tu interés por India Con Corazón.\n Muchas gracias por tu mensaje', rows='7')
-                .form-group
-                  .col-md-12.text-center
-                    button.btn.btn-primary.btn-lg(type='submit') Enviar
+    .contact-content.col-xs-12
+      .container.col-sm-8.col-sm-offset-2
+        .well.well-sm
+          form.form-horizontal(method='POST',action='/sendMail')
+            fieldset
+              legend.text-center.header Déjanos tu mensaje
+              .form-group
+                span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
+                  i.fa.fa-user.bigicon
+                .col-sm-8.col-xs-11
+                  input#fname.form-control(name='name', type='text', placeholder='Nombre', required)
+              .form-group
+                span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
+                  i.fa.fa-envelope-o.bigicon
+                .col-sm-8.col-xs-11
+                  input#email.form-control(name='email', type='text', placeholder='Email', required)
+              .form-group
+                span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
+                  i.fa.fa-phone-square.bigicon
+                .col-sm-8.col-xs-11
+                  input#phone.form-control(name='phone', type='phone', placeholder='555 5555 555')
+              .form-group
+                span.col-sm-1.col-sm-offset-2.text-center.col-xs-1
+                  i.fa.fa-pencil-square-o.bigicon
+                .col-sm-8.col-xs-11
+                  textarea#message.form-control(name='message', placeholder='Nos gustaría saber la razón de tu interés por India Con Corazón.\n Muchas gracias por tu mensaje', rows='7')
+              .form-group
+                .text-center
+                  button.btn.btn-primary.btn-lg(type='submit') Enviar
