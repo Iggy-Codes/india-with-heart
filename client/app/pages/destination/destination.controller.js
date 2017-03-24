@@ -4,7 +4,7 @@
   .module('adminApp')
   .controller('DestinationController', DestinationController)
 
-  function DestinationController (adminAppFactory, $rootScope, $route, addressGeoFactory, $window) {
+  function DestinationController (DestinationFactory, ImgFactory, TripFactory, $rootScope, $route, addressGeoFactory, $window) {
     var vm = this
 
     vm.titleForm = 'Alta de Destinación'
@@ -14,25 +14,25 @@
     vm.npoCheck = true
     vm.heartCheck = true
 
-    adminAppFactory.getDestinations()
+    DestinationFactory.getDestinations()
       .then(({data}) => {
         vm.destinations = data
       })
 
-    adminAppFactory.getImgs()
+    ImgFactory.getImgs()
       .then(({data}) => { vm.imgs = data.files })
 
     vm.addDestination = (e) => {
       e.preventDefault()
       const { id, cityName, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck } = vm
       const rawData = { id, cityName, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck }
-      adminAppFactory.newDestination(rawData)
+      DestinationFactory.newDestination(rawData)
           .then($route.reload())
     }
 
     vm.editDestination = (e, id) => {
       e.preventDefault()
-      adminAppFactory.getDestinationById(id)
+      DestinationFactory.getDestinationById(id)
         .then(response => {
           Object.keys(response.data).forEach(key => { vm[key] = response.data[key] })
           vm.titleForm = 'Modificación de: ' + response.data.cityName
@@ -47,13 +47,13 @@
     vm.removeDestination = (e, id) => {
       e.preventDefault()
       if (confirm('Are you sure?')) {
-        adminAppFactory.checkTripDestination(id)
+        TripFactory.checkTripDestination(id)
           .then(result => {
             if (result) {
               alert('City in use\n It can NOT be removed')
                 .then($route.reload())
             } else {
-              adminAppFactory.removeDestinationById(id)
+              DestinationFactory.removeDestinationById(id)
                   .then($route.reload())
             }
           })

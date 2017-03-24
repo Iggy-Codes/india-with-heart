@@ -2,9 +2,9 @@
 (function () {
   angular
     .module('adminApp')
-    .factory('adminAppFactory', adminAppFactory)
+    .factory('TripFactory', TripFactory)
 
-  function adminAppFactory ($http, cfg, $rootScope) {
+  function TripFactory ($http, cfg, $rootScope) {
     function getTrips () {
       return $http.get(cfg.urlTrips)
     }
@@ -40,76 +40,13 @@
         .then(response => response.data.result)
     }
 
-    function newDestination (rawData) {
-      const blocks = []
-      blocks.push({ title: rawData.tourismTitle, description: rawData.tourismDes, img: rawData.tourismImg, visible: rawData.tourismCheck, section: 'tourism' })
-      console.log(blocks)
-      blocks.push({ title: rawData.npoTitle, description: rawData.npoDes, img: rawData.npoImg, visible: rawData.npoCheck, section: 'npo' })
-      blocks.push({ title: rawData.heartTitle, description: rawData.heartDes, img: rawData.heartImg, visible: rawData.heartCheck, section: 'heart' })
-      const coord = $rootScope.coord
-      const postDestination = {
-        name: rawData.cityName,
-        coord,
-        blocks
-      }
-      console.log('factory before petition')
-      console.log(postDestination)
-      if (rawData.id === '') return $http.post(cfg.urlDestinations, {postDestination})
-      else return $http.put(cfg.urlDestinations + '/' + rawData.id, {postDestination})
-    }
-
-    function getDestinations () {
-      return $http.get(cfg.urlDestinations)
-    }
-
-    function getDestinationById (id) {
-      var rawData = {}
-      return $http.get(cfg.urlDestinations + '/' + id)
-        .then(response => {
-          const destination = response.data
-          console.log('received')
-          console.log(destination)
-          rawData['id'] = destination._id
-          rawData['cityName'] = destination.name
-          rawData['lat'] = destination.coord.lat
-          rawData['lng'] = destination.coord.lng
-          destination.blocks.forEach(block => {
-            const titles = [block.section + 'Title', block.section + 'Des', block.section + 'Check', block.section + 'Img']
-            rawData[titles[0]] = block.title
-            rawData[titles[1]] = block.description
-            rawData[titles[2]] = block.visible
-            rawData[titles[3]] = block.img
-          })
-          console.log(rawData)
-          response.data = rawData
-          console.log(response)
-          // const promise = new Promise((resolve, reject) => resolve(rawData))
-          // console.log(promise)
-          return response
-        })
-
-          // const rawData = { cityName, lat, lng, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartMsg, heartImg, heartCheck }
-    }
-
-    function removeDestinationById (id) {
-      return $http.delete(cfg.urlDestinations + '/' + id)
-    }
-
-    function getImgs () {
-      return $http.get(cfg.urlImgs)
-    }
     return {
       getTrips,
       addTrip,
       updateTrip,
       removeTripById,
       getTripById,
-      checkTripDestination,
-      newDestination,
-      getDestinations,
-      getDestinationById,
-      removeDestinationById,
-      getImgs
+      checkTripDestination
     }
   }
 
@@ -137,68 +74,3 @@
       .replace(/[^a-z0-9\-]/g, function (a) { return Latinise.latin_map[a] || a })
   }
 })()
-
-      // let destinations = []
-      // if (newTrip.stops) {
-      //   let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
-      //   if (stops) {
-      //     stops.forEach(stop => {
-      //       if (!(!stop) && destinations.indexOf(stop) < 0) {
-      //         destinations.push(stop)
-      //       }
-      //     })
-      //   }
-      // }
-      // newTrip['destinations'] = destinations
-      // console.log(newTrip)
-      // console.log('Position New Stops')
-      // console.log(posNewStops)
-
-      // console.log('destinationsToCheck')
-      // console.log(destinationsToCheck)
-      // newTrip['destinations'] = checkDestinations(destinationsToCheck)
-
-      // console.log(newTrip.destinations)
-
-      // debugger
-      // let destinations = []
-      // if (newTrip.stops) {
-      //   let stops = Object.keys(newTrip.stops).map((k) => newTrip.stops[k])
-      //   if (stops) {
-      //     stops.forEach(stop => {
-      //       if (!(!stop) && destinations.indexOf(stop) < 0) {
-      //         destinations.push(stop)
-      //       }
-      //     })
-      //   }
-      // }
-      // newTrip['destinations'] = destinations
-
-      // let trip_destinations = newTrip.trip_destinations
-      // console.log('old destinations')
-      // console.log(trip_destinations)
-
-      // console.log('before')
-      // console.log(stops)
-
-      // console.log('after')
-      // console.log(destinations)
-      // console.log(newTrip)
-      // if (newTrip.id === '')
-      // else
-      // for (var i = 3; i < 11; i++) {
-      //   if (+e.srcElement[i].value !== 0 ) {
-      //   }
-      // }
-
-      // let idx = stops.indexOf('')
-      // while (idx !== -1) {
-      //   stops.splice(idx, 1)
-      //   idx = stops.indexOf('')
-      // }
-      // {
-
-      // }
-
-      // var desired = stringToReplace.replace(/[^a-z0-9\-]/gi, '')
-    // }

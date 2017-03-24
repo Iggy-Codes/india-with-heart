@@ -4,7 +4,7 @@
   .module('adminApp')
   .controller('TripController', TripController)
 
-  function TripController (adminAppFactory, $rootScope, $route) {
+  function TripController (DestinationFactory, TripFactory, $rootScope, $route) {
     var vm = this
 
     vm.titleForm = 'Alta de Viaje'
@@ -12,19 +12,19 @@
     vm.id = ''
     vm.numberStops = new Array(8).fill(0).map((item, i) => i)
 
-    adminAppFactory.getDestinations()
+    DestinationFactory.getDestinations()
       .then(({data}) => {
         vm.destinations = data
       })
 
-    adminAppFactory.getTrips()
+    TripFactory.getTrips()
       .then(({data}) => {
         vm.trips = data
       })
 
     vm.editTrip = (e, id) => {
       e.preventDefault()
-      adminAppFactory.getTripById(id)
+      trip.getTripById(id)
         .then((response) => {
           const trip = response.data
           vm.titleForm = 'Modificación de: ' + trip.title
@@ -40,7 +40,7 @@
     vm.removeTrip = (e, id) => {
       e.preventDefault
       if (confirm('Are you sure?')) {
-        adminAppFactory.removeTripById(id)
+        TripFactory.removeTripById(id)
           .then($route.reload())
       }
     }
@@ -55,11 +55,11 @@
         id
       }
       if (id === '') {
-        adminAppFactory.addTrip(newTrip)
+        TripFactory.addTrip(newTrip)
           .then($route.reload())
       } else {
         newTrip['trip_destinations'] = vm.trip_destinations
-        adminAppFactory.updateTrip(newTrip)
+        TripFactory.updateTrip(newTrip)
           .then($route.reload())
       }
     }

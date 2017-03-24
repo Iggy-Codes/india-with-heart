@@ -3,24 +3,16 @@
   <head>
     <title>India con corazon - Administración</title>
     <link rel="stylesheet" type="text/css" href="/admin/app/css/main.css">
-<!--     <base href="/admin"> -->
   </head>
   <body>
-<!--     <header ng-include src="'/admin/app/pages/header/header.tpl.html'">
-    </header> -->
     <nav-bar></nav-bar>
     <main ng-view></main>
-<!--     <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBzDWwjBUCdOtXqfjAXXbLtOgLWxqZzkc0"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBzDWwjBUCdOtXqfjAXXbLtOgLWxqZzkc0" async defer></script>
 
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <script src="/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
     <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
-<!--     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQReRbAJO4XaWQz1EsWlg1rRfcZJSArkQ"></script> -->
-    <!-- <script src="/bower_components/lodash/vendor/underscore/underscore-min.js"></script> -->
-    <!-- <script src="/bower_components/lodash/dist/lodash.min.js"></script> -->
-    <!-- <script src="/admin/app/js/angular-google-maps.min.js"></script> -->
 
     <script src="/admin/app/components/index.js"></script>
     <script src="/admin/app/components/navbar/navbar.js"></script>
@@ -32,7 +24,9 @@
     <script src="/admin/app/js/services/auth.factory.js"></script>
     <script src="/admin/app/js/services/storage.factory.js"></script>
     <script src="/admin/app/js/services/geocoder.factory.js"></script>
-    <script src="/admin/app/js/services/api.factory.js"></script>
+    <script src="/admin/app/js/services/img.factory.js"></script>
+    <script src="/admin/app/js/services/trip.factory.js"></script>
+    <script src="/admin/app/js/services/destination.factory.js"></script>
     <script src="/admin/app/js/interceptors/AuthInterceptor.js"></script>
 
     <script src="/admin/app/pages/trip/trip.controller.js"></script>
