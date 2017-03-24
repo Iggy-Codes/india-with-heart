@@ -26,7 +26,6 @@
       e.preventDefault()
       const { id, cityName, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck } = vm
       const rawData = { id, cityName, tourismTitle, tourismDes, tourismImg, tourismCheck, npoTitle, npoDes, npoImg, npoCheck, heartTitle, heartDes, heartImg, heartCheck }
-      console.log(rawData)
       adminAppFactory.newDestination(rawData)
           .then($route.reload())
     }
@@ -38,6 +37,10 @@
           Object.keys(response.data).forEach(key => { vm[key] = response.data[key] })
           vm.titleForm = 'Modificación de: ' + response.data.cityName
           vm.id = response.data.id
+          $rootScope.coord = {
+            'lat': response.data.lat,
+            'lng': response.data.lng
+          }
         })
     }
 
@@ -58,7 +61,6 @@
     }
 
     vm.changeEnterForTab = (e, elementId) => {
-      console.log(e)
       vm.lat = ''
       vm.lng = ''
       if (e.keyCode === 13) {
@@ -83,12 +85,8 @@
         addressGeoFactory.getCoordinates(vm.cityName)
           .then((response) => {
             $rootScope.coord = response
-            // console.log(response)
-            // // debugger
             if (response.lat === 0 && response.lng === 0) {
               alert('Ciudad no encontrada.')
-              // vm.lat = 0
-              // vm.lng = 0
               vm.cityName = ''
               vm.setFocus('cityName')
             } else {
