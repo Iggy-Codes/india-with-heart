@@ -10,8 +10,6 @@ module.exports = (req, res) => {
     destinations
   }
 
-  console.log(trip)
-  console.log(id)
   Trip
     .findByIdAndUpdate(id, trip)
     .then(response => {

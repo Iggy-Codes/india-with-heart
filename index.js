@@ -1,10 +1,10 @@
 const fs = require('fs')
 const path = require('path')
+
 const thereIsDotEnv = fs.existsSync('.env')
 if (thereIsDotEnv) require('dotenv').config()
 
 global.__base = path.join(__dirname, '/server/')
-console.log(global.__base)
 
 const app = require('./server/app')
 const db = require('./server/config/db')
